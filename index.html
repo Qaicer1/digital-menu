@@ -1,0 +1,2195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover" />
+    <title>Las Palmeras · Menú Móvil | Granada</title>
+    <style>
+        /* ─── RESET & BASE ─── */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: #f2ebe1;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            color: #2c1810;
+            line-height: 1.4;
+            padding-bottom: 80px;
+            font-size: 15px;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        .app-container {
+            max-width: 480px;
+            margin: 0 auto;
+            background: #faf6f0;
+            min-height: 100vh;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.08);
+            position: relative;
+        }
+
+        /* ─── HERO ─── */
+        .hero {
+            background: linear-gradient(145deg, #3d2317 0%, #5c3d2e 100%);
+            color: #fef6e8;
+            padding: 1.6rem 1.2rem 2rem;
+            border-radius: 0 0 32px 32px;
+            margin-bottom: 0.5rem;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+        .hero::before {
+            content: '🌴';
+            position: absolute;
+            top: -30px;
+            right: -20px;
+            font-size: 120px;
+            opacity: 0.06;
+            transform: rotate(15deg);
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: -40%;
+            right: -20%;
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            background: rgba(212, 160, 23, 0.06);
+            pointer-events: none;
+        }
+        
+        .logo-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            margin-bottom: 0.4rem;
+            position: relative;
+            z-index: 1;
+        }
+        .logo-icon {
+            font-size: 3rem;
+            line-height: 1;
+            filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
+            flex-shrink: 0;
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-6px); }
+        }
+        
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.1;
+        }
+        .logo-text .brand {
+            font-size: 2rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            background: linear-gradient(to right, #f7e7b0, #d4a017, #f7e7b0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+        .logo-text .tagline {
+            font-size: 0.65rem;
+            font-weight: 500;
+            letter-spacing: 3px;
+            color: #d4a86a;
+            text-transform: uppercase;
+            -webkit-text-fill-color: #d4a86a;
+        }
+        
+        .hero h1 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-top: 4px;
+            color: #fef6e8;
+            -webkit-text-fill-color: #fef6e8;
+            position: relative;
+            z-index: 1;
+        }
+        .hero h1 span {
+            background: rgba(184, 134, 11, 0.85);
+            padding: 3px 14px;
+            border-radius: 24px;
+            font-size: 0.65rem;
+            font-weight: 600;
+            color: #fef6e8;
+            -webkit-text-fill-color: #fef6e8;
+            letter-spacing: 0.5px;
+            backdrop-filter: blur(4px);
+        }
+        .hero h1 .halal-badge-hero {
+            background: #b8860b;
+            padding: 3px 14px;
+            border-radius: 24px;
+            font-size: 0.6rem;
+            border: 1px solid rgba(212, 160, 23, 0.3);
+            box-shadow: 0 0 20px rgba(184, 134, 11, 0.15);
+        }
+        
+        .address {
+            margin-top: 10px;
+            font-size: 0.75rem;
+            opacity: 0.92;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            flex-wrap: wrap;
+            color: #ecd6b8;
+            position: relative;
+            z-index: 1;
+        }
+        .address a {
+            color: #f7e7b0;
+            text-decoration: none;
+            font-weight: 500;
+            background: rgba(0, 0, 0, 0.25);
+            padding: 4px 16px;
+            border-radius: 24px;
+            font-size: 0.7rem;
+            transition: all 0.3s ease;
+        }
+        .address a:hover {
+            background: rgba(212, 160, 23, 0.3);
+            transform: scale(1.02);
+        }
+        .halal-badge {
+            display: inline-block;
+            background: rgba(184, 134, 11, 0.2);
+            color: #fef6e8;
+            font-size: 0.6rem;
+            padding: 4px 16px;
+            border-radius: 24px;
+            margin-top: 8px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            border: 1px solid rgba(212, 160, 23, 0.25);
+            backdrop-filter: blur(4px);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ─── TRANSLATOR BAR ─── */
+        .translator-bar {
+            display: flex;
+            justify-content: flex-end;
+            padding: 0.5rem 0.8rem;
+            background: #faf6f0;
+            border-bottom: 1px solid #e4d5c4;
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            backdrop-filter: blur(10px);
+            background: rgba(250, 246, 240, 0.92);
+        }
+        .dropdown-btn {
+            background: #fef6e8;
+            border: 1px solid #c9b09b;
+            border-radius: 30px;
+            padding: 0.4rem 1rem;
+            font-size: 1.3rem;
+            line-height: 1;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-weight: 500;
+            color: #5c3d2e;
+            transition: all 0.25s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+        }
+        .dropdown-btn:hover {
+            border-color: #b8860b;
+            box-shadow: 0 4px 16px rgba(184, 134, 11, 0.12);
+        }
+        .dropdown-btn:active {
+            transform: scale(0.96);
+        }
+        .dropdown-btn .arrow {
+            font-size: 0.7rem;
+            margin-left: 4px;
+            transition: transform 0.3s ease;
+        }
+        .dropdown-btn .arrow.open {
+            transform: rotate(180deg);
+        }
+        
+        .lang-dropdown {
+            display: none;
+            position: absolute;
+            top: calc(100% + 6px);
+            right: 8px;
+            background: #fefaf5;
+            border: 1px solid #d4c0b0;
+            border-radius: 18px;
+            box-shadow: 0 12px 40px rgba(60, 35, 23, 0.18);
+            z-index: 100;
+            min-width: 200px;
+            max-height: 320px;
+            overflow-y: auto;
+            padding: 0.4rem 0;
+            backdrop-filter: blur(20px);
+            background: rgba(254, 250, 245, 0.96);
+        }
+        .lang-dropdown.show {
+            display: block;
+            animation: slideDown 0.2s ease;
+        }
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .lang-option {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 0.6rem 1.2rem;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.15s ease;
+            border: none;
+            background: transparent;
+            width: 100%;
+            text-align: left;
+            font-family: inherit;
+            color: #3d2a1e;
+        }
+        .lang-option:hover {
+            background: #f0e6db;
+        }
+        .lang-option .flag {
+            font-size: 1.6rem;
+            line-height: 1;
+        }
+        .lang-option .lang-name {
+            font-weight: 500;
+            font-size: 0.85rem;
+        }
+        .lang-option.active-option {
+            background: #e4d5c4;
+            font-weight: 600;
+            color: #3d2317;
+            border-radius: 0;
+        }
+        .lang-option:first-child.active-option { border-radius: 18px 18px 0 0; }
+        .lang-option:last-child.active-option { border-radius: 0 0 18px 18px; }
+
+        /* ─── CATEGORY SCROLL ─── */
+        .cats-scroll {
+            display: flex;
+            gap: 0.7rem;
+            overflow-x: auto;
+            padding: 0.7rem 0.8rem;
+            background: #faf6f0;
+            border-bottom: 1px solid #e4d5c4;
+            scrollbar-width: none;
+            -webkit-overflow-scrolling: touch;
+            scroll-behavior: smooth;
+            position: sticky;
+            top: 48px;
+            z-index: 40;
+            backdrop-filter: blur(8px);
+            background: rgba(250, 246, 240, 0.92);
+        }
+        .cats-scroll::-webkit-scrollbar {
+            display: none;
+        }
+        .cat-chip {
+            background: #fefaf5;
+            border: 1.5px solid #d4c0b0;
+            padding: 0.5rem 1.2rem;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 0.7rem;
+            color: #5c3d2e;
+            white-space: nowrap;
+            cursor: pointer;
+            flex-shrink: 0;
+            transition: all 0.25s ease;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+        }
+        .cat-chip:hover {
+            border-color: #b8860b;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(184, 134, 11, 0.12);
+        }
+        .cat-chip.active {
+            background: #5c3d2e;
+            border-color: #5c3d2e;
+            color: #f7e7b0;
+            box-shadow: 0 4px 16px rgba(92, 61, 46, 0.25);
+        }
+
+        /* ─── MENU SECTIONS ─── */
+        .menu-section {
+            padding: 0.2rem 0.8rem 0.8rem;
+            scroll-margin-top: 120px;
+        }
+        .section-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #5c3d2e;
+            margin: 1rem 0 0.7rem 0;
+            border-bottom: 3px solid #d4c0b0;
+            padding-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .section-title::after {
+            content: '';
+            flex: 1;
+            height: 2px;
+            background: linear-gradient(to right, #d4c0b0, transparent);
+        }
+
+        /* ─── MENU ITEM ─── */
+        .menu-item {
+            display: flex;
+            background: #fefaf5;
+            border-radius: 20px;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            box-shadow: 0 2px 12px rgba(60, 35, 23, 0.06);
+            border: 1px solid #e8dacc;
+            align-items: center;
+            gap: 1rem;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .menu-item:hover {
+            border-color: #c9b09b;
+            box-shadow: 0 8px 28px rgba(60, 35, 23, 0.10);
+            transform: translateY(-2px);
+        }
+        .menu-item:active {
+            transform: scale(0.99);
+        }
+
+        /* ─── BIGGER IMAGES ─── */
+        .item-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 18px;
+            flex-shrink: 0;
+            overflow: hidden;
+            background: #ede3d8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            border: 2px solid #dccbbc;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+        .item-img:hover {
+            transform: scale(1.02);
+            border-color: #b8860b;
+            box-shadow: 0 8px 24px rgba(184, 134, 11, 0.15);
+        }
+        .item-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .item-img:hover img {
+            transform: scale(1.08);
+        }
+        /* Blur-up placeholder effect */
+        .item-img img.loading {
+            filter: blur(6px);
+            transform: scale(1.1);
+        }
+        .item-img img.loaded {
+            filter: blur(0);
+            transform: scale(1);
+            transition: filter 0.4s ease, transform 0.4s ease;
+        }
+        
+        .item-img .emoji-fallback {
+            position: absolute;
+            font-size: 3rem;
+            opacity: 0.5;
+            pointer-events: none;
+        }
+        /* Badge on image */
+        .item-img .img-badge {
+            position: absolute;
+            top: 6px;
+            right: 6px;
+            background: rgba(92, 61, 46, 0.85);
+            backdrop-filter: blur(4px);
+            color: #f7e7b0;
+            font-size: 0.5rem;
+            padding: 2px 10px;
+            border-radius: 20px;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            border: 1px solid rgba(212, 160, 23, 0.2);
+        }
+
+        .item-info {
+            flex: 1;
+            min-width: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+        .item-name {
+            font-weight: 700;
+            font-size: 1rem;
+            color: #2c1810;
+            line-height: 1.2;
+        }
+        .item-desc {
+            font-size: 0.7rem;
+            color: #8a725e;
+            line-height: 1.3;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .allergy-icons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3px;
+            margin-top: 4px;
+        }
+        .allergy-icon {
+            background: #ede3d8;
+            border-radius: 20px;
+            padding: 2px 8px;
+            font-size: 0.5rem;
+            color: #7a6553;
+            border: 0.5px solid #dccbbc;
+            font-weight: 500;
+        }
+
+        .price-add {
+            text-align: right;
+            min-width: 80px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 6px;
+        }
+        .price {
+            font-weight: 800;
+            font-size: 1.1rem;
+            color: #b8860b;
+            letter-spacing: -0.3px;
+        }
+        .price::after {
+            content: ' €';
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #8a725e;
+        }
+        .add-btn {
+            background: linear-gradient(135deg, #5c3d2e, #4a3024);
+            border: none;
+            padding: 0.35rem 1.2rem;
+            border-radius: 30px;
+            font-size: 0.65rem;
+            font-weight: 600;
+            color: #f7e7b0;
+            margin-top: 2px;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.25s ease;
+            box-shadow: 0 2px 8px rgba(92, 61, 46, 0.2);
+            letter-spacing: 0.3px;
+        }
+        .add-btn:hover {
+            background: linear-gradient(135deg, #6d4a38, #5c3d2e);
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(92, 61, 46, 0.25);
+        }
+        .add-btn:active {
+            transform: scale(0.94);
+            box-shadow: 0 2px 8px rgba(92, 61, 46, 0.15);
+        }
+
+        /* ─── ORDER PANEL ─── */
+        .order-panel {
+            background: #faf6f0;
+            border-top: 1px solid #e4d5c4;
+            border-bottom: 1px solid #e4d5c4;
+            padding: 0.8rem 1rem;
+            margin: 0.5rem 0;
+            font-size: 0.8rem;
+            border-radius: 0;
+        }
+        .order-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: #b8860b;
+            border-bottom: 2px dashed #d4c0b0;
+            padding-bottom: 6px;
+            margin-bottom: 8px;
+        }
+        .order-header-text {
+            font-size: 0.9rem;
+        }
+        #clearOrderBtn {
+            background: none;
+            border: none;
+            color: #b8860b;
+            font-size: 0.7rem;
+            cursor: pointer;
+            font-weight: 600;
+            padding: 4px 12px;
+            border-radius: 20px;
+            transition: all 0.2s ease;
+        }
+        #clearOrderBtn:hover {
+            background: rgba(184, 134, 11, 0.08);
+        }
+        
+        .order-list {
+            max-height: 180px;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+        .order-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 6px 0;
+            border-bottom: 1px solid #ede3d8;
+            font-size: 0.8rem;
+        }
+        .order-item:last-child {
+            border-bottom: none;
+        }
+        .order-controls {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        .order-qty {
+            font-weight: 700;
+            min-width: 24px;
+            text-align: center;
+            color: #3d2317;
+            font-size: 0.9rem;
+        }
+        .order-btn {
+            background: #ede3d8;
+            border: none;
+            border-radius: 50%;
+            width: 28px;
+            height: 28px;
+            font-size: 1rem;
+            cursor: pointer;
+            font-weight: 700;
+            color: #5c3d2e;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
+        }
+        .order-btn:hover {
+            background: #dccbbc;
+            transform: scale(1.05);
+        }
+        .order-btn:active {
+            transform: scale(0.92);
+        }
+        .order-total {
+            text-align: right;
+            font-weight: 800;
+            margin-top: 8px;
+            padding-top: 8px;
+            border-top: 2px solid #dccbbc;
+            color: #b8860b;
+            font-size: 1.1rem;
+        }
+        .empty-list {
+            color: #b7a78f;
+            text-align: center;
+            padding: 12px;
+            font-style: italic;
+            font-size: 0.75rem;
+        }
+
+        /* ─── ALLERGENS FOOTER ─── */
+        .allergens-footer {
+            background: #f2e6da;
+            padding: 0.6rem 0.8rem;
+            margin: 0.5rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.55rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 5px;
+            color: #7a6553;
+        }
+        .allergen-footer-item {
+            background: #fefaf5;
+            padding: 3px 10px;
+            border-radius: 20px;
+            border: 0.5px solid #dccbbc;
+            font-weight: 500;
+        }
+
+        /* ─── BOTTOM NAV ─── */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            max-width: 480px;
+            margin: 0 auto;
+            background: rgba(250, 246, 240, 0.96);
+            backdrop-filter: blur(16px);
+            display: flex;
+            justify-content: space-around;
+            padding: 0.6rem 0.8rem 1rem;
+            border-top: 1px solid #e4d5c4;
+            font-size: 0.6rem;
+            font-weight: 500;
+            color: #8a725e;
+            box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.04);
+        }
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.1rem;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            padding: 4px 12px;
+            border-radius: 12px;
+        }
+        .nav-item:hover {
+            color: #5c3d2e;
+        }
+        .nav-item.active {
+            color: #b8860b;
+        }
+        .nav-item.active .nav-icon {
+            transform: scale(1.1);
+        }
+        .nav-icon {
+            font-size: 1.4rem;
+            transition: transform 0.25s ease;
+        }
+        .nav-item span {
+            font-size: 0.55rem;
+            letter-spacing: 0.3px;
+        }
+
+        /* ─── CONTACT SHEET ─── */
+        .contact-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(44, 24, 16, 0.55);
+            backdrop-filter: blur(4px);
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+            z-index: 1200;
+        }
+        .contact-overlay.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        .contact-sheet {
+            width: 100%;
+            max-width: 480px;
+            max-height: 88vh;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+            background: #faf6f0;
+            border-radius: 28px 28px 0 0;
+            padding: 1rem 1.1rem calc(1.4rem + env(safe-area-inset-bottom));
+            box-shadow: 0 -12px 40px rgba(60, 35, 23, 0.28);
+            transform: translateY(100%);
+            transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .contact-overlay.show .contact-sheet {
+            transform: translateY(0);
+        }
+        .contact-grabber {
+            width: 44px;
+            height: 5px;
+            border-radius: 999px;
+            background: #dccbbc;
+            margin: 0 auto 0.9rem;
+        }
+        .contact-title {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            margin-bottom: 1rem;
+        }
+        .contact-title h2 {
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: #3d2317;
+            letter-spacing: -0.3px;
+        }
+        .contact-close {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 34px;
+            height: 34px;
+            border: none;
+            border-radius: 50%;
+            background: #ede3d8;
+            color: #5c3d2e;
+            font-size: 1rem;
+            line-height: 1;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .contact-close:hover {
+            background: #dccbbc;
+            transform: rotate(90deg);
+        }
+        .contact-card {
+            display: flex;
+            align-items: center;
+            gap: 0.85rem;
+            padding: 0.85rem 0.95rem;
+            margin-bottom: 0.7rem;
+            background: #fefaf5;
+            border: 1px solid #ece0d3;
+            border-radius: 18px;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.2s ease;
+        }
+        .contact-card:hover {
+            border-color: #d4a017;
+            box-shadow: 0 6px 18px rgba(184, 134, 11, 0.12);
+            transform: translateY(-1px);
+        }
+        .contact-card-icon {
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            border-radius: 14px;
+            font-size: 1.4rem;
+            background: linear-gradient(135deg, #f7e7b0, #ecd6b8);
+        }
+        .contact-card-body {
+            flex: 1;
+            min-width: 0;
+        }
+        .contact-card-label {
+            font-size: 0.6rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #b8860b;
+            margin-bottom: 2px;
+        }
+        .contact-card-value {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #3d2317;
+            word-break: break-word;
+        }
+        .contact-card-action {
+            flex-shrink: 0;
+            font-size: 0.65rem;
+            font-weight: 700;
+            color: #b8860b;
+            background: rgba(184, 134, 11, 0.1);
+            padding: 6px 12px;
+            border-radius: 999px;
+            white-space: nowrap;
+        }
+        .contact-footer-note {
+            margin-top: 0.9rem;
+            text-align: center;
+            font-size: 0.62rem;
+            line-height: 1.6;
+            color: #8a725e;
+        }
+
+        /* ─── TOAST ─── */
+        #toastMsg {
+            position: fixed;
+            bottom: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #3d2317;
+            color: #f7e7b0;
+            padding: 8px 24px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            opacity: 0;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            pointer-events: none;
+            z-index: 1100;
+            white-space: nowrap;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            border: 1px solid #b8860b;
+            font-weight: 500;
+            backdrop-filter: blur(8px);
+            background: rgba(61, 35, 23, 0.92);
+        }
+        #toastMsg.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        /* ─── UTILITY ─── */
+        .hidden-cat {
+            display: none !important;
+        }
+
+        /* ─── RESPONSIVE ─── */
+        @media (max-width: 480px) {
+            .hero {
+                padding: 1.2rem 0.8rem 1.6rem;
+            }
+            .logo-text .brand {
+                font-size: 1.6rem;
+            }
+            .logo-icon {
+                font-size: 2.4rem;
+            }
+            .item-img {
+                width: 100px;
+                height: 100px;
+            }
+            .menu-item {
+                padding: 0.8rem;
+                gap: 0.8rem;
+            }
+            .price-add {
+                min-width: 70px;
+            }
+            .price {
+                font-size: 1rem;
+            }
+        }
+        @media (max-width: 380px) {
+            .item-img {
+                width: 80px;
+                height: 80px;
+            }
+            .menu-item {
+                flex-wrap: wrap;
+                justify-content: center;
+                text-align: center;
+            }
+            .price-add {
+                width: 100%;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                min-width: 0;
+            }
+            .add-btn {
+                width: auto;
+                padding: 0.3rem 1.4rem;
+            }
+            .item-info {
+                text-align: center;
+            }
+            .allergy-icons {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container" id="appContainer">
+
+        <!-- ─── HERO con LOGO ─── -->
+        <div class="hero">
+            <div class="logo-wrapper">
+                <div class="logo-icon">🌴</div>
+                <div class="logo-text">
+                    <span class="brand">Las Palmeras</span>
+                    <span class="tagline">✦ Cocina Mediterránea ✦</span>
+                </div>
+            </div>
+            <h1>
+                <span>Granada</span>
+                <span style="background:#b8860b;font-size:0.55rem;padding:2px 10px;">✦ HALAL</span>
+            </h1>
+            <div class="address">
+                📍 Calle Elvira, 33 · <a href="tel:+34672197472">📞 672 19 74 72</a>
+            </div>
+            <div class="halal-badge">✓ Cocina artesanal · Sabores de siempre</div>
+        </div>
+
+        <!-- ─── TRADUCTOR ─── -->
+        <div class="translator-bar">
+            <button class="dropdown-btn" id="langDropdownBtn">
+                🌐 <span id="currentLangLabel">Español</span> <span class="arrow" id="dropdownArrow">▾</span>
+            </button>
+            <div class="lang-dropdown" id="langDropdown">
+                <button class="lang-option active-option" data-lang="es"><span class="flag">🇪🇸</span> <span class="lang-name">Español</span></button>
+                <button class="lang-option" data-lang="en"><span class="flag">🇬🇧</span> <span class="lang-name">English</span></button>
+                <button class="lang-option" data-lang="fr"><span class="flag">🇫🇷</span> <span class="lang-name">Français</span></button>
+                <button class="lang-option" data-lang="ar"><span class="flag">🇲🇦</span> <span class="lang-name">العربية</span></button>
+                <button class="lang-option" data-lang="de"><span class="flag">🇩🇪</span> <span class="lang-name">Deutsch</span></button>
+                <button class="lang-option" data-lang="ru"><span class="flag">🇷🇺</span> <span class="lang-name">Русский</span></button>
+                <button class="lang-option" data-lang="it"><span class="flag">🇮🇹</span> <span class="lang-name">Italiano</span></button>
+                <button class="lang-option" data-lang="el"><span class="flag">🇬🇷</span> <span class="lang-name">Ελληνικά</span></button>
+                <button class="lang-option" data-lang="pt"><span class="flag">🇵🇹</span> <span class="lang-name">Português</span></button>
+                <button class="lang-option" data-lang="zh"><span class="flag">🇨🇳</span> <span class="lang-name">简体中文</span></button>
+                <button class="lang-option" data-lang="zh-tw"><span class="flag">🇹🇼</span> <span class="lang-name">繁體中文</span></button>
+                <button class="lang-option" data-lang="ja"><span class="flag">🇯🇵</span> <span class="lang-name">日本語</span></button>
+                <button class="lang-option" data-lang="ko"><span class="flag">🇰🇷</span> <span class="lang-name">한국어</span></button>
+                <button class="lang-option" data-lang="hi"><span class="flag">🇮🇳</span> <span class="lang-name">हिन्दी</span></button>
+                <button class="lang-option" data-lang="nl"><span class="flag">🇳🇱</span> <span class="lang-name">Nederlands</span></button>
+                <button class="lang-option" data-lang="pl"><span class="flag">🇵🇱</span> <span class="lang-name">Polski</span></button>
+                <button class="lang-option" data-lang="tr"><span class="flag">🇹🇷</span> <span class="lang-name">Türkçe</span></button>
+                <button class="lang-option" data-lang="uk"><span class="flag">🇺🇦</span> <span class="lang-name">Українська</span></button>
+            </div>
+        </div>
+
+        <!-- ─── FILTROS ─── -->
+        <div class="cats-scroll" id="filterTabs">
+            <div class="cat-chip active" data-filter="all">🍽️ Todo</div>
+            <div class="cat-chip" data-filter="entrantes">🥗 Antipasti</div>
+            <div class="cat-chip" data-filter="sopas">🥣 Sopas</div>
+            <div class="cat-chip" data-filter="tagines">🍲 Tajines</div>
+            <div class="cat-chip" data-filter="cuscus">🍚 Cuscús</div>
+            <div class="cat-chip" data-filter="pizzas">🍕 Pizza</div>
+            <div class="cat-chip" data-filter="arroces">🥘 Arroces</div>
+            <div class="cat-chip" data-filter="grill">🔥 Grill</div>
+            <div class="cat-chip" data-filter="postres">🍰 Postres</div>
+            <div class="cat-chip" data-filter="bebidas">🥤 Bebidas</div>
+        </div>
+
+        <!-- ─── PANEL DE PEDIDO ─── -->
+        <div class="order-panel" id="orderPanel">
+            <div class="order-header">
+                <span class="order-header-text">🛒 Mi pedido</span>
+                <button id="clearOrderBtn" style="background:none;border:none;color:#b8860b;font-size:0.65rem;cursor:pointer;font-weight:600;">Vaciar</button>
+            </div>
+            <div id="orderListContainer" class="order-list"><div class="empty-list">✨ Añade tus platos favoritos</div></div>
+            <div class="order-total" id="orderTotal">💰 Total: 0.00 €</div>
+        </div>
+
+        <!-- ════════════════════════════════════════════════════════════ -->
+        <!--                   CARTA COMPLETA                          -->
+        <!-- ════════════════════════════════════════════════════════════ -->
+        <div id="menuContainer">
+
+            <!-- ─── ENTRANTES ─── -->
+            <div class="menu-section" data-category="entrantes">
+                <div class="section-title">🥗 Antipasti · Entrantes</div>
+
+                <!-- Ensalada marroquí -->
+                <div class="menu-item" data-id="ensalada"
+                data-name-es="Ensalada marroquí" data-desc-es="Tomate, pepino, cebolla, pimiento"
+                data-name-en="Moroccan Salad" data-desc-en="Tomato, cucumber, onion, pepper"
+                data-name-fr="Salade marocaine" data-desc-fr="Tomate, concombre, oignon, poivron"
+                data-name-ar="سلطة مغربية" data-desc-ar="طماطم، خيار، بصل، فلفل"
+                data-name-de="Marokkanischer Salat" data-desc-de="Tomate, Gurke, Zwiebel, Paprika"
+                data-name-ru="Марокканский салат" data-desc-ru="Помидор, огурец, лук, перец"
+                data-name-it="Insalata marocchina" data-desc-it="Pomodoro, cetriolo, cipolla, peperone"
+                data-name-el="Μαροκινή σαλάτα" data-desc-el="Ντομάτα, αγγούρι, κρεμμύδι, πιπεριά"
+                data-name-pt="Salada marroquina" data-desc-pt="Tomate, pepino, cebola, pimentão"
+                data-name-zh="摩洛哥沙拉" data-desc-zh="番茄，黄瓜，洋葱，辣椒"
+                data-name-zh-tw="摩洛哥沙拉" data-desc-zh-tw="番茄，黃瓜，洋蔥，辣椒"
+                data-name-ja="モロッコサラダ" data-desc-ja="トマト、キュウリ、タマネギ、ピーマン"
+                data-name-ko="모로코 샐러드" data-desc-ko="토마토, 오이, 양파, 피망"
+                data-name-hi="मोरक्कन सलाद" data-desc-hi="टमाटर, खीरा, प्याज, शिमला मिर्च"
+                data-name-nl="Marokkaanse salade" data-desc-nl="Tomaat, komkommer, ui, paprika"
+                data-name-pl="Sałatka marokańska" data-desc-pl="Pomidor, ogórek, cebula, papryka"
+                data-name-tr="Fasülye salatası" data-desc-tr="Domates, salatalık, soğan, biber"
+                data-name-uk="Марокканський салат" data-desc-uk="Помідор, огірок, цибуля, перець"
+                data-price="7.00">
+                <div class="item-img">
+                    <img src="images/ensaladamarroqui.jpg" alt="Ensalada marroquí" loading="lazy" />
+                </div>
+                <div class="item-info"><div class="item-name">Ensalada marroquí</div><div class="item-desc">Tomate, pepino, cebolla, pimiento</div><div class="allergy-icons"><span class="allergy-icon">🌱 Soja</span><span class="allergy-icon">🌿 Apio</span></div></div>
+                <div class="price-add"><div class="price">7.00€</div><button class="add-btn">Añadir</button></div>
+            </div>
+
+            <!-- Hummus -->
+            <div class="menu-item" data-id="hummus"
+            data-name-es="Hummus con pan de pita" data-desc-es="Garbanzos, tahini, limón"
+            data-name-en="Hummus with pita bread" data-desc-en="Chickpeas, tahini, lemon"
+            data-name-fr="Hoummous avec pain pita" data-desc-fr="Pois chiches, tahini, citron"
+            data-name-ar="حمص مع خبز بيتا" data-desc-ar="حمص، طحينة، ليمون"
+            data-name-de="Hummus mit Fladenbrot" data-desc-de="Kichererbsen, Tahini, Zitrone"
+            data-name-ru="Хумус с питой" data-desc-ru="Нут, тахини, лимон"
+            data-name-it="Hummus con pane pita" data-desc-it="Ceci, tahini, limone"
+            data-name-el="Χούμους με πίτα" data-desc-el="Ρεβίθια, ταχίνι, λεμόνι"
+            data-name-pt="Homus com pão pita" data-desc-pt="Grão-de-bico, tahine, limão"
+            data-name-zh="鹰嘴豆泥配皮塔饼" data-desc-zh="鹰嘴豆，芝麻酱，柠檬"
+            data-name-zh-tw="鷹嘴豆泥配皮塔餅" data-desc-zh-tw="鷹嘴豆，芝麻醬，檸檬"
+            data-name-ja="フムス（ピタパン付き）" data-desc-ja="ひよこ豆、タヒニ、レモン"
+            data-name-ko="후무스 (피타빵 포함)" data-desc-ko="병아리콩, 타히니, 레몬"
+            data-name-hi="हम्मस पीटा ब्रेड के साथ" data-desc-hi="काबुली चना, ताहिनी, नींबू"
+            data-name-nl="Hummus met pitabrood" data-desc-nl="Kikkererwten, tahini, citroen"
+            data-name-pl="Hummus z chlebem pita" data-desc-pl="Ciecierzyca, tahini, cytryna"
+            data-name-tr="Humuslu pide" data-desc-tr="Nohut, tahin, limon"
+            data-name-uk="Хумус з пітою" data-desc-uk="Нут, тахіні, лимон"
+            data-price="8.00">
+            <div class="item-img">
+                <img src="images/hummos.jpg" alt="Hummus" loading="lazy" />
+            </div>
+            <div class="item-info"><div class="item-name">Hummus con pan de pita</div><div class="item-desc">Garbanzos, tahini, limón</div><div class="allergy-icons"><span class="allergy-icon">🌾 Gluten</span><span class="allergy-icon">🌱 Sésamo</span></div></div>
+            <div class="price-add"><div class="price">8.00€</div><button class="add-btn">Añadir</button></div>
+        </div>
+
+        <!-- Falafel -->
+        <div class="menu-item" data-id="falafel"
+        data-name-es="Falafel (4uds)" data-desc-es="Garbanzos, perejil, especias"
+        data-name-en="Falafel (4pcs)" data-desc-en="Chickpeas, parsley, spices"
+        data-name-fr="Falafel (4pcs)" data-desc-fr="Pois chiches, persil, épices"
+        data-name-ar="فلافل" data-desc-ar="حمص، بقدونس، بهارات"
+        data-name-de="Falafel (4 Stk)" data-desc-de="Kichererbsen, Petersilie, Gewürze"
+        data-name-ru="Фалафель (4 шт)" data-desc-ru="Нут, петрушка, специи"
+        data-name-it="Falafel (4 pz)" data-desc-it="Ceci, prezzemolo, spezie"
+        data-name-el="Φαλάφελ (4 τεμ)" data-desc-el="Ρεβίθια, μαϊντανός, μπαχαρικά"
+        data-name-pt="Falafel (4 unid.)" data-desc-pt="Grão-de-bico, salsa, especiarias"
+        data-name-zh="沙拉三明治 (4个)" data-desc-zh="鹰嘴豆，欧芹，香料"
+        data-name-zh-tw="沙拉三明治 (4個)" data-desc-zh-tw="鷹嘴豆，歐芹，香料"
+        data-name-ja="ファラフェル (4個)" data-desc-ja="ひよこ豆、パセリ、スパイス"
+        data-name-ko="팔라펠 (4개)" data-desc-ko="병아리콩, 파슬리, 향신료"
+        data-name-hi="फलाफेल (4 टुकड़े)" data-desc-hi="काबुली चना, अजमोद, मसाले"
+        data-name-nl="Falafel (4 stuks)" data-desc-nl="Kikkererwten, peterselie, kruiden"
+        data-name-pl="Falafel (4 szt.)" data-desc-pl="Ciecierzyca, pietruszka, przyprawy"
+        data-name-tr="Falafel (4 adet)" data-desc-tr="Nohut, maydanoz, baharatlar"
+        data-name-uk="Фалафель (4 шт)" data-desc-uk="Нут, петрушка, спеції"
+        data-price="7.50">
+        <div class="item-img">
+            <img src="images/4falafel.jpg" alt="Falafel" loading="lazy" />
+        </div>
+        <div class="item-info"><div class="item-name">Falafel (4 uds.)</div><div class="item-desc">Garbanzos, perejil, especias</div><div class="allergy-icons"><span class="allergy-icon">🌾 Gluten</span><span class="allergy-icon">🌱 Sésamo</span></div></div>
+        <div class="price-add"><div class="price">7.50€</div><button class="add-btn">Añadir</button></div>
+    </div>
+
+    <!-- Pastela -->
+    <div class="menu-item" data-id="pastela"
+    data-name-es="Pastela de pollo y almendras" data-desc-es="Hojaldre, pollo, almendras, canela"
+    data-name-en="Chicken pastilla" data-desc-en="Puff pastry, chicken, almonds, cinnamon"
+    data-name-fr="Pastilla au poulet" data-desc-fr="Pâte feuilletée, poulet, amandes, cannelle"
+    data-name-ar="باستيلا" data-desc-ar="معجنات، دجاج، لوز، قرفة"
+    data-name-de="Hühnchen-Pastilla mit Mandeln" data-desc-de="Blätterteig, Hühnchen, Mandeln, Zimt"
+    data-name-ru="Пастила с курицей и миндалем" data-desc-ru="Слоеное тесто, курица, миндаль, корица"
+    data-name-it="Pastilla di pollo e mandorle" data-desc-it="Pasta sfoglia, pollo, mandorle, cannella"
+    data-name-el="Παστίλα με κοτόπουλο και αμύγδαλα" data-desc-el="Σφολιάτα, κοτόπουλο, αμύγδαλα, κανέλα"
+    data-name-pt="Pastila de frango e amêndoas" data-desc-pt="Massa folhada, frango, amêndoas, canela"
+    data-name-zh="鸡肉杏仁千层酥" data-desc-zh="酥皮，鸡肉，杏仁，肉桂"
+    data-name-zh-tw="雞肉杏仁千層酥" data-desc-zh-tw="酥皮，雞肉，杏仁，肉桂"
+    data-name-ja="チキンとアーモンドのパスティラ" data-desc-ja="パイ生地、チキン、アーモンド、シナモン"
+    data-name-ko="치킨 아몬드 파스틸라" data-desc-ko="퍼프 페이스트리, 닭고기, 아몬드, 계피"
+    data-name-hi="चिकन और बादाम पेस्ट्री" data-desc-hi="पफ पेस्ट्री, चिकन, बादाम, दालचीनी"
+    data-name-nl="Kip- en amandelpastilla" data-desc-nl="Bladerdeeg, kip, amandelen, kaneel"
+    data-name-pl="Pastilla z kurczakiem i migdałami" data-desc-pl="Ciasto francuskie, kurczak, migdały, cynamon"
+    data-name-tr="Tavuk ve bademli pastilla" data-desc-tr="Milföy hamuru, tavuk, badem, tarçın"
+    data-name-uk="Пастила з куркою та мигдалем" data-desc-uk="Листкове тісто, курка, мигдаль, кориця"
+    data-price="18.00">
+    <div class="item-img">
+        <img src="images/pastela.jpg" alt="Pastela" loading="lazy" />
+    </div>
+    <div class="item-info"><div class="item-name">Pastela de pollo y almendras</div><div class="item-desc">Hojaldre, pollo, almendras, canela</div><div class="allergy-icons"><span class="allergy-icon">🌾 Gluten</span><span class="allergy-icon">🌰 Frutos cáscara</span><span class="allergy-icon">🥚 Huevos</span></div></div>
+    <div class="price-add"><div class="price">18.00€</div><button class="add-btn">Añadir</button></div>
+</div>
+
+<!-- Zaalouk -->
+<div class="menu-item" data-id="zaalouk"
+data-name-es="Zaalouk berenjena" data-desc-es="Berenjena asada, tomate, ajo, comino"
+data-name-en="Roasted eggplant" data-desc-en="Roasted eggplant, tomato, garlic, cumin"
+data-name-fr="Aubergine rôtie" data-desc-fr="Aubergine rôtie, tomate, ail, cumin"
+data-name-ar="باذنجان مشوي" data-desc-ar="باذنجان مشوي، طماطم، ثوم، كمون"
+data-name-de="Gebackene Aubergine" data-desc-de="Gebackene Aubergine, Tomate, Knoblauch, Kreuzkümmel"
+data-name-ru="Запеченные баклажаны" data-desc-ru="Запеченные баклажаны, помидор, чеснок, тмин"
+data-name-it="Melanzane arrostite" data-desc-it="Melanzane arrostite, pomodoro, aglio, cumino"
+data-name-el="Ψητή μελιτζάνα" data-desc-el="Ψητή μελιτζάνα, ντομάτα, σκόρδο, κύμινο"
+data-name-pt="Beringela assada" data-desc-pt="Beringela assada, tomate, alho, cominho"
+data-name-zh="烤茄子" data-desc-zh="烤茄子，番茄，大蒜，孜然"
+data-name-zh-tw="烤茄子" data-desc-zh-tw="烤茄子，番茄，大蒜，孜然"
+data-name-ja="焼きナス" data-desc-ja="焼きナス、トマト、ニンニク、クミン"
+data-name-ko="구운 가지" data-desc-ko="구운 가지, 토마토, 마늘, 커민"
+data-name-hi="भुना बैंगन" data-desc-hi="भुना बैंगन, टमाटर, लहसुन, जीरा"
+data-name-nl="Geroosterde aubergine" data-desc-nl="Geroosterde aubergine, tomaat, knoflook, komijn"
+data-name-pl="Pieczony bakłażan" data-desc-pl="Pieczony bakłażan, pomidor, czosnek, kminek"
+data-name-tr="Izgara patlıcan" data-desc-tr="Izgara patlıcan, domates, sarımsak, kimyon"
+data-name-uk="Смажений баклажан" data-desc-uk="Смажений баклажан, помідор, часник, кмин"
+data-price="8.00">
+<div class="item-img">
+    <img src="images/zaalouk.jpg" alt="Zaalouk" loading="lazy" />
+</div>
+<div class="item-info"><div class="item-name">Zaalouk · Berenjena asada</div><div class="item-desc">Berenjena, tomate, ajo, comino</div><div class="allergy-icons"><span class="allergy-icon">🌱 Soja</span></div></div>
+<div class="price-add"><div class="price">8.00€</div><button class="add-btn">Añadir</button></div>
+</div>
+
+<div class="menu-item" data-id="Taktouka"
+data-name-es="Taktouka" data-desc-es="Berenjena asada, tomate, ajo, comino"
+data-name-en="Roasted eggplant" data-desc-en="Roasted eggplant, tomato, garlic, cumin"
+data-name-fr="Aubergine rôtie" data-desc-fr="Aubergine rôtie, tomate, ail, cumin"
+data-name-ar="باذنجان مشوي" data-desc-ar="باذنجان مشوي، طماطم، ثوم، كمون"
+data-name-de="Gebackene Aubergine" data-desc-de="Gebackene Aubergine, Tomate, Knoblauch, Kreuzkümmel"
+data-name-ru="Запеченные баклажаны" data-desc-ru="Запеченные баклажаны, помидор, чеснок, тмин"
+data-name-it="Melanzane arrostite" data-desc-it="Melanzane arrostite, pomodoro, aglio, cumino"
+data-name-el="Ψητή μελιτζάνα" data-desc-el="Ψητή μελιτζάνα, ντομάτα, σκόρδο, κύμινο"
+data-name-pt="Beringela assada" data-desc-pt="Beringela assada, tomate, alho, cominho"
+data-name-zh="烤茄子" data-desc-zh="烤茄子，番茄，大蒜，孜然"
+data-name-zh-tw="烤茄子" data-desc-zh-tw="烤茄子，番茄，大蒜，孜然"
+data-name-ja="焼きナス" data-desc-ja="焼きナス、トマト、ニンニク、クミン"
+data-name-ko="구운 가지" data-desc-ko="구운 가지, 토마토, 마늘, 커민"
+data-name-hi="भुना बैंगन" data-desc-hi="भुना बैंगन, टमाटर, लहसुन, जीरा"
+data-name-nl="Geroosterde aubergine" data-desc-nl="Geroosterde aubergine, tomaat, knoflook, komijn"
+data-name-pl="Pieczony bakłażan" data-desc-pl="Pieczony bakłażan, pomidor, czosnek, kminek"
+data-name-tr="Izgara patlıcan" data-desc-tr="Izgara patlıcan, domates, sarımsak, kimyon"
+data-name-uk="Смажений баклажан" data-desc-uk="Смажений баклажан, помідор, часник, кмин"
+data-price="8.00">
+<div class="item-img">
+    <img src="images/zaalouk.jpg" alt="Taktouka" loading="lazy" />
+</div>
+<div class="item-info"><div class="item-name">Taktouka · Berenjena asada</div><div class="item-desc">Berenjena, tomate, ajo, comino</div><div class="allergy-icons"><span class="allergy-icon">🌱 Soja</span></div></div>
+<div class="price-add"><div class="price">8.00€</div><button class="add-btn">Añadir</button></div>
+</div>
+
+<!-- Gambas -->
+<div class="menu-item" data-id="gambas"
+data-name-es="Gambas al pil pil" data-desc-es="Gambas, ajo, guindilla"
+data-name-en="Prawns pil-pil" data-desc-en="Prawns, garlic, chili"
+data-name-fr="Crevettes pil-pil" data-desc-fr="Crevettes, ail, piment"
+data-name-ar="جمبري بيل بيل" data-desc-ar="جمبري، ثوم، فلفل حار"
+data-name-de="Garnelen Pil-Pil" data-desc-de="Garnelen, Knoblauch, Chili"
+data-name-ru="Креветки пиль-пиль" data-desc-ru="Креветки, чеснок, перец чили"
+data-name-it="Gamberi al pil pil" data-desc-it="Gamberi, aglio, peperoncino"
+data-name-el="Γαρίδες πιλ πιλ" data-desc-el="Γαρίδες, σκόρδο, τσίλι"
+data-name-pt="Camarões pil-pil" data-desc-pt="Camarões, alho, pimenta"
+data-name-zh="蒜蓉辣椒虾" data-desc-zh="虾，大蒜，辣椒"
+data-name-zh-tw="蒜蓉辣椒蝦" data-desc-zh-tw="蝦，大蒜，辣椒"
+data-name-ja="ガーリックシュリンプ" data-desc-ja="エビ、ニンニク、唐辛子"
+data-name-ko="마늘 새우" data-desc-ko="새우, 마늘, 고추"
+data-name-hi="लहसुन झींगा" data-desc-hi="झींगा, लहसुन, मिर्च"
+data-name-nl="Garnalen pil-pil" data-desc-nl="Garnalen, knoflook, chili"
+data-name-pl="Krewetki pil-pil" data-desc-pl="Krewetki, czosnek, papryka chili"
+data-name-tr="Sarımsaklı karides" data-desc-tr="Karides, sarımsak, acı biber"
+data-name-uk="Креветки піль-піль" data-desc-uk="Креветки, часник, чилі"
+data-price="12.50">
+<div class="item-img">
+    <img src="images/gambas.jpg" alt="Gambas" loading="lazy" />
+</div>
+<div class="item-info"><div class="item-name">Gambas al pil pil</div><div class="item-desc">Gambas, ajo, guindilla</div><div class="allergy-icons"><span class="allergy-icon">🦐 Crustáceos</span></div></div>
+<div class="price-add"><div class="price">12.50€</div><button class="add-btn">Añadir</button></div>
+</div>
+</div>
+
+<!-- ─── SOPAS ─── -->
+<div class="menu-section" data-category="sopas">
+    <div class="section-title">🥣 Sopas</div>
+    <div class="menu-item" data-id="harira"
+    data-name-es="Harira (sopa marroquí)" data-desc-es="Garbanzos, lentejas, tomate"
+    data-name-en="Harira soup" data-desc-en="Chickpeas, lentils, tomato"
+    data-name-fr="Harira" data-desc-fr="Pois chiches, lentilles, tomates"
+    data-name-ar="حريرة" data-desc-ar="حمص، عدس، طماطم"
+    data-name-de="Harira-Suppe" data-desc-de="Kichererbsen, Linsen, Tomate"
+    data-name-ru="Суп Харира" data-desc-ru="Нут, чечевица, помидор"
+    data-name-it="Zuppa Harira" data-desc-it="Ceci, lenticchie, pomodoro"
+    data-name-el="Σούπα Χαρίρα" data-desc-el="Ρεβίθια, φακές, ντομάτα"
+    data-name-pt="Sopa Harira" data-desc-pt="Grão-de-bico, lentilhas, tomate"
+    data-name-zh="哈里拉汤" data-desc-zh="鹰嘴豆，扁豆，番茄"
+    data-name-zh-tw="哈里拉湯" data-desc-zh-tw="鷹嘴豆，扁豆，番茄"
+    data-name-ja="ハリラスープ" data-desc-ja="ひよこ豆、レンズ豆、トマト"
+    data-name-ko="하리라 수프" data-desc-ko="병아리콩, 렌틸콩, 토마토"
+    data-name-hi="हरीरा सूप" data-desc-hi="काबुली चना, मसूर, टमाटर"
+    data-name-nl="Harira-soep" data-desc-nl="Kikkererwten, linzen, tomaat"
+    data-name-pl="Zupa Harira" data-desc-pl="Ciecierzyca, soczewica, pomidor"
+    data-name-tr="Harira çorbası" data-desc-tr="Nohut, mercimek, domates"
+    data-name-uk="Суп Харіра" data-desc-uk="Нут, сочевиця, помідор"
+    data-price="7.00">
+    <div class="item-img">
+        <img src="images/harira.jpg" alt="Harira" loading="lazy" />
+    </div>
+    <div class="item-info"><div class="item-name">Harira tradicional</div><div class="item-desc">Garbanzos, lentejas, tomate</div><div class="allergy-icons"><span class="allergy-icon">🌾 Gluten</span></div></div>
+    <div class="price-add"><div class="price">7.00€</div><button class="add-btn">Añadir</button></div>
+</div>
+</div>
+
+<!-- ─── TAGINES ─── -->
+<div class="menu-section" data-category="tagines">
+    <div class="section-title">🍲 Tajines</div>
+
+    <!-- Pollo con verduras -->
+    <div class="menu-item" data-id="pollo_verdura"
+    data-name-es="Pollo con verduras" data-desc-es="Tagine de pollo y verduras"
+    data-name-en="Chicken with vegetables" data-desc-en="Chicken and vegetable tagine"
+    data-name-fr="Poulet aux légumes" data-desc-fr="Tajine de poulet aux légumes"
+    data-name-ar="دجاج بالخضار" data-desc-ar="طاجين الدجاج بالخضار"
+    data-name-de="Hühnchen mit Gemüse" data-desc-de="Tagine mit Hühnchen und Gemüse"
+    data-name-ru="Курица с овощами" data-desc-ru="Тажин с курицей и овощами"
+    data-name-it="Pollo con verdure" data-desc-it="Tagine di pollo e verdure"
+    data-name-el="Κοτόπουλο με λαχανικά" data-desc-el="Ταζίν με κοτόπουλο και λαχανικά"
+    data-name-pt="Frango com legumes" data-desc-pt="Tagine de frango com legumes"
+    data-name-zh="鸡肉蔬菜塔吉锅" data-desc-zh="鸡肉蔬菜塔吉锅"
+    data-name-zh-tw="雞肉蔬菜塔吉鍋" data-desc-zh-tw="雞肉蔬菜塔吉鍋"
+    data-name-ja="野菜とチキンのタジン" data-desc-ja="チキンと野菜のタジン"
+    data-name-ko="닭고기 야채 타진" data-desc-ko="닭고기와 야채 타진"
+    data-name-hi="सब्जियों के साथ चिकन" data-desc-hi="चिकन और सब्जी ताजीन"
+    data-name-nl="Kip met groenten" data-desc-nl="Tagine met kip en groenten"
+    data-name-pl="Kurczak z warzywami" data-desc-pl="Tagine z kurczakiem i warzywami"
+    data-name-tr="Tavuk ve sebze" data-desc-tr="Tavuk ve sebze tagine"
+    data-name-uk="Курка з овочами" data-desc-uk="Тажин з куркою та овочами"
+    data-price="16.00">
+    <div class="item-img">
+        <img src="images/pollo_verdura.jpg" alt="Pollo con verduras" loading="lazy" />
+    </div>
+    <div class="item-info"><div class="item-name">Pollo con verduras</div><div class="item-desc">Tagine de pollo y verduras</div><div class="allergy-icons"><span class="allergy-icon">🌱 Soja</span></div></div>
+    <div class="price-add"><div class="price">16.00€</div><button class="add-btn">Añadir</button></div>
+</div>
+
+<!-- Pollo limón -->
+<div class="menu-item" data-id="pollo_limon"
+data-name-es="Pollo con limón y aceitunas" data-desc-es="Pollo, limón confitado, aceitunas"
+data-name-en="Chicken with lemon and olives" data-desc-en="Chicken, preserved lemon, olives"
+data-name-fr="Poulet citron et olives" data-desc-fr="Poulet, citron confit, olives"
+data-name-ar="دجاج بالليمون والزيتون" data-desc-ar="دجاج، ليمون محفوظ، زيتون"
+data-name-de="Hühnchen mit Zitrone und Oliven" data-desc-de="Hühnchen, eingelegte Zitrone, Oliven"
+data-name-ru="Курица с лимоном и оливками" data-desc-ru="Курица, лимон конфи, оливки"
+data-name-it="Pollo con limone e olive" data-desc-it="Pollo, limone confit, olive"
+data-name-el="Κοτόπουλο με λεμόνι και ελιές" data-desc-el="Κοτόπουλο, λεμόνι κονφί, ελιές"
+data-name-pt="Frango com limão e azeitonas" data-desc-pt="Frango, limão confitado, azeitonas"
+data-name-zh="柠檬橄榄鸡肉" data-desc-zh="鸡肉，柠檬蜜饯，橄榄"
+data-name-zh-tw="檸檬橄欖雞肉" data-desc-zh-tw="雞肉，檸檬蜜餞，橄欖"
+data-name-ja="レモンとオリーブのチキン" data-desc-ja="チキン、レモンのコンフィ、オリーブ"
+data-name-ko="레몬 올리브 치킨" data-desc-ko="닭고기, 레몬 절임, 올리브"
+data-name-hi="नींबू और जैतून के साथ चिकन" data-desc-hi="चिकन, संरक्षित नींबू, जैतून"
+data-name-nl="Kip met citroen en olijven" data-desc-nl="Kip, citroenconfijt, olijven"
+data-name-pl="Kurczak z cytryną i oliwkami" data-desc-pl="Kurczak, cytryna konserwowa, oliwki"
+data-name-tr="Limon ve zeytinli tavuk" data-desc-tr="Tavuk, konserve limon, zeytin"
+data-name-uk="Курка з лимоном та оливками" data-desc-uk="Курка, лимон конфі, оливки"
+data-price="17.00">
+<div class="item-img">
+    <img src="images/pollo_limon.jpeg" alt="Pollo con limón" loading="lazy" />
+</div>
+<div class="item-info"><div class="item-name">Pollo con limón y aceitunas</div><div class="item-desc">Pollo, limón, aceitunas</div><div class="allergy-icons"><span class="allergy-icon">🌱 Soja</span></div></div>
+<div class="price-add"><div class="price">17.00€</div><button class="add-btn">Añadir</button></div>
+</div>
+
+<!-- Tagine vegetal -->
+<div class="menu-item" data-id="tagine_vegetal"
+data-name-es="Tagine vegetal" data-desc-es="Verduras, garbanzos, especias"
+data-name-en="Vegetable tagine" data-desc-en="Vegetables, chickpeas, spices"
+data-name-fr="Tajine végétarien" data-desc-fr="Légumes, pois chiches, épices"
+data-name-ar="طاجين خضار" data-desc-ar="خضروات، حمص، بهارات"
+data-name-de="Gemüse-Tagine" data-desc-de="Gemüse, Kichererbsen, Gewürze"
+data-name-ru="Овощной тажин" data-desc-ru="Овощи, нут, специи"
+data-name-it="Tagine vegetariano" data-desc-it="Verdure, ceci, spezie"
+data-name-el="Χορτοφαγικό ταζίν" data-desc-el="Λαχανικά, ρεβίθια, μπαχαρικά"
+data-name-pt="Tagine de legumes" data-desc-pt="Legumes, grão-de-bico, especiarias"
+data-name-zh="蔬菜塔吉锅" data-desc-zh="蔬菜，鹰嘴豆，香料"
+data-name-zh-tw="蔬菜塔吉鍋" data-desc-zh-tw="蔬菜，鷹嘴豆，香料"
+data-name-ja="野菜のタジン" data-desc-ja="野菜、ひよこ豆、スパイス"
+data-name-ko="야채 타진" data-desc-ko="야채, 병아리콩, 향신료"
+data-name-hi="सब्जी ताजीन" data-desc-hi="सब्जियाँ, काबुली चना, मसाले"
+data-name-nl="Groententagine" data-desc-nl="Groenten, kikkererwten, kruiden"
+data-name-pl="Tagine warzywny" data-desc-pl="Warzywa, ciecierzyca, przyprawy"
+data-name-tr="Sebze tagine" data-desc-tr="Sebze, nohut, baharatlar"
+data-name-uk="Овочевий тажин" data-desc-uk="Овочі, нут, спеції"
+data-price="14.00">
+<div class="item-img">
+    <img src="images/tagine_vegetal.jpeg" alt="Tagine vegetal" loading="lazy" />
+</div>
+<div class="item-info"><div class="item-name">Tagine vegetal</div><div class="item-desc">Verduras, garbanzos, especias</div><div class="allergy-icons"><span class="allergy-icon">🌱 Soja</span></div></div>
+<div class="price-add"><div class="price">14.00€</div><button class="add-btn">Añadir</button></div>
+</div>
+
+<!-- Tanjia -->
+<div class="menu-item" data-id="tanjia"
+data-name-es="Tanjia de Marrakech" data-desc-es="Ternera marinada cocción lenta"
+data-name-en="Marrakech Tanjia" data-desc-en="Slow-cooked marinated beef"
+data-name-fr="Tanjia de Marrakech" data-desc-fr="Boeuf mariné mijoté"
+data-name-ar="طنجية مراكش" data-desc-ar="لحم بقري متبل مطبوخ ببطء"
+data-name-de="Tanjia von Marrakesch" data-desc-de="Langsam gegartes mariniertes Rindfleisch"
+data-name-ru="Танджия из Марракеша" data-desc-ru="Медленно тушеная маринованная говядина"
+data-name-it="Tanjia di Marrakech" data-desc-it="Manzo marinato a cottura lenta"
+data-name-el="Τάντζια του Μαρακές" data-desc-el="Βραδινό μαριναρισμένο βοδινό"
+data-name-pt="Tanjia de Marraquexe" data-desc-pt="Carne de vaca marinada cozinhada lentamente"
+data-name-zh="马拉喀什炖牛肉" data-desc-zh="慢炖腌制牛肉"
+data-name-zh-tw="馬拉喀什燉牛肉" data-desc-zh-tw="慢燉醃製牛肉"
+data-name-ja="マラケシュのタンジア" data-desc-ja="ゆっくり煮込んだマリネした牛肉"
+data-name-ko="마라케시 탄지아" data-desc-ko="천천히 조리한 마리네이드 쇠고기"
+data-name-hi="मराकेश तंजिया" data-desc-hi="धीमी आंच पर पका हुआ मैरीनेट किया हुआ बीफ"
+data-name-nl="Tanjia van Marrakech" data-desc-nl="Langzaam gegaard gemarineerd rundvlees"
+data-name-pl="Tanjia z Marrakeszu" data-desc-pl="Wolno gotowana marynowana wołowina"
+data-name-tr="Marakeş Tanjia" data-desc-tr="Yavaş pişirilmiş marine edilmiş sığır eti"
+data-name-uk="Танджія з Марракеша" data-desc-uk="Повільно тушкована маринована яловичина"
+data-price="19.00">
+<div class="item-img">
+    <img src="images/tanjia.jpg" alt="Tanjia" loading="lazy" />
+</div>
+<div class="item-info"><div class="item-name">Tanjia de Marrakech</div><div class="item-desc">Ternera marinada cocción lenta</div><div class="allergy-icons"><span class="allergy-icon">⚠️ Sulfitos</span></div></div>
+<div class="price-add"><div class="price">19.00€</div><button class="add-btn">Añadir</button></div>
+</div>
+
+<!-- Cordero -->
+<div class="menu-item" data-id="cordero"
+data-name-es="Cordero con ciruelas" data-desc-es="Cordero, ciruelas, almendras"
+data-name-en="Lamb with plums" data-desc-en="Lamb, plums, almonds"
+data-name-fr="Agneau aux pruneaux" data-desc-fr="Agneau, pruneaux, amandes"
+data-name-ar="لحم ضان مع البرقوق" data-desc-ar="لحم ضان، برقوق، لوز"
+data-name-de="Lamm mit Pflaumen" data-desc-de="Lamm, Pflaumen, Mandeln"
+data-name-ru="Баранина с черносливом" data-desc-ru="Баранина, чернослив, миндаль"
+data-name-it="Agnello con prugne" data-desc-it="Agnello, prugne, mandorle"
+data-name-el="Αρνί με δαμάσκηνα" data-desc-el="Αρνί, δαμάσκηνα, αμύγδαλα"
+data-name-pt="Cordeiro com ameixas" data-desc-pt="Cordeiro, ameixas, amêndoas"
+data-name-zh="李子羊肉" data-desc-zh="羊肉，李子，杏仁"
+data-name-zh-tw="李子羊肉" data-desc-zh-tw="羊肉，李子，杏仁"
+data-name-ja="プルーン入りラム" data-desc-ja="ラム、プルーン、アーモンド"
+data-name-ko="자두 양고기" data-desc-ko="양고기, 자두, 아몬드"
+data-name-hi="आलूबुखारा के साथ मटन" data-desc-hi="मटन, आलूबुखारा, बादाम"
+data-name-nl="Lamsvlees met pruimen" data-desc-nl="Lamsvlees, pruimen, amandelen"
+data-name-pl="Jagnięcina ze śliwkami" data-desc-pl="Jagnięcina, śliwki, migdały"
+data-name-tr="Erikli kuzu" data-desc-tr="Kuzu, erik, badem"
+data-name-uk="Баранина з чорносливом" data-desc-uk="Баранина, чорнослив, мигдаль"
+data-price="18.00">
+<div class="item-img">
+    <img src="images/cordero.jpeg" alt="Cordero" loading="lazy" />
+</div>
+<div class="item-info"><div class="item-name">Cordero con ciruelas</div><div class="item-desc">Cordero, ciruelas, almendras</div><div class="allergy-icons"><span class="allergy-icon">🌰 Frutos cáscara</span></div></div>
+<div class="price-add"><div class="price">18.00€</div><button class="add-btn">Añadir</button></div>
+</div>
+</div>
+
+<!-- ─── CUSCÚS ─── -->
+<div class="menu-section" data-category="cuscus">
+    <div class="section-title">🍚 Cuscús</div>
+
+    <!-- Cuscús vegetal -->
+    <div class="menu-item" data-id="cuscus_vegetal"
+    data-name-es="Cuscús vegetal" data-desc-es="Sémola, verduras, garbanzos"
+    data-name-en="Vegetable couscous" data-desc-en="Semolina, vegetables, chickpeas"
+    data-name-fr="Couscous végétarien" data-desc-fr="Semoule, légumes, pois chiches"
+    data-name-ar="كسكس بالخضار" data-desc-ar="سميد، خضار، حمص"
+    data-name-de="Gemüse-Couscous" data-desc-de="Grieß, Gemüse, Kichererbsen"
+    data-name-ru="Овощной кускус" data-desc-ru="Манка, овощи, нут"
+    data-name-it="Couscous vegetariano" data-desc-it="Semola, verdure, ceci"
+    data-name-el="Χορτοφαγικό κουσκούς" data-desc-el="Σιμιγδάλι, λαχανικά, ρεβίθια"
+    data-name-pt="Cuscuz vegetariano" data-desc-pt="Sêmola, legumes, grão-de-bico"
+    data-name-zh="蔬菜古斯米" data-desc-zh="粗麦粉，蔬菜，鹰嘴豆"
+    data-name-zh-tw="蔬菜古斯米" data-desc-zh-tw="粗麥粉，蔬菜，鷹嘴豆"
+    data-name-ja="野菜クスクス" data-desc-ja="セモリナ、野菜、ひよこ豆"
+    data-name-ko="야채 쿠스쿠스" data-desc-ko="세몰리나, 야채, 병아리콩"
+    data-name-hi="सब्जी कूसकूस" data-desc-hi="सूजी, सब्जियाँ, काबुली चना"
+    data-name-nl="Groentecouscous" data-desc-nl="Griesmeel, groenten, kikkererwten"
+    data-name-pl="Kuskus warzywny" data-desc-pl="Kasza manna, warzywa, ciecierzyca"
+    data-name-tr="Sebze kuskusu" data-desc-tr="İrmik, sebze, nohut"
+    data-name-uk="Овочевий кускус" data-desc-uk="Манна крупа, овочі, нут"
+    data-price="15.00">
+    <div class="item-img">
+        <img src="images/Couscous végétal.jpg" alt="Cuscús vegetal" loading="lazy" />
+    </div>
+    <div class="item-info"><div class="item-name">Cuscús vegetal</div><div class="item-desc">Sémola, verduras, garbanzos</div><div class="allergy-icons"><span class="allergy-icon">🌾 Gluten</span></div></div>
+    <div class="price-add"><div class="price">15.00€</div><button class="add-btn">Añadir</button></div>
+</div>
+
+<!-- Cuscús pollo -->
+<div class="menu-item" data-id="cuscus_pollo"
+data-name-es="Cuscús de pollo" data-desc-es="Pollo, verduras, pasas"
+data-name-en="Chicken couscous" data-desc-en="Chicken, vegetables, raisins"
+data-name-fr="Couscous au poulet" data-desc-fr="Poulet, légumes, raisins"
+data-name-ar="كسكس بالدجاج" data-desc-ar="دجاج، خضار، زبيب"
+data-name-de="Hühnchen-Couscous" data-desc-de="Hühnchen, Gemüse, Rosinen"
+data-name-ru="Кускус с курицей" data-desc-ru="Курица, овощи, изюм"
+data-name-it="Couscous di pollo" data-desc-it="Pollo, verdure, uvetta"
+data-name-el="Κουσκούς με κοτόπουλο" data-desc-el="Κοτόπουλο, λαχανικά, σταφίδες"
+data-name-pt="Cuscuz de frango" data-desc-pt="Frango, legumes, passas"
+data-name-zh="鸡肉古斯米" data-desc-zh="鸡肉，蔬菜，葡萄干"
+data-name-zh-tw="雞肉古斯米" data-desc-zh-tw="雞肉，蔬菜，葡萄乾"
+data-name-ja="チキンクスクス" data-desc-ja="チキン、野菜、レーズン"
+data-name-ko="치킨 쿠스쿠스" data-desc-ko="닭고기, 야채, 건포도"
+data-name-hi="चिकन कूसकूस" data-desc-hi="चिकन, सब्जियाँ, किशमिश"
+data-name-nl="Kipcouscous" data-desc-nl="Kip, groenten, rozijnen"
+data-name-pl="Kuskus z kurczakiem" data-desc-pl="Kurczak, warzywa, rodzynki"
+data-name-tr="Tavuklu kuskus" data-desc-tr="Tavuk, sebze, kuru üzüm"
+data-name-uk="Кускус з куркою" data-desc-uk="Курка, овочі, родзинки"
+data-price="18.00">
+<div class="item-img">
+    <img src="images/couscous pollo.jpeg" alt="Cuscús de pollo" loading="lazy" />
+</div>
+<div class="item-info"><div class="item-name">Cuscús de pollo</div><div class="item-desc">Pollo, verduras, pasas</div><div class="allergy-icons"><span class="allergy-icon">🌾 Gluten</span></div></div>
+<div class="price-add"><div class="price">18.00€</div><button class="add-btn">Añadir</button></div>
+</div>
+
+<!-- Cuscús cordero -->
+<div class="menu-item" data-id="cuscus_cordero"
+data-name-es="Cuscús de cordero" data-desc-es="Cordero, verduras, pasas"
+data-name-en="Lamb couscous" data-desc-en="Lamb, vegetables, raisins"
+data-name-fr="Couscous d'agneau" data-desc-fr="Agneau, légumes, raisins"
+data-name-ar="كسكس باللحم" data-desc-ar="لحم ضان، خضار، زبيب"
+data-name-de="Lamm-Couscous" data-desc-de="Lamm, Gemüse, Rosinen"
+data-name-ru="Кускус с бараниной" data-desc-ru="Баранина, овощи, изюм"
+data-name-it="Couscous di agnello" data-desc-it="Agnello, verdure, uvetta"
+data-name-el="Κουσκούς με αρνί" data-desc-el="Αρνί, λαχανικά, σταφίδες"
+data-name-pt="Cuscuz de cordeiro" data-desc-pt="Cordeiro, legumes, passas"
+data-name-zh="羊肉古斯米" data-desc-zh="羊肉，蔬菜，葡萄干"
+data-name-zh-tw="羊肉古斯米" data-desc-zh-tw="羊肉，蔬菜，葡萄乾"
+data-name-ja="ラムクスクス" data-desc-ja="ラム、野菜、レーズン"
+data-name-ko="양고기 쿠스쿠스" data-desc-ko="양고기, 야채, 건포도"
+data-name-hi="मटन कूसकूस" data-desc-hi="मटन, सब्जियाँ, किशमिश"
+data-name-nl="Lamscouscous" data-desc-nl="Lamsvlees, groenten, rozijnen"
+data-name-pl="Kuskus z jagnięciną" data-desc-pl="Jagnięcina, warzywa, rodzynki"
+data-name-tr="Kuzu kuskus" data-desc-tr="Kuzu, sebze, kuru üzüm"
+data-name-uk="Кускус з бараниною" data-desc-uk="Баранина, овочі, родзинки"
+data-price="17.00">
+<div class="item-img">
+    <img src="images/cuscus_cordero.jpeg" alt="Cuscús de cordero" loading="lazy" />
+</div>
+<div class="item-info"><div class="item-name">Cuscús de cordero</div><div class="item-desc">Cordero, verduras, pasas</div><div class="allergy-icons"><span class="allergy-icon">🌾 Gluten</span></div></div>
+<div class="price-add"><div class="price">17.00€</div><button class="add-btn">Añadir</button></div>
+</div>
+</div>
+
+<!-- ─── PIZZAS ─── -->
+<div class="menu-section" data-category="pizzas">
+    <div class="section-title">🍕 Pizzas</div>
+
+    <!-- Margarita -->
+    <div class="menu-item" data-id="margarita"
+    data-name-es="Pizza Margarita" data-desc-es="Tomate, mozzarella, albahaca"
+    data-name-en="Margherita" data-desc-en="Tomato, mozzarella, basil"
+    data-name-fr="Margherita" data-desc-fr="Tomate, mozzarella, basilic"
+    data-name-ar="مارجريتا" data-desc-ar="طماطم، موزاريلا، ريحان"
+    data-name-de="Pizza Margherita" data-desc-de="Tomate, Mozzarella, Basilikum"
+    data-name-ru="Пицца Маргарита" data-desc-ru="Помидор, моцарелла, базилик"
+    data-name-it="Pizza Margherita" data-desc-it="Pomodoro, mozzarella, basilico"
+    data-name-el="Πίτσα Μαργαρίτα" data-desc-el="Ντομάτα, μοτσαρέλα, βασιλικός"
+    data-name-pt="Pizza Margherita" data-desc-pt="Tomate, mussarela, manjericão"
+    data-name-zh="玛格丽特披萨" data-desc-zh="番茄，马苏里拉奶酪，罗勒"
+    data-name-zh-tw="瑪格麗特披薩" data-desc-zh-tw="番茄，馬蘇里拉奶酪，羅勒"
+    data-name-ja="マルゲリータ" data-desc-ja="トマト、モッツァレラ、バジル"
+    data-name-ko="마르게리타 피자" data-desc-ko="토마토, 모짜렐라, 바질"
+    data-name-hi="मार्गेरिटा पिज़्ज़ा" data-desc-hi="टमाटर, मोज़ेरेला, तुलसी"
+    data-name-nl="Pizza Margherita" data-desc-nl="Tomaat, mozzarella, basilicum"
+    data-name-pl="Pizza Margherita" data-desc-pl="Pomidor, mozzarella, bazylia"
+    data-name-tr="Margherita pizza" data-desc-tr="Domates, mozzarella, fesleğen"
+    data-name-uk="Піца Маргарита" data-desc-uk="Помідор, моцарела, базилік"
+    data-price="12.00">
+    <div class="item-img">
+        <img src="images/margarita.jpeg" alt="Pizza Margarita" loading="lazy" />
+    </div>
+    <div class="item-info"><div class="item-name">Pizza Margarita</div><div class="item-desc">Tomate, mozzarella, albahaca</div><div class="allergy-icons"><span class="allergy-icon">🌾 Gluten</span><span class="allergy-icon">🥛 Lácteos</span></div></div>
+    <div class="price-add"><div class="price">12.00€</div><button class="add-btn">Añadir</button></div>
+</div>
+
+<!-- Barbacoa -->
+<div class="menu-item" data-id="barbacoa"
+data-name-es="Pizza Barbacoa" data-desc-es="Carne picada, cebolla, salsa barbacoa"
+data-name-en="BBQ Pizza" data-desc-en="Minced meat, onion, BBQ sauce"
+data-name-fr="Pizza BBQ" data-desc-fr="Viande hachée, oignon, sauce BBQ"
+data-name-ar="بيتزا باربيكيو" data-desc-ar="لحم مفروم، بصل، صلصة باربيكيو"
+data-name-de="BBQ-Pizza" data-desc-de="Hackfleisch, Zwiebel, BBQ-Sauce"
+data-name-ru="Пицца Барбекю" data-desc-ru="Мясной фарш, лук, соус барбекю"
+data-name-it="Pizza BBQ" data-desc-it="Carne macinata, cipolla, salsa BBQ"
+data-name-el="Πίτσα μπάρμπεκιου" data-desc-el="Κιμάς, κρεμμύδι, σάλτσα μπάρμπεκιου"
+data-name-pt="Pizza Barbecue" data-desc-pt="Carne moída, cebola, molho barbecue"
+data-name-zh="烧烤披萨" data-desc-zh="碎肉，洋葱，烧烤酱"
+data-name-zh-tw="燒烤披薩" data-desc-zh-tw="碎肉，洋蔥，燒烤醬"
+data-name-ja="BBQピザ" data-desc-ja="ひき肉、タマネギ、BBQソース"
+data-name-ko="바비큐 피자" data-desc-ko="다진 고기, 양파, 바비큐 소스"
+data-name-hi="बारबेक्यू पिज़्ज़ा" data-desc-hi="कीमा, प्याज, बारबेक्यू सॉस"
+data-name-nl="BBQ-pizza" data-desc-nl="Gehakt, ui, BBQsaus"
+data-name-pl="Pizza BBQ" data-desc-pl="Mięso mielone, cebula, sos barbecue"
+data-name-tr="Barbekü pizza" data-desc-tr="Kıyma, soğan, barbekü sos"
+data-name-uk="Піца Барбекю" data-desc-uk="М'ясний фарш, цибуля, соус барбекю"
+data-price="14.00">
+<div class="item-img">
+    <img src="images/barbacoa.jpeg" alt="Pizza Barbacoa" loading="lazy" />
+</div>
+<div class="item-info"><div class="item-name">Pizza Barbacoa</div><div class="item-desc">Carne picada, cebolla, salsa barbacoa</div><div class="allergy-icons"><span class="allergy-icon">🌾 Gluten</span><span class="allergy-icon">🥛 Lácteos</span></div></div>
+<div class="price-add"><div class="price">14.00€</div><button class="add-btn">Añadir</button></div>
+</div>
+</div>
+
+<!-- ─── ARROCES ─── -->
+<div class="menu-section" data-category="arroces">
+    <div class="section-title">🥘 Arroces</div>
+    <div class="menu-item" data-id="paella_mar"
+    data-name-es="Paella del Mar" data-desc-es="Gambas, mejillones, calamar"
+    data-name-en="Seafood Paella" data-desc-en="Prawns, mussels, squid"
+    data-name-fr="Paella aux fruits de mer" data-desc-fr="Crevettes, moules, calmar"
+    data-name-ar="باييلا البحر" data-desc-ar="جمبري، بلح البحر، حبار"
+    data-name-de="Paella mit Meeresfrüchten" data-desc-de="Garnelen, Miesmuscheln, Tintenfisch"
+    data-name-ru="Паэлья с морепродуктами" data-desc-ru="Креветки, мидии, кальмар"
+    data-name-it="Paella di mare" data-desc-it="Gamberi, cozze, calamaro"
+    data-name-el="Παέγια με θαλασσινά" data-desc-el="Γαρίδες, μύδια, καλαμάρι"
+    data-name-pt="Paella de marisco" data-desc-pt="Camarões, mexilhões, lula"
+    data-name-zh="海鲜饭" data-desc-zh="虾，贻贝，鱿鱼"
+    data-name-zh-tw="海鮮飯" data-desc-zh-tw="蝦，貽貝，魷魚"
+    data-name-ja="シーフードパエリア" data-desc-ja="エビ、ムール貝、イカ"
+    data-name-ko="해산물 빠에야" data-desc-ko="새우, 홍합, 오징어"
+    data-name-hi="समुद्री भोजन पेला" data-desc-hi="झींगा, मसल्स, स्क्विड"
+    data-name-nl="Paella met zeevruchten" data-desc-nl="Garnalen, mosselen, inktvis"
+    data-name-pl="Paella z owocami morza" data-desc-pl="Krewetki, małże, kalmary"
+    data-name-tr="Deniz ürünlü paella" data-desc-tr="Karides, midye, kalamar"
+    data-name-uk="Паелья з морепродуктами" data-desc-uk="Креветки, мідії, кальмар"
+    data-price="16.00">
+    <div class="item-img">
+        <img src="images/paella_mar.jpeg" alt="Paella del Mar" loading="lazy" />
+    </div>
+    <div class="item-info"><div class="item-name">Paella del Mar</div><div class="item-desc">Gambas, mejillones, calamar</div><div class="allergy-icons"><span class="allergy-icon">🦐 Crustáceos</span><span class="allergy-icon">🐚 Moluscos</span></div></div>
+    <div class="price-add"><div class="price">16.00€</div><button class="add-btn">Añadir</button></div>
+</div>
+</div>
+
+<!-- ─── GRILL ─── -->
+<div class="menu-section" data-category="grill">
+    <div class="section-title">🔥 Plancha · Grill</div>
+
+    <!-- Pinchitos De Pollo Con Arroz -->
+    <div class="menu-item" data-id="Pinchitos De Pollo Con Arroz"
+        data-name-es="Pinchitos De Pollo Con Arroz" data-desc-es="Pinchitos De Pollo Con Arroz"
+        data-name-en="Chicken skewers" data-desc-en="3 skewers with side"
+        data-name-fr="Brochettes de poulet" data-desc-fr="3 brochettes avec accompagnement"
+        data-name-ar="أسياخ دجاج" data-desc-ar="٣ أسياخ مع طبق جانبي"
+        data-name-de="Hähnchenspieße" data-desc-de="3 Spieße mit Beilage"
+        data-name-ru="Шашлык из курицы" data-desc-ru="3 шашлыка с гарниром"
+        data-name-it="Spiedini di pollo" data-desc-it="3 spiedini con contorno"
+        data-name-el="Κοτόπουλο σουβλάκι" data-desc-el="3 σουβλάκια με συνοδευτικό"
+        data-name-pt="Espetinhos de frango" data-desc-pt="3 espetos com acompanhamento"
+        data-name-zh="鸡肉串" data-desc-zh="3串配菜"
+        data-name-zh-tw="雞肉串" data-desc-zh-tw="3串配菜"
+        data-name-ja="チキン串焼き" data-desc-ja="3本の串と付け合わせ"
+        data-name-ko="닭꼬치" data-desc-ko="3개 꼬치와 사이드"
+        data-name-hi="चिकन सीख" data-desc-hi="3 सीख साइड के साथ"
+        data-name-nl="Kipspiesen" data-desc-nl="3 spiesen met bijgerecht"
+        data-name-pl="Szaszłyki z kurczaka" data-desc-pl="3 szaszłyki z dodatkami"
+        data-name-tr="Tavuk şiş" data-desc-tr="3 şiş ve garnitür"
+        data-name-uk="Шашлик з курки" data-desc-uk="3 шашлики з гарніром"
+        data-price="17.00">
+        <div class="item-img">
+            <img src="images/Pinchitos pollo con arroz.jpeg" alt="Pinchitos De Pollo Con Arroz" loading="lazy" />
+        </div>
+        <div class="item-info">
+            <div class="item-name">Pinchitos De Pollo Con Arroz</div>
+            <div class="item-desc">Pinchitos De Pollo Con Arroz</div>
+        </div>
+        <div class="price-add">
+            <div class="price">17.00€</div>
+            <button class="add-btn">Añadir</button>
+        </div>
+    </div>
+
+    <!-- Pinchitos michtos con arroz y ensalada -->
+    <div class="menu-item" data-id="Pinchitos michtos con arroz y ensalada"
+        data-name-es="Pinchitos de pollo" data-desc-es="3 brochetas con guarnición"
+        data-name-en="Chicken skewers" data-desc-en="3 skewers with side"
+        data-name-fr="Brochettes de poulet" data-desc-fr="3 brochettes avec accompagnement"
+        data-name-ar="أسياخ دجاج" data-desc-ar="٣ أسياخ مع طبق جانبي"
+        data-name-de="Hähnchenspieße" data-desc-de="3 Spieße mit Beilage"
+        data-name-ru="Шашлык из курицы" data-desc-ru="3 шашлыка с гарниром"
+        data-name-it="Spiedini di pollo" data-desc-it="3 spiedini con contorno"
+        data-name-el="Κοτόπουλο σουβλάκι" data-desc-el="3 σουβλάκια με συνοδευτικό"
+        data-name-pt="Espetinhos de frango" data-desc-pt="3 espetos com acompanhamento"
+        data-name-zh="鸡肉串" data-desc-zh="3串配菜"
+        data-name-zh-tw="雞肉串" data-desc-zh-tw="3串配菜"
+        data-name-ja="チキン串焼き" data-desc-ja="3本の串と付け合わせ"
+        data-name-ko="닭꼬치" data-desc-ko="3개 꼬치와 사이드"
+        data-name-hi="चिकन सीख" data-desc-hi="3 सीख साइड के साथ"
+        data-name-nl="Kipspiesen" data-desc-nl="3 spiesen met bijgerecht"
+        data-name-pl="Szaszłyki z kurczaka" data-desc-pl="3 szaszłyki z dodatkami"
+        data-name-tr="Tavuk şiş" data-desc-tr="3 şiş ve garnitür"
+        data-name-uk="Шашлик з курки" data-desc-uk="3 шашлики з гарніром"
+        data-price="17.00">
+        <div class="item-img">
+            <img src="images/Pinchitos pollo con arroz.jpg" alt="Pinchitos Pollo Con Arroz" loading="lazy" />
+        </div>
+        <div class="item-info">
+            <div class="item-name">Pinchitos Pollo Con Arroz</div>
+            <div class="item-desc">Pinchitos Pollo Con Arroz</div>
+            <div class="allergy-icons"><span class="allergy-icon">🌱 Soja</span></div>
+        </div>
+        <div class="price-add">
+            <div class="price">17.00€</div>
+            <button class="add-btn">Añadir</button>
+        </div>
+    </div>
+
+    <!-- Pinchitos cordero Con Arroz -->
+    <div class="menu-item" data-id="Pinchitos cordero Con Arroz"
+        data-name-es="Pinchitos cordero Con Arroz" data-desc-es="Pinchitos cordero Con Arroz"
+        data-name-en="Lamb skewers" data-desc-en="Lamb skewers"
+        data-name-fr="Brochettes d'agneau" data-desc-fr="Brochettes d'agneau"
+        data-name-ar="أسياخ لحم ضان" data-desc-ar="أسياخ لحم ضان"
+        data-name-de="Lammspieße" data-desc-de="Lammspieße"
+        data-name-ru="Шашлык из баранины" data-desc-ru="Шашлык из баранины"
+        data-name-it="Spiedini di agnello" data-desc-it="Spiedini di agnello"
+        data-name-el="Αρνί σουβλάκι" data-desc-el="Αρνί σουβλάκι"
+        data-name-pt="Espetinhos de cordeiro" data-desc-pt="Espetinhos de cordeiro"
+        data-name-zh="羊肉串" data-desc-zh="羊肉串"
+        data-name-zh-tw="羊肉串" data-desc-zh-tw="羊肉串"
+        data-name-ja="ラム串焼き" data-desc-ja="ラム串焼き"
+        data-name-ko="양꼬치" data-desc-ko="양꼬치"
+        data-name-hi="मटन सीख" data-desc-hi="मटन सीख"
+        data-name-nl="Lamsvleesspiesen" data-desc-nl="Lamsvleesspiesen"
+        data-name-pl="Szaszłyki z jagnięciny" data-desc-pl="Szaszłyki z jagnięciny"
+        data-name-tr="Kuzu şiş" data-desc-tr="Kuzu şiş"
+        data-name-uk="Шашлик з баранини" data-desc-uk="Шашлик з баранини"
+        data-price="18.00">
+        <div class="item-img">
+            <img src="images/pinchitos cordero arroz.jpeg" alt="Pinchitos cordero Con Arroz" loading="lazy" />
+        </div>
+        <div class="item-info">
+            <div class="item-name">Pinchitos cordero Con Arroz</div>
+            <div class="item-desc">Pinchitos cordero Con Arroz</div>
+            <div class="allergy-icons"><span class="allergy-icon">🌱 Soja</span></div>
+        </div>
+        <div class="price-add">
+            <div class="price">18.00€</div>
+            <button class="add-btn">Añadir</button>
+        </div>
+    </div>
+     <!-- Pinchitos Kefta con Patatas Fritas -->
+    <div class="menu-item" data-id="Pinchitos Kefta con Patatas Fritas"
+        data-name-es="Pinchitos Kefta con Patatas Fritas" data-desc-es="Pinchitos Kefta con Patatas Fritas"
+        data-name-en="Lamb skewers" data-desc-en="Lamb skewers"
+        data-name-fr="Brochettes d'agneau" data-desc-fr="Brochettes d'agneau"
+        data-name-ar="أسياخ لحم ضان" data-desc-ar="أسياخ لحم ضان"
+        data-name-de="Lammspieße" data-desc-de="Lammspieße"
+        data-name-ru="Шашлык из баранины" data-desc-ru="Шашлык из баранины"
+        data-name-it="Spiedini di agnello" data-desc-it="Spiedini di agnello"
+        data-name-el="Αρνί σουβλάκι" data-desc-el="Αρνί σουβλάκι"
+        data-name-pt="Espetinhos de cordeiro" data-desc-pt="Espetinhos de cordeiro"
+        data-name-zh="羊肉串" data-desc-zh="羊肉串"
+        data-name-zh-tw="羊肉串" data-desc-zh-tw="羊肉串"
+        data-name-ja="ラム串焼き" data-desc-ja="ラム串焼き"
+        data-name-ko="양꼬치" data-desc-ko="양꼬치"
+        data-name-hi="मटन सीख" data-desc-hi="मटन सीख"
+        data-name-nl="Lamsvleesspiesen" data-desc-nl="Lamsvleesspiesen"
+        data-name-pl="Szaszłyki z jagnięciny" data-desc-pl="Szaszłyki z jagnięciny"
+        data-name-tr="Kuzu şiş" data-desc-tr="Kuzu şiş"
+        data-name-uk="Шашлик з баранини" data-desc-uk="Шашлик з баранини"
+        data-price="18.00">
+        <div class="item-img">
+            <img src="images/pinchitos kefta con patata fritas.jpeg" alt="Pinchitos Kefta con Patatas Fritas" loading="lazy" />
+        </div>
+        <div class="item-info">
+            <div class="item-name">Pinchitos Kefta con Patatas Fritas</div>
+            <div class="item-desc">Pinchitos Kefta con Patatas Fritas</div>
+            <div class="allergy-icons"><span class="allergy-icon">🌱 Soja</span></div>
+        </div>
+        <div class="price-add">
+            <div class="price">18.00€</div>
+            <button class="add-btn">Añadir</button>
+        </div>
+    </div>
+</div>
+<!-- ─── POSTRES ─── -->
+<div class="menu-section" data-category="postres">
+    <div class="section-title">🍰 Postres</div>
+
+    <!-- Baklava -->
+    <div class="menu-item" data-id="baklava"
+    data-name-es="Baklava de pistacho" data-desc-es="Miel, pistacho, hojaldre"
+    data-name-en="Pistachio Baklava" data-desc-en="Honey, pistachio, pastry"
+    data-name-fr="Baklava pistache" data-desc-fr="Miel, pistache, pâte feuilletée"
+    data-name-ar="بقلاوة فستق" data-desc-ar="عسل، فستق، معجنات"
+    data-name-de="Pistazien-Baklava" data-desc-de="Honig, Pistazien, Blätterteig"
+    data-name-ru="Баклава с фисташками" data-desc-ru="Мед, фисташки, слоеное тесто"
+    data-name-it="Baklava al pistacchio" data-desc-it="Miele, pistacchio, pasta sfoglia"
+    data-name-el="Μπακλαβάς με φιστίκια" data-desc-el="Μέλι, φιστίκι, σφολιάτα"
+    data-name-pt="Baklava de pistache" data-desc-pt="Mel, pistache, massa folhada"
+    data-name-zh="开心果果仁蜜饼" data-desc-zh="蜂蜜，开心果，酥皮"
+    data-name-zh-tw="開心果果仁蜜餅" data-desc-zh-tw="蜂蜜，開心果，酥皮"
+    data-name-ja="ピスタチオのバクラヴァ" data-desc-ja="ハチミツ、ピスタチオ、パイ生地"
+    data-name-ko="피스타치오 바클라바" data-desc-ko="꿀, 피스타치오, 퍼프 페이스트리"
+    data-name-hi="पिस्ता बकलवा" data-desc-hi="शहद, पिस्ता, पफ पेस्ट्री"
+    data-name-nl="Pistache-baklava" data-desc-nl="Honing, pistache, bladerdeeg"
+    data-name-pl="Baklawa pistacjowa" data-desc-pl="Miód, pistacje, ciasto francuskie"
+    data-name-tr="Fıstıklı baklava" data-desc-tr="Bal, fıstık, milföy"
+    data-name-uk="Баклава з фісташками" data-desc-uk="Мед, фісташки, листкове тісто"
+    data-price="2.20">
+    <div class="item-img">
+        <img src="images/baklava.jpeg" alt="Baklava" loading="lazy" />
+    </div>
+    <div class="item-info"><div class="item-name">Baklava de pistacho</div><div class="item-desc">Miel, pistacho, hojaldre</div><div class="allergy-icons"><span class="allergy-icon">🌾 Gluten</span><span class="allergy-icon">🌰 Frutos cáscara</span></div></div>
+    <div class="price-add"><div class="price">2.20€</div><button class="add-btn">Añadir</button></div>
+</div>
+
+<!-- Surtido -->
+<div class="menu-item" data-id="surtido"
+data-name-es="Surtido dulces árabes" data-desc-es="Selección de 3 dulces"
+data-name-en="Arabic sweets" data-desc-en="Selection of 3 sweets"
+data-name-fr="Pâtisseries arabes" data-desc-fr="Sélection de 3 pâtisseries"
+data-name-ar="حلويات عربية" data-desc-ar="تشكيلة من ٣ حلويات"
+data-name-de="Arabische Süßigkeiten" data-desc-de="Auswahl von 3 Süßigkeiten"
+data-name-ru="Арабские сладости" data-desc-ru="Ассорти из 3 сладостей"
+data-name-it="Dolci arabi" data-desc-it="Selezione di 3 dolci"
+data-name-el="Αραβικά γλυκά" data-desc-el="Επιλογή 3 γλυκών"
+data-name-pt="Doces árabes" data-desc-pt="Seleção de 3 doces"
+data-name-zh="阿拉伯甜点" data-desc-zh="3种甜点精选"
+data-name-zh-tw="阿拉伯甜點" data-desc-zh-tw="3種甜點精選"
+data-name-ja="アラビアのデザート" data-desc-ja="3種類のデザート"
+data-name-ko="아라비아 디저트" data-desc-ko="3가지 디저트"
+data-name-hi="अरबी मिठाई" data-desc-hi="3 मिठाइयों का चयन"
+data-name-nl="Arabische zoetigheden" data-desc-nl="Selectie van 3 zoetigheden"
+data-name-pl="Arabskie słodycze" data-desc-pl="Wybór 3 słodyczy"
+data-name-tr="Arap tatlıları" data-desc-tr="3 tatlı seçeneği"
+data-name-uk="Арабські солодощі" data-desc-uk="Вибір з 3 солодощів"
+data-price="5.00">
+<div class="item-img">
+    <img src="images/surtido.jpeg" alt="Surtido dulces árabes" loading="lazy" />
+</div>
+<div class="item-info"><div class="item-name">Surtido dulces árabes (3uds)</div><div class="item-desc">Selección de 3 dulces</div><div class="allergy-icons"><span class="allergy-icon">🌾 Gluten</span><span class="allergy-icon">🌰 Frutos cáscara</span></div></div>
+<div class="price-add"><div class="price">5.00€</div><button class="add-btn">Añadir</button></div>
+</div>
+</div>
+
+<!-- ─── BEBIDAS ─── -->
+<div class="menu-section" data-category="bebidas">
+    <div class="section-title">🥤 Bebidas</div>
+
+    <!-- Té -->
+    <div class="menu-item" data-id="te"
+    data-name-es="Té marroquí" data-desc-es="Té verde, hierbabuena"
+    data-name-en="Moroccan tea" data-desc-en="Green tea, spearmint"
+    data-name-fr="Thé marocain" data-desc-fr="Thé vert, menthe"
+    data-name-ar="شاي مغربي" data-desc-ar="شاي أخضر، نعناع"
+    data-name-de="Marokkanischer Tee" data-desc-de="Grüner Tee, Minze"
+    data-name-ru="Марокканский чай" data-desc-ru="Зеленый чай, мята"
+    data-name-it="Tè marocchino" data-desc-it="Tè verde, menta"
+    data-name-el="Μαροκινό τσάι" data-desc-el="Πράσινο τσάι, μέντα"
+    data-name-pt="Chá marroquino" data-desc-pt="Chá verde, hortelã"
+    data-name-zh="摩洛哥茶" data-desc-zh="绿茶，薄荷"
+    data-name-zh-tw="摩洛哥茶" data-desc-zh-tw="綠茶，薄荷"
+    data-name-ja="モロッコティー" data-desc-ja="緑茶、ミント"
+    data-name-ko="모로코 차" data-desc-ko="녹차, 박하"
+    data-name-hi="मोरक्कन चाय" data-desc-hi="हरी चाय, पुदीना"
+    data-name-nl="Marokkaanse thee" data-desc-nl="Groene thee, munt"
+    data-name-pl="Herbata marokańska" data-desc-pl="Zielona herbata, mięta"
+    data-name-tr="Fasülye çayı" data-desc-tr="Yeşil çay, nane"
+    data-name-uk="Марокканський чай" data-desc-uk="Зелений чай, м'ята"
+    data-price="4.50">
+    <div class="item-img">
+        <img src="images/te.jpeg" alt="Té marroquí" loading="lazy" />
+    </div>
+    <div class="item-info"><div class="item-name">Té marroquí</div><div class="item-desc">Té verde, hierbabuena</div><div class="allergy-icons"><span class="allergy-icon">🌿 Apio</span></div></div>
+    <div class="price-add"><div class="price">4.50€</div><button class="add-btn">Añadir</button></div>
+</div>
+
+<!-- Cerveza -->
+<div class="menu-item" data-id="cerveza"
+data-name-es="Cerveza sin alcohol" data-desc-es="Cerveza 0.0%"
+data-name-en="Non-alcoholic beer" data-desc-en="Non-alcoholic 0.0%"
+data-name-fr="Bière sans alcool" data-desc-fr="Bière 0.0%"
+data-name-ar="بيرة غير كحولية" data-desc-ar="بيرة ٠.٠٪"
+data-name-de="Alkoholfreies Bier" data-desc-de="Alkoholfreies 0.0%"
+data-name-ru="Безалкогольное пиво" data-desc-ru="Безалкогольное 0.0%"
+data-name-it="Birra analcolica" data-desc-it="Analcolica 0.0%"
+data-name-el="Μη αλκοολούχα μπύρα" data-desc-el="Μη αλκοολούχα 0.0%"
+data-name-pt="Cerveja sem álcool" data-desc-pt="Sem álcool 0.0%"
+data-name-zh="无酒精啤酒" data-desc-zh="无酒精 0.0%"
+data-name-zh-tw="無酒精啤酒" data-desc-zh-tw="無酒精 0.0%"
+data-name-ja="ノンアルコールビール" data-desc-ja="ノンアルコール 0.0%"
+data-name-ko="무알코올 맥주" data-desc-ko="무알코올 0.0%"
+data-name-hi="गैर-अल्कोहलिक बियर" data-desc-hi="गैर-अल्कोहलिक 0.0%"
+data-name-nl="Alcoholvrij bier" data-desc-nl="Alcoholvrij 0.0%"
+data-name-pl="Piwo bezalkoholowe" data-desc-pl="Bezalkoholowe 0.0%"
+data-name-tr="Alkolsüz bira" data-desc-tr="Alkolsüz 0.0%"
+data-name-uk="Безалкогольне пиво" data-desc-uk="Безалкогольне 0.0%"
+data-price="2.90">
+<div class="item-img">
+    <img src="images/cerveza.jpeg" alt="Cerveza sin alcohol" loading="lazy" />
+</div>
+<div class="item-info"><div class="item-name">Cerveza sin alcohol</div><div class="item-desc">Cerveza 0.0%</div><div class="allergy-icons"><span class="allergy-icon">🌾 Gluten</span></div></div>
+<div class="price-add"><div class="price">2.90€</div><button class="add-btn">Añadir</button></div>
+</div>
+
+<!-- Limonada -->
+<div class="menu-item" data-id="limonada"
+data-name-es="Limonada de menta" data-desc-es="Limón, menta fresca"
+data-name-en="Mint lemonade" data-desc-en="Lemon, fresh mint"
+data-name-fr="Limonade à la menthe" data-desc-fr="Citron, menthe fraîche"
+data-name-ar="ليمونادة بالنعناع" data-desc-ar="ليمون، نعناع طازج"
+data-name-de="Minz-Limonade" data-desc-de="Zitrone, frische Minze"
+data-name-ru="Лимонад с мятой" data-desc-ru="Лимон, свежая мята"
+data-name-it="Limonata alla menta" data-desc-it="Limone, menta fresca"
+data-name-el="Λεμονάδα με μέντα" data-desc-el="Λεμόνι, φρέσκια μέντα"
+data-name-pt="Limonada de hortelã" data-desc-pt="Limão, hortelã fresca"
+data-name-zh="薄荷柠檬水" data-desc-zh="柠檬，新鲜薄荷"
+data-name-zh-tw="薄荷檸檬水" data-desc-zh-tw="檸檬，新鮮薄荷"
+data-name-ja="ミントレモネード" data-desc-ja="レモン、フレッシュミント"
+data-name-ko="민트 레모네이드" data-desc-ko="레몬, 신선한 민트"
+data-name-hi="पुदीना नींबू पानी" data-desc-hi="नींबू, ताजा पुदीना"
+data-name-nl="Muntlimonade" data-desc-nl="Citroen, verse munt"
+data-name-pl="Limonada miętowa" data-desc-pl="Cytryna, świeża mięta"
+data-name-tr="Nane limonata" data-desc-tr="Limon, taze nane"
+data-name-uk="Лимонний напій з м'ятою" data-desc-uk="Лимон, свіжа м'ята"
+data-price="4.50">
+<div class="item-img">
+    <img src="images/limonada.jpeg" alt="Limonada de menta" loading="lazy" />
+</div>
+<div class="item-info"><div class="item-name">Limonada de menta</div><div class="item-desc">Limón, menta fresca</div><div class="allergy-icons"><span class="allergy-icon">🌿 Apio</span></div></div>
+<div class="price-add"><div class="price">4.50€</div><button class="add-btn">Añadir</button></div>
+</div>
+</div>
+</div>
+<!-- fin #menuContainer -->
+
+<!-- ─── ALÉRGENOS FOOTER ─── -->
+<div class="allergens-footer">
+    <span class="allergen-footer-item">🌾 Gluten</span>
+    <span class="allergen-footer-item">🦐 Crustáceos</span>
+    <span class="allergen-footer-item">🥚 Huevos</span>
+    <span class="allergen-footer-item">🐟 Pescado</span>
+    <span class="allergen-footer-item">🥜 Cacahuetes</span>
+    <span class="allergen-footer-item">🌱 Soja</span>
+    <span class="allergen-footer-item">🥛 Lácteos</span>
+    <span class="allergen-footer-item">🌰 Frutos cáscara</span>
+    <span class="allergen-footer-item">🌿 Apio</span>
+    <span class="allergen-footer-item">🍯 Mostaza</span>
+    <span class="allergen-footer-item">🌱 Sésamo</span>
+    <span class="allergen-footer-item">⚠️ Sulfitos</span>
+    <span class="allergen-footer-item">🐚 Moluscos</span>
+</div>
+
+<!-- ─── BOTTOM NAV ─── -->
+<div class="bottom-nav">
+    <div class="nav-item" data-nav="favorites"><div class="nav-icon">⭐</div><span>Favorites</span></div>
+    <div class="nav-item" data-nav="contact"><div class="nav-icon">📞</div><span>Contacto</span></div>
+    <div class="nav-item active" data-nav="menu"><div class="nav-icon">🍽️</div><span>Menu</span></div>
+    <div class="nav-item" data-nav="mylist"><div class="nav-icon">📋</div><span>My list</span></div>
+</div>
+</div>
+<!-- fin app-container -->
+
+<!-- ─── CONTACT SHEET (página de contacto) ─── -->
+<div class="contact-overlay" id="contactOverlay" role="dialog" aria-modal="true" aria-label="Información de contacto">
+    <div class="contact-sheet" id="contactSheet">
+        <div class="contact-grabber"></div>
+        <div class="contact-title">
+            <h2>📞 Contacto</h2>
+            <button class="contact-close" id="contactClose" type="button" aria-label="Cerrar">✕</button>
+        </div>
+
+        <a class="contact-card" href="https://www.google.com/maps/search/?api=1&query=Calle+Elvira+33+Granada" target="_blank" rel="noopener">
+            <div class="contact-card-icon">📍</div>
+            <div class="contact-card-body">
+                <div class="contact-card-label">Dirección</div>
+                <div class="contact-card-value">Calle Elvira, 33 · Granada</div>
+            </div>
+            <div class="contact-card-action">Cómo llegar</div>
+        </a>
+
+        <a class="contact-card" href="tel:+34672197472">
+            <div class="contact-card-icon">📞</div>
+            <div class="contact-card-body">
+                <div class="contact-card-label">Teléfono</div>
+                <div class="contact-card-value">672 19 74 72</div>
+            </div>
+            <div class="contact-card-action">Llamar</div>
+        </a>
+
+        <a class="contact-card" href="https://wa.me/34672197472" target="_blank" rel="noopener">
+            <div class="contact-card-icon">💬</div>
+            <div class="contact-card-body">
+                <div class="contact-card-label">WhatsApp</div>
+                <div class="contact-card-value">Escríbenos un mensaje</div>
+            </div>
+            <div class="contact-card-action">Abrir</div>
+        </a>
+
+        <div class="contact-footer-note">Las Palmeras · Cocina Mediterránea · Halal</div>
+    </div>
+</div>
+
+<div id="toastMsg"></div>
+
+<script>
+    // ─── DESPLEGABLE DE IDIOMAS ───
+    const dropdownBtn = document.getElementById('langDropdownBtn');
+    const dropdown = document.getElementById('langDropdown');
+    const arrow = document.getElementById('dropdownArrow');
+    const currentLangLabel = document.getElementById('currentLangLabel');
+
+    document.addEventListener('click', function(event) {
+        if (!event.target.closest('.translator-bar')) {
+            dropdown.classList.remove('show');
+            arrow.classList.remove('open');
+        }
+    });
+    dropdownBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        dropdown.classList.toggle('show');
+        arrow.classList.toggle('open');
+    });
+
+    // ─── TRADUCCIONES UI ───
+    const translations = {
+        es: { orderHeader: "🛒 Mi pedido", clearBtn: "Vaciar", emptyList: "✨ Añade tus platos favoritos", total: "💰 Total" },
+        en: { orderHeader: "🛒 My order", clearBtn: "Clear", emptyList: "✨ Add your favorite dishes", total: "💰 Total" },
+        fr: { orderHeader: "🛒 Ma commande", clearBtn: "Vider", emptyList: "✨ Ajoutez vos plats", total: "💰 Total" },
+        ar: { orderHeader: "🛒 طلبي", clearBtn: "إفراغ", emptyList: "✨ أضف أطباقك", total: "💰 المجموع" },
+        de: { orderHeader: "🛒 Meine Bestellung", clearBtn: "Leeren", emptyList: "✨ Füge deine Lieblingsgerichte hinzu",
+            total: "💰 Gesamt" },
+        ru: { orderHeader: "🛒 Мой заказ", clearBtn: "Очистить", emptyList: "✨ Добавьте свои любимые блюда",
+            total: "💰 Итого" },
+        it: { orderHeader: "🛒 Il mio ordine", clearBtn: "Svuota", emptyList: "✨ Aggiungi i tuoi piatti preferiti",
+            total: "💰 Totale" },
+        el: { orderHeader: "🛒 Η παραγγελία μου", clearBtn: "Άδειασμα", emptyList: "✨ Προσθέστε τα αγαπημένα σας πιάτα",
+            total: "💰 Σύνολο" },
+        pt: { orderHeader: "🛒 Meu pedido", clearBtn: "Limpar", emptyList: "✨ Adicione seus pratos favoritos",
+            total: "💰 Total" },
+        zh: { orderHeader: "🛒 我的订单", clearBtn: "清空", emptyList: "✨ 添加您喜欢的菜肴", total: "💰 总计" },
+        'zh-tw': { orderHeader: "🛒 我的訂單", clearBtn: "清空", emptyList: "✨ 添加您喜歡的菜餚", total: "💰 總計" },
+        ja: { orderHeader: "🛒 注文", clearBtn: "空にする", emptyList: "✨ お気に入りの料理を追加", total: "💰 合計" },
+        ko: { orderHeader: "🛒 내 주문", clearBtn: "비우기", emptyList: "✨ 좋아하는 요리 추가", total: "💰 합계" },
+        hi: { orderHeader: "🛒 मेरा आदेश", clearBtn: "खाली करें", emptyList: "✨ अपने पसंदीदा व्यंजन जोड़ें",
+            total: "💰 कुल" },
+        nl: { orderHeader: "🛒 Mijn bestelling", clearBtn: "Leegmaken", emptyList: "✨ Voeg je favoriete gerechten toe",
+            total: "💰 Totaal" },
+        pl: { orderHeader: "🛒 Moje zamówienie", clearBtn: "Opróżnij", emptyList: "✨ Dodaj swoje ulubione dania",
+            total: "💰 Razem" },
+        tr: { orderHeader: "🛒 Siparişim", clearBtn: "Temizle", emptyList: "✨ Favori yemeklerini ekle", total: "💰 Toplam" },
+        uk: { orderHeader: "🛒 Моє замовлення", clearBtn: "Очистити", emptyList: "✨ Додайте свої улюблені страви",
+            total: "💰 Загалом" }
+    };
+
+    let currentLang = 'es';
+
+    function applyTranslation() {
+        const t = translations[currentLang];
+        if (!t) return;
+
+        const orderHeaderEl = document.querySelector('.order-header-text');
+        const clearBtnEl = document.getElementById('clearOrderBtn');
+
+        if (orderHeaderEl) orderHeaderEl.textContent = t.orderHeader;
+        if (clearBtnEl) clearBtnEl.textContent = t.clearBtn;
+
+        document.querySelectorAll('.menu-item').forEach(item => {
+            const nameEl = item.querySelector('.item-name');
+            const descEl = item.querySelector('.item-desc');
+            const attrLang = currentLang.toLowerCase();
+            const newName = item.getAttribute(`data-name-${attrLang}`);
+            const newDesc = item.getAttribute(`data-desc-${attrLang}`);
+            if (newName && nameEl) nameEl.textContent = newName;
+            if (newDesc && descEl) descEl.textContent = newDesc;
+        });
+
+        renderOrder();
+    }
+
+    // ─── SCROLL HELPERS ───
+    function scrollToElement(el, offset = 10) {
+        if (!el) return;
+        const rect = el.getBoundingClientRect();
+        const targetTop = window.pageYOffset + rect.top - offset;
+        window.scrollTo({ top: targetTop, behavior: 'smooth' });
+    }
+
+    function scrollChipIntoView(chip) {
+        const container = document.getElementById('filterTabs');
+        if (!container || !chip) return;
+        const containerRect = container.getBoundingClientRect();
+        const chipRect = chip.getBoundingClientRect();
+        const leftOffset = chipRect.left - containerRect.left + container.scrollLeft;
+        const rightOffset = leftOffset + chipRect.width - containerRect.width;
+        if (rightOffset > 0) {
+            container.scrollTo({ left: container.scrollLeft + rightOffset + 10, behavior: 'smooth' });
+        } else if (leftOffset < 0) {
+            container.scrollTo({ left: container.scrollLeft + leftOffset - 10, behavior: 'smooth' });
+        }
+    }
+
+    // ─── CARRITO ───
+    let orderItems = [];
+
+    function saveOrder() { localStorage.setItem('lasPalmerasOrder', JSON.stringify(orderItems)); }
+
+    function loadOrder() { const s = localStorage.getItem('lasPalmerasOrder'); if (s) orderItems = JSON.parse(s);
+        renderOrder(); }
+
+    function addToCart(id, name, price) {
+        let existing = orderItems.find(i => i.id === id);
+        if (existing) existing.qty++;
+        else orderItems.push({ id, name, price: parseFloat(price), qty: 1 });
+        saveOrder();
+        renderOrder();
+        showToast(`✓ ${name} · ${price.toFixed(2)}€`);
+    }
+
+    function updateQty(id, delta) {
+        let idx = orderItems.findIndex(i => i.id === id);
+        if (idx !== -1) {
+            let newQty = orderItems[idx].qty + delta;
+            if (newQty <= 0) orderItems.splice(idx, 1);
+            else orderItems[idx].qty = newQty;
+            saveOrder();
+            renderOrder();
+        }
+    }
+
+    function clearOrder() { orderItems = [];
+        saveOrder();
+        renderOrder();
+        showToast("Lista vaciada"); }
+
+    function renderOrder() {
+        const container = document.getElementById('orderListContainer');
+        const totalSpan = document.getElementById('orderTotal');
+        if (!container || !totalSpan) return;
+        const t = translations[currentLang] || translations.es;
+        if (orderItems.length === 0) {
+            container.innerHTML = `<div class="empty-list">${t.emptyList}</div>`;
+            totalSpan.innerText = `${t.total}: 0.00 €`;
+            return;
+        }
+        let html = '',
+            total = 0;
+        orderItems.forEach(i => {
+            total += i.price * i.qty;
+            html +=
+                `<div class="order-item"><span>${i.name} · ${i.price.toFixed(2)}€</span><div class="order-controls"><button class="order-btn" data-id="${i.id}" data-delta="-1">−</button><span class="order-qty">${i.qty}</span><button class="order-btn" data-id="${i.id}" data-delta="1">+</button></div></div>`;
+        });
+        container.innerHTML = html;
+        totalSpan.innerText = `${t.total}: ${total.toFixed(2)} €`;
+        document.querySelectorAll('.order-btn').forEach(b => b.addEventListener('click', function() {
+            updateQty(this.dataset.id, parseInt(this.dataset.delta));
+        }));
+    }
+
+    function showToast(msg) {
+        let t = document.getElementById('toastMsg');
+        if (!t) return;
+        t.innerText = msg;
+        t.style.opacity = '1';
+        setTimeout(() => t.style.opacity = '0', 1500);
+    }
+
+    function addHandler(e) {
+        let item = this.closest('.menu-item');
+        if (!item) return;
+        let id = item.dataset.id;
+        let name = item.querySelector('.item-name').textContent;
+        let price = parseFloat(item.dataset.price);
+        if (id && name && !isNaN(price)) addToCart(id, name, price);
+    }
+
+    function attachAddButtons() {
+        document.querySelectorAll('.add-btn').forEach(btn => {
+            btn.removeEventListener('click', addHandler);
+            btn.addEventListener('click', addHandler);
+        });
+    }
+
+    function filterMenu(selected) {
+        document.querySelectorAll('.menu-section').forEach(s => {
+            let cat = s.dataset.category;
+            if (selected === 'all' || cat === selected) s.classList.remove('hidden-cat');
+            else s.classList.add('hidden-cat');
+        });
+        document.querySelectorAll('.cat-chip').forEach(chip => {
+            if (chip.dataset.filter === selected) chip.classList.add('active');
+            else chip.classList.remove('active');
+        });
+
+        const firstVisible = document.querySelector('.menu-section:not(.hidden-cat)');
+        if (firstVisible) {
+            scrollToElement(firstVisible, 70);
+        }
+    }
+
+    document.querySelectorAll('.cat-chip').forEach(chip => {
+        chip.addEventListener('click', function() {
+            const filter = this.dataset.filter;
+            filterMenu(filter);
+            scrollChipIntoView(this);
+        });
+    });
+
+    document.querySelectorAll('.nav-item').forEach(nav => nav.addEventListener('click', function() {
+        document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+        this.classList.add('active');
+        let type = this.dataset.nav;
+        if (type === 'mylist') document.getElementById('orderPanel').scrollIntoView({ behavior: 'smooth' });
+        if (type === 'menu') window.scrollTo({ top: 0, behavior: 'smooth' });
+        if (type === 'favorites') showToast("⭐ Favoritos próximamente");
+        if (type === 'contact') openContact();
+    }));
+
+    // ─── CONTACTO ───
+    function openContact() {
+        const overlay = document.getElementById('contactOverlay');
+        if (!overlay) return;
+        overlay.classList.add('show');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeContact() {
+        const overlay = document.getElementById('contactOverlay');
+        if (!overlay) return;
+        overlay.classList.remove('show');
+        document.body.style.overflow = '';
+        // Al cerrar, vuelve a marcar "Menu" como pestaña activa
+        document.querySelectorAll('.nav-item').forEach(n => n.classList.toggle('active', n.dataset.nav === 'menu'));
+    }
+
+    const contactOverlay = document.getElementById('contactOverlay');
+    if (contactOverlay) {
+        contactOverlay.addEventListener('click', function(e) {
+            if (e.target === contactOverlay) closeContact();
+        });
+    }
+    document.getElementById('contactClose')?.addEventListener('click', closeContact);
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeContact();
+    });
+
+    document.getElementById('clearOrderBtn')?.addEventListener('click', clearOrder);
+
+    // ─── IDIOMA: click en opción ───
+    document.querySelectorAll('.lang-option').forEach(option => {
+        option.addEventListener('click', function() {
+            const lang = this.dataset.lang;
+            const langName = this.querySelector('.lang-name').textContent;
+            currentLangLabel.textContent = langName;
+            dropdown.classList.remove('show');
+            arrow.classList.remove('open');
+            document.querySelectorAll('.lang-option').forEach(opt => opt.classList.remove('active-option'));
+            this.classList.add('active-option');
+            currentLang = lang;
+            applyTranslation();
+        });
+    });
+
+    // ─── INICIO ───
+    loadOrder();
+    attachAddButtons();
+    filterMenu('all');
+    applyTranslation();
+</script>
+</body>
+</html>
