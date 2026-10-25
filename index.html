@@ -649,22 +649,18 @@
             font-style: italic;
             font-size: 0.75rem;
         }
-
-        /* ─── SELECTION PAGE ─── */
-        .selection-page {
-            display: none;
-            max-width: 480px;
-            min-height: 100vh;
-            margin: 0 auto;
-            padding: 1.5rem 1rem 100px;
+                   .selection-page {
+            display: none; 
+            position: fixed; /* 👈 مهم جداً */
+            top: 0;          /* 👈 مهم جداً */
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            z-index: 999;
+            overflow-y: auto;
             background: #faf6f0;
-            box-shadow: 0 0 30px rgba(0, 0, 0, 0.08);
-        }
-        .selection-page-title {
-            margin: 0 0 1rem;
-            color: #5c3d2e;
-            font-size: 1.4rem;
-            font-weight: 800;
+            padding: 1.5rem 1rem 120px;
+            box-sizing: border-box;
         }
         .selection-page .order-panel {
             margin: 0;
@@ -672,10 +668,7 @@
             border: 1px solid #e4d5c4;
             border-radius: 20px;
             box-shadow: 0 4px 16px rgba(60, 35, 23, 0.06);
-        }
-        .selection-page .order-list {
-            max-height: none;
-            overflow: visible;
+            background: #fefaf5;
         }
 
         /* ─── ALLERGENS FOOTER ─── */
@@ -2149,6 +2142,10 @@ data-price="4.50">
         </div>
         <div class="order-list" id="orderListContainer"></div>
         <div class="order-total" id="orderTotal">💰 Total: 0.00 €</div>
+        
+        <button id="backToMenuBtn" type="button" style="width: 100%; margin-top: 20px; padding: 15px; background: #5c3d2e; color: #f7e7b0; border: none; border-radius: 12px; font-weight: bold; cursor: pointer;">
+            ⬅️ Volver al Menú
+        </button>
     </section>
 </main>
 
@@ -2431,10 +2428,12 @@ data-price="4.50">
         let type = this.dataset.nav;
         const menuPage = document.getElementById('appContainer');
         const selectionPage = document.getElementById('selectionPage');
-        if (type === 'mylist') {
-            menuPage.style.display = 'none';
-            selectionPage.style.display = 'block';
-            renderOrder();
+                if (type === 'mylist') {
+            menuPage.style.display = 'none';       // إخفاء القائمة
+            selectionPage.style.display = 'block'; // إظهار السلة
+            selectionPage.style.position = 'fixed';// 👈 تثبيت السلة فوق الشاشة
+            selectionPage.style.zIndex = '9999';   // 👈 التأكد من ظهورها فوق كل شيء
+            renderOrder();                         // تحديث الطلبات
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
         if (type === 'menu') {
@@ -2445,7 +2444,10 @@ data-price="4.50">
         if (type === 'favorites') showToast("⭐ Favoritos próximamente");
         if (type === 'contact') openContact();
     }));
-
+    // ربط زر "العودة إلى القائمة"
+    document.getElementById('backToMenuBtn')?.addEventListener('click', function() {
+        document.querySelector('.nav-item[data-nav="menu"]').click();
+    });
     // ─── CONTACTO ───
     function openContact() {
         const overlay = document.getElementById('contactOverlay');
