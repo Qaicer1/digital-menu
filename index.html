@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
+    
 <head>
+    
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover" />
     <title>Las Palmeras · Menú Móvil | Granada</title>
@@ -73,8 +75,9 @@
             z-index: 1;
         }
         .logo-icon {
-            font-size: 3rem;
-            line-height: 1;
+            width: 64px;
+            height: 64px;
+            object-fit: contain;
             filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
             flex-shrink: 0;
             animation: float 3s ease-in-out infinite;
@@ -429,6 +432,10 @@
             opacity: 0.5;
             pointer-events: none;
         }
+        .item-img.has-image .emoji-fallback,
+        .item-img img.image-missing {
+            display: none;
+        }
         /* Badge on image */
         .item-img .img-badge {
             position: absolute;
@@ -527,6 +534,14 @@
         .add-btn:active {
             transform: scale(0.94);
             box-shadow: 0 2px 8px rgba(92, 61, 46, 0.15);
+        }
+        .add-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+        .menu-item[data-price="consult"] .price::after {
+            content: "";
         }
 
         /* ─── ORDER PANEL ─── */
@@ -635,6 +650,34 @@
             font-size: 0.75rem;
         }
 
+        /* ─── SELECTION PAGE ─── */
+        .selection-page {
+            display: none;
+            max-width: 480px;
+            min-height: 100vh;
+            margin: 0 auto;
+            padding: 1.5rem 1rem 100px;
+            background: #faf6f0;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.08);
+        }
+        .selection-page-title {
+            margin: 0 0 1rem;
+            color: #5c3d2e;
+            font-size: 1.4rem;
+            font-weight: 800;
+        }
+        .selection-page .order-panel {
+            margin: 0;
+            padding: 1rem;
+            border: 1px solid #e4d5c4;
+            border-radius: 20px;
+            box-shadow: 0 4px 16px rgba(60, 35, 23, 0.06);
+        }
+        .selection-page .order-list {
+            max-height: none;
+            overflow: visible;
+        }
+
         /* ─── ALLERGENS FOOTER ─── */
         .allergens-footer {
             background: #f2e6da;
@@ -654,6 +697,13 @@
             border-radius: 20px;
             border: 0.5px solid #dccbbc;
             font-weight: 500;
+        }
+        .allergen-note {
+            flex: 1 0 100%;
+            text-align: center;
+            line-height: 1.5;
+            font-size: 0.7rem;
+            padding: 0.4rem 0.2rem;
         }
 
         /* ─── BOTTOM NAV ─── */
@@ -882,7 +932,8 @@
                 font-size: 1.6rem;
             }
             .logo-icon {
-                font-size: 2.4rem;
+                width: 54px;
+                height: 54px;
             }
             .item-img {
                 width: 100px;
@@ -898,44 +949,43 @@
             .price {
                 font-size: 1rem;
             }
-        }
-        @media (max-width: 380px) {
+        }        @media (max-width: 380px) {
             .item-img {
-                width: 80px;
-                height: 80px;
+                width: 85px;
+                height: 85px;
             }
             .menu-item {
-                flex-wrap: wrap;
-                justify-content: center;
-                text-align: center;
+                padding: 0.6rem;
+                gap: 0.6rem;
+                align-items: flex-start; 
             }
             .price-add {
-                width: 100%;
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: center;
-                min-width: 0;
+                min-width: 65px;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-end;
             }
             .add-btn {
-                width: auto;
-                padding: 0.3rem 1.4rem;
+                width: 100%;
+                padding: 0.4rem 0.5rem;
+                font-size: 0.6rem;
             }
             .item-info {
-                text-align: center;
+                text-align: left; 
             }
             .allergy-icons {
-                justify-content: center;
+                justify-content: flex-start;
             }
         }
     </style>
 </head>
+
 <body>
     <div class="app-container" id="appContainer">
 
         <!-- ─── HERO con LOGO ─── -->
         <div class="hero">
             <div class="logo-wrapper">
-                <div class="logo-icon">🌴</div>
                 <div class="logo-text">
                     <span class="brand">Las Palmeras</span>
                     <span class="tagline">✦ cocina marroquí casera ✦</span>
@@ -953,11 +1003,12 @@
 
         <!-- ─── TRADUCTOR ─── -->
         <div class="translator-bar">
-            <button class="dropdown-btn" id="langDropdownBtn"> 
-                🌐 <span id="currentLangLabel">Español</span>
-                 <span class="arrow" id="dropdownArrow">▾
-                 </span>
-            </button>
+            <button class="dropdown-btn" id="langDropdownBtn" 
+            style="padding: 10px 10px; font-size: 15px; display: 
+            flex; align-items: center; gap: 6px; cursor: pointer;">
+    🌐 <span id="currentLangLabel">Idiomas</span>
+    <span class="arrow" id="dropdownArrow">▼</span>
+</button>
             <div class="lang-dropdown" id="langDropdown">
                 <button class="lang-option active-option" data-lang="es"><span class="flag">🇪🇸</span> <span class="lang-name">Español</span></button>
                 <button class="lang-option" data-lang="en"><span class="flag">🇬🇧</span> <span class="lang-name">English</span></button>
@@ -992,6 +1043,11 @@
             <div class="cat-chip" data-filter="grill">🔥 Grill</div>
             <div class="cat-chip" data-filter="postres">🍰 Postres</div>
             <div class="cat-chip" data-filter="bebidas">🥤 Bebidas</div>
+            <div class="cat-chip" data-filter="cigars">🥟 Cigars</div>
+            <div class="cat-chip" data-filter="pastela">🥧 Pastela</div>
+            <div class="cat-chip" data-filter="acompanamientos">🍟 Acompañamientos</div>
+            <div class="cat-chip" data-filter="tes">🍵 Tés e infusiones</div>
+            <div class="cat-chip" data-filter="smoothies">🥭 Smoothies</div>
         </div>
 
      
@@ -1169,9 +1225,36 @@ data-price="8.00">
     <img src="images/taktoka.jpg" alt="Taktouka" loading="lazy" />
 </div>
 <div class="item-info"><div class="item-name">Taktouka · Berenjena asada</div><div class="item-desc">Berenjena, tomate, ajo, comino</div><div class="allergy-icons"><span class="allergy-icon">🌱 Soja</span></div></div>
-<div class="price-add"><div class="price">8.00</div><button class="add-btn">Añadir</button></div>
+<div class="price-add"><div class="price">8.00</div><button class="add-btn">Añadir</button>
 </div>
 
+</div>
+<div class="menu-item" data-id="Degustación marroquí Las Palmeras"
+data-name-es="Degustación marroquí Las Palmeras" data-desc-es="Selección de cuatro ensaladas y entrantes marroquíes."
+data-name-en="Roasted eggplant" data-desc-en="Roasted eggplant, tomato, garlic, cumin"
+data-name-fr="Aubergine rôtie" data-desc-fr="Aubergine rôtie, tomate, ail, cumin"
+data-name-ar=" تذوق المغربي في لاس بالماس " data-desc-ar="تشكيلة من أربعة أنواع من السلطات والمقبلات المغربية."
+data-name-de="Gebackene Aubergine" data-desc-de="Gebackene Aubergine, Tomate, Knoblauch, Kreuzkümmel"
+data-name-ru="Запеченные баклажаны" data-desc-ru="Запеченные баклажаны, помидор, чеснок, тмин"
+data-name-it="Melanzane arrostite" data-desc-it="Melanzane arrostite, pomodoro, aglio, cumino"
+data-name-el="Ψητή μελιτζάνα" data-desc-el="Ψητή μελιτζάνα, ντομάτα, σκόρδο, κύμινο"
+data-name-pt="Beringela assada" data-desc-pt="Beringela assada, tomate, alho, cominho"
+data-name-zh="烤茄子" data-desc-zh="烤茄子，番茄，大蒜，孜然"
+data-name-zh-tw="烤茄子" data-desc-zh-tw="烤茄子，番茄，大蒜，孜然"
+data-name-ja="焼きナス" data-desc-ja="焼きナス、トマト、ニンニク、クミン"
+data-name-ko="구운 가지" data-desc-ko="구운 가지, 토마토, 마늘, 커민"
+data-name-hi="भुना बैंगन" data-desc-hi="भुना बैंगन, टमाटर, लहसुन, जीरा"
+data-name-nl="Geroosterde aubergine" data-desc-nl="Geroosterde aubergine, tomaat, knoflook, komijn"
+data-name-pl="Pieczony bakłażan" data-desc-pl="Pieczony bakłażan, pomidor, czosnek, kminek"
+data-name-tr="Izgara patlıcan" data-desc-tr="Izgara patlıcan, domates, sarımsak, kimyon"
+data-name-uk="Смажений баклажан" data-desc-uk="Смажений баклажан, помідор, часник, кмин"
+data-price="8.00">
+<div class="item-img">
+    <img src="images/taktoka.jpg" alt="Taktouka" loading="lazy" />
+</div>
+<div class="item-info"><div class="item-name">Taktouka · Berenjena asada</div><div class="item-desc">Berenjena, tomate, ajo, comino</div><div class="allergy-icons"><span class="allergy-icon">🌱 Soja</span></div></div>
+<div class="price-add"><div class="price">8.00</div><button class="add-btn">Añadir</button></div>
+</div>
 <!-- Gambas -->
 <div class="menu-item" data-id="gambas"
 data-name-es="Gambas al pil pil" data-desc-es="Gambas, ajo, guindilla"
@@ -1198,6 +1281,76 @@ data-price="12.50">
 </div>
 <div class="item-info"><div class="item-name">Gambas al pil pil</div><div class="item-desc">Gambas, ajo, guindilla</div><div class="allergy-icons"><span class="allergy-icon">🦐 Crustáceos</span></div></div>
 <div class="price-add"><div class="price">12.50</div><button class="add-btn">Añadir</button></div>
+</div>
+<!-- Hummus Las Palmeras -->
+<div class="menu-item" data-id="Hummus Las Palmeras"
+data-name-es="Hummus Las Palmeras" data-desc-es="Hummus, berenjena, tomate"
+data-name-en="Hummus Las Palmeras" data-desc-en="Hummus, eggplant, tomato"
+data-name-fr="Hummus Las Palmeras" data-desc-fr="Hummus, aubergine, tomate"
+data-name-ar="حُمُس لاس بالميراس" data-desc-ar="حُمُس، بندق، طماطم"
+data-name-de="Hummus Las Palmeras" data-desc-de="Hummus, Aubergine, Tomate"
+data-name-ru="Хуммус Лас Пальмерас" data-desc-ru="Хуммус, баклажан, помидор"
+data-name-it="Hummus Las Palmeras" data-desc-it="Hummus, melanzana, pomodoro"
+data-name-el="Χούμος Λας Παλμεράς" data-desc-el="Χούμος, μπαμπίρι, ντομάτα"
+data-name-pt="Hummus Las Palmeras" data-desc-pt="Hummus, berinjela, tomate"
+data-name-zh="鹰嘴豆泥拉斯帕尔梅拉斯" data-desc-zh="鹰嘴豆泥，茄子，番茄"
+data-name-zh-tw="鷹嘴豆泥拉斯帕爾梅拉斯" data-desc-zh-tw="鷹嘴豆泥，茄子，番茄"
+data-name-ja="ハムス ラス パルメラス" data-desc-ja="ハムス、ナス、トマト"
+data-name-ko="햄스 라스 팔메라스" data-desc-ko="햄스, 가지, 토마토"
+data-name-hi="हम्मस लास पैलमेरास" data-desc-hi="हम्मस, बैंगनी, टमाटर"
+data-name-nl="Hummus Las Palmeras" data-desc-nl="Hummus, aubergine, tomaat"
+data-name-pl="Hummus Las Palmeras" data-desc-pl]="Hummus, bakłażan, pomidor"
+data-name-tr="Hummus Las Palmeras" data-desc-tr]="Hummus, patlıcan, domates"
+data-name-uk]="Хуммус Лас Пальмерас" data-desc-uk]="Хуммус, баклажан, помідор
+data-name-de="Garnelen Pil-Pil" data-desc-de="Garnelen, Knoblauch, Chili"
+data-name-ru="Креветки пиль-пиль" data-desc-ru="Креветки, чеснок, перец чили"
+data-name-it="Gamberi al pil pil" data-desc-it="Gamberi, aglio, peperoncino"
+data-name-el="Γαρίδες πιλ πιλ" data-desc-el="Γαρίδες, σκόρδο, τσίλι"
+data-name-pt="Camarões pil-pil" data-desc-pt="Camarões, alho, pimenta"
+data-name-zh="蒜蓉辣椒虾" data-desc-zh="虾，大蒜，辣椒"
+data-name-zh-tw="蒜蓉辣椒蝦" data-desc-zh-tw="蝦，大蒜，辣椒"
+data-name-ja="ガーリックシュリンプ" data-desc-ja="エビ、ニンニク、唐辛子"
+data-name-ko="마늘 새우" data-desc-ko="새우, 마늘, 고추"
+data-name-hi="लहसुन झींगा" data-desc-hi="झींगा, लहसुन, मिर्च"
+data-name-nl="Garnalen pil-pil" data-desc-nl="Garnalen, knoflook, chili"
+data-name-pl="Krewetki pil-pil" data-desc-pl="Krewetki, czosnek, papryka chili"
+data-name-tr="Sarımsaklı karides" data-desc-tr="Karides, sarımsak, acı biber"
+data-name-uk="Креветки піль-піль" data-desc-uk="Креветки, часник, чилі"
+data-price="12.50">
+<div class="item-img">
+    <img src="images/Gambas pil pil.jpeg" alt="Gambas" loading="lazy" />
+</div>
+<div class="item-info"><div class="item-name">Gambas al pil pil</div><div class="item-desc">Gambas, ajo, guindilla</div><div class="allergy-icons"><span class="allergy-icon">🦐 Crustáceos</span></div></div>
+<div class="price-add"><div class="price">12.50</div><button class="add-btn">Añadir</button></div>
+</div>
+
+</div>
+<!-- hummus con harrisa -->
+<div class="menu-item" data-id="Hummus con harissa"
+data-name-es="Hummus con Harissa" data-desc-es="Hummus, Harissa"
+data-name-en="Hummus with Harissa" data-desc-en="Hummus, Harissa"
+data-name-fr="Hummus avec Harissa" data-desc-fr="Hummus, Harissa"
+data-name-ar="حُمُس مع الحَرِّسَة" data-desc-ar="حُمُس، الحَرِّسَة"
+data-name-de="Hummus mit Harissa" data-desc-de="Hummus, Harissa"
+data-name-ru="Хумус с хариссой" data-desc-ru="Хумус, харисса"
+data-name-it="Hummus con Harissa" data-desc-it="Hummus, Harissa"
+data-name-el="Χουμους με Χαρίσσα" data-desc-el="Χουμους, Χαρίσσα"
+data-name-pt="Hummus com Harissa" data-desc-pt="Hummus, Harissa"
+data-name-zh="蒜蓉辣椒虾" data-desc-zh="虾，大蒜，辣椒"
+data-name-zh-tw="蒜蓉辣椒蝦" data-desc-zh-tw="蝦，大蒜，辣椒"
+data-name-ja="ガーリックシュリンプ" data-desc-ja="エビ、ニンニク、唐辛子"
+data-name-ko="마늘 새우" data-desc-ko="새우, 마늘, 고추"
+data-name-hi="लहसुन झींगा" data-desc-hi="झींगा, लहसुन, मिर्च"
+data-name-nl="Garnalen pil-pil" data-desc-nl="Garnalen, knoflook, chili"
+data-name-pl="Krewetki pil-pil" data-desc-pl="Krewetki, czosnek, papryka chili"
+data-name-tr="Sarımsaklı karides" data-desc-tr="Karides, sarımsak, acı biber"
+data-name-uk="Креветки піль-піль" data-desc-uk="Креветки, часник, чилі"
+data-price="9.00">
+<div class="item-img">
+    <img src="images/Hummus con harissa.jpeg" alt="Hummus con Harissa" loading="lazy" />
+</div>
+<div class="item-info"><div class="item-name">Hummus con Harissa</div><div class="item-desc">Hummus, Harissa</div><div class="allergy-icons"><span class="allergy-icon">🌾 Gluten</span></div></div>
+<div class="price-add"><div class="price">9.00</div><button class="add-btn">Añadir</button></div>
 </div>
 </div>
 
@@ -1454,6 +1607,7 @@ data-price="18.00">
         <button class="add-btn">Añadir</button>
     </div>
     
+</div>
 </div>
 <!-- ─── CUSCÚS ─── -->
 <div class="menu-section" data-category="cuscus">
@@ -1838,6 +1992,33 @@ data-price="5.00">
 <div class="price-add"><div class="price">5.00</div><button class="add-btn">Añadir</button></div>
 </div>
 </div>
+<div class="menu-item" data-id="Copa de helado Las Palmeras"
+data-name-es="Copa de helado Las Palmeras" data-desc-es="Pistachio and vanilla ice cream."
+data-name-en="Las Palmeras Ice Cream Sundae" data-desc-en="Selection of 3 sweets"
+data-name-fr="Pâtisseries arabes" data-desc-fr="Sélection de 3 pâtisseries"
+data-name-ar="حلويات عربية" data-desc-ar="تشكيلة من ٣ حلويات"
+data-name-de="Arabische Süßigkeiten" data-desc-de="Auswahl von 3 Süßigkeiten"
+data-name-ru="Арабские сладости" data-desc-ru="Ассорти из 3 сладостей"
+data-name-it="Dolci arabi" data-desc-it="Selezione di 3 dolci"
+data-name-el="Αραβικά γλυκά" data-desc-el="Επιλογή 3 γλυκών"
+data-name-pt="Doces árabes" data-desc-pt="Seleção de 3 doces"
+data-name-zh="阿拉伯甜点" data-desc-zh="3种甜点精选"
+data-name-zh-tw="阿拉伯甜點" data-desc-zh-tw="3種甜點精選"
+data-name-ja="アラビアのデザート" data-desc-ja="3種類のデザート"
+data-name-ko="아라비아 디저트" data-desc-ko="3가지 디저트"
+data-name-hi="अरबी मिठाई" data-desc-hi="3 मिठाइयों का चयन"
+data-name-nl="Arabische zoetigheden" data-desc-nl="Selectie van 3 zoetigheden"
+data-name-pl="Arabskie słodycze" data-desc-pl="Wybór 3 słodyczy"
+data-name-tr="Arap tatlıları" data-desc-tr="3 tatlı seçeneği"
+data-name-uk="Арабські солодощі" data-desc-uk="Вибір з 3 солодощів"
+data-price="5.00">
+<div class="item-img">
+    <img src="images/surtido.jpeg" alt="Surtido dulces árabes" loading="lazy" />
+</div>
+<div class="item-info"><div class="item-name">Surtido dulces árabes (3uds)</div><div class="item-desc">Selección de 3 dulces</div><div class="allergy-icons"><span class="allergy-icon">🌾 Gluten</span><span class="allergy-icon">🌰 Frutos cáscara</span></div></div>
+<div class="price-add"><div class="price">5.00</div><button class="add-btn">Añadir</button></div>
+</div>
+</div>
 
 <!-- ─── BEBIDAS ─── -->
 <div class="menu-section" data-category="bebidas">
@@ -1945,17 +2126,31 @@ data-price="4.50">
     <span class="allergen-footer-item">🌱 Sésamo</span>
     <span class="allergen-footer-item">⚠️ Sulfitos</span>
     <span class="allergen-footer-item">🐚 Moluscos</span>
+    <p class="allergen-note">Si tienes alguna alergia o intolerancia alimentaria, consulta con nuestro personal antes de realizar tu pedido. Disponemos de información sobre los alérgenos presentes en nuestros platos.</p>
 </div>
 
 <!-- ─── BOTTOM NAV ─── -->
+</div>
+<!-- fin app-container -->
+
 <div class="bottom-nav">
     <div class="nav-item" data-nav="favorites"><div class="nav-icon">⭐</div><span>Favorites</span></div>
     <div class="nav-item" data-nav="contact"><div class="nav-icon">📞</div><span>Contacto</span></div>
     <div class="nav-item active" data-nav="menu"><div class="nav-icon">🍽️</div><span>Menu</span></div>
-    <div class="nav-item" data-nav="mylist"><div class="nav-icon">📋</div><span>My list</span></div>
+    <div class="nav-item" data-nav="mylist"><div class="nav-icon">📋</div><span>Mi selección</span></div>
 </div>
-</div>
-<!-- fin app-container -->
+
+<main class="selection-page" id="selectionPage" aria-label="Mi selección">
+    <h1 class="selection-page-title">📋 Mi selección</h1>
+    <section class="order-panel" id="orderPanel">
+        <div class="order-header">
+            <span class="order-header-text">🛒 Mi pedido</span>
+            <button id="clearOrderBtn" type="button">Vaciar</button>
+        </div>
+        <div class="order-list" id="orderListContainer"></div>
+        <div class="order-total" id="orderTotal">💰 Total: 0.00 €</div>
+    </section>
+</main>
 
 <!-- ─── CONTACT SHEET (página de contacto) ─── -->
 <div class="contact-overlay" id="contactOverlay" role="dialog" aria-modal="true" aria-label="Información de contacto">
@@ -2049,11 +2244,38 @@ data-price="4.50">
             total: "💰 Загалом" }
     };
 
-    let currentLang = 'es';
+    const languageStorageKey = 'lasPalmerasSelectedLanguage';
+    let currentLang = (() => {
+        try {
+            const saved = localStorage.getItem(languageStorageKey);
+            return saved && translations[saved] ? saved : 'es';
+        } catch (error) {
+            return 'es';
+        }
+    })();
+
+    function syncLanguageUI() {
+        const selectedOption = document.querySelector(`.lang-option[data-lang="${currentLang}"]`);
+        const langName = selectedOption?.querySelector('.lang-name')?.textContent?.trim() || 'Español';
+        const currentLangLabelEl = document.getElementById('currentLangLabel');
+        if (currentLangLabelEl) currentLangLabelEl.textContent = langName;
+
+        document.querySelectorAll('.lang-option').forEach(option => {
+            option.classList.toggle('active-option', option.dataset.lang === currentLang);
+        });
+
+        document.documentElement.lang = currentLang;
+        document.documentElement.dir = ['ar'].includes(currentLang) ? 'rtl' : 'ltr';
+
+        try {
+            localStorage.setItem(languageStorageKey, currentLang);
+        } catch (error) {
+            // Ignore storage errors in restricted browsers.
+        }
+    }
 
     function applyTranslation() {
-        const t = translations[currentLang];
-        if (!t) return;
+        const t = translations[currentLang] || translations.es;
 
         const orderHeaderEl = document.querySelector('.order-header-text');
         const clearBtnEl = document.getElementById('clearOrderBtn');
@@ -2071,6 +2293,7 @@ data-price="4.50">
             if (newDesc && descEl) descEl.textContent = newDesc;
         });
 
+        syncLanguageUI();
         renderOrder();
     }
 
@@ -2206,8 +2429,19 @@ data-price="4.50">
         document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
         this.classList.add('active');
         let type = this.dataset.nav;
-        if (type === 'mylist') document.getElementById('orderPanel').scrollIntoView({ behavior: 'smooth' });
-        if (type === 'menu') window.scrollTo({ top: 0, behavior: 'smooth' });
+        const menuPage = document.getElementById('appContainer');
+        const selectionPage = document.getElementById('selectionPage');
+        if (type === 'mylist') {
+            menuPage.style.display = 'none';
+            selectionPage.style.display = 'block';
+            renderOrder();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        if (type === 'menu') {
+            selectionPage.style.display = 'none';
+            menuPage.style.display = 'block';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
         if (type === 'favorites') showToast("⭐ Favoritos próximamente");
         if (type === 'contact') openContact();
     }));
@@ -2225,8 +2459,8 @@ data-price="4.50">
         if (!overlay) return;
         overlay.classList.remove('show');
         document.body.style.overflow = '';
-        // Al cerrar, vuelve a marcar "Menu" como pestaña activa
-        document.querySelectorAll('.nav-item').forEach(n => n.classList.toggle('active', n.dataset.nav === 'menu'));
+        const activePage = document.getElementById('selectionPage').style.display === 'block' ? 'mylist' : 'menu';
+        document.querySelectorAll('.nav-item').forEach(n => n.classList.toggle('active', n.dataset.nav === activePage));
     }
 
     const contactOverlay = document.getElementById('contactOverlay');
@@ -2257,11 +2491,370 @@ data-price="4.50">
         });
     });
 
+    // ─── MENÚ ACTUALIZADO ───
+    const menuOverrides = [
+        ['Ensalada marroquí', 'ensalada', 'Ensalada marroquí', 7.50, 'Tomate, pepino, cebolla, pimiento y vinagreta.', 'Moroccan salad', 'Tomato, cucumber, onion, pepper and vinaigrette.', 'entrantes'],
+        ['Hummus con pan de pita', 'hummus', 'Hummus clásico con pan pita', 8.00, 'Hummus tradicional con aceite de oliva, servido con pan pita.', 'Classic hummus with pita bread', 'Traditional hummus with olive oil, served with pita bread.', 'entrantes'],
+        ['Falafel (4 uds.)', 'falafel', 'Falafel (4 unidades)', 8.00, 'Cuatro falafel de garbanzos con especias.', 'Falafel (4 pieces)', 'Four chickpea falafel with spices.', 'entrantes'],
+        ['Pastela de pollo y almendras', 'pastela', 'Pastela de pollo y almendras', 19.50, 'Fina y crujiente masa rellena de pollo especiado y almendras, con el tradicional toque dulce de canela y azúcar glas.', 'Chicken and almond pastilla', 'Delicate crispy pastry filled with spiced chicken and almonds, finished with cinnamon and icing sugar.', 'pastela'],
+        ['Zaalouk · Berenjena asada', 'zaalouk', 'Zaalouk · Ensalada de berenjena', 8.50, 'Berenjena cocinada con tomate y especias marroquíes.', 'Zaalouk · Moroccan eggplant salad', 'Eggplant cooked with tomato and Moroccan spices.', 'entrantes'],
+        ['Taktouka · Berenjena asada', 'Taktouka', 'Taktouka · Ensalada de pimientos', 8.50, 'Tomate y pimientos cocinados con especias marroquíes.', 'Taktouka · Moroccan pepper salad', 'Tomato and peppers cooked with Moroccan spices.', 'entrantes'],
+        ['Gambas al pil pil', 'gambas', 'Gambas al pil pil', 12.00, 'Gambas salteadas con ajo y aceite de oliva.', 'Gambas al pil pil', 'Prawns sautéed with garlic and olive oil.', 'entrantes'],
+        ['Harira tradicional', 'harira', 'Harira tradicional marroquí', 8.00, 'Sopa tradicional marroquí.', 'Traditional Moroccan harira', 'Traditional Moroccan soup.', 'sopas'],
+        ['Pollo con verduras', 'pollo_verdura', 'Tajín de pollo con verduras', 17.00, 'Tajín de pollo con verduras.', 'Chicken tagine with vegetables', 'Chicken tagine with vegetables.', 'tagines'],
+        ['Pollo con limón y aceitunas', 'pollo_limon', 'Tajín de pollo con limón y aceitunas', 18.00, 'Pollo con limón confitado y aceitunas.', 'Chicken tagine with lemon and olives', 'Chicken with preserved lemon and olives.', 'tagines'],
+        ['Tagine vegetal', 'Tajin Verdura', 'Tajín vegetal', 15.00, 'Verduras y especias marroquíes.', 'Vegetable tagine', 'Vegetables with Moroccan spices.', 'tagines'],
+        ['Tanjia de Marrakech', 'tanjia', 'Tanjia de Marrakech', 20.00, 'Especialidad tradicional de Marrakech elaborada con ternera marinada, cocinada lentamente con limón confitado y azafrán, acompañada de patatas marinadas.', 'Marrakech tanjia', 'Traditional Marrakech specialty of marinated beef, slow-cooked with preserved lemon and saffron, served with marinated potatoes.', 'tagines'],
+        ['Cordero con ciruelas', 'cordero', 'Tajín de cordero con ciruelas, almendras y huevo', 19.50, 'Tajín de cordero con ciruelas, almendras y huevo.', 'Lamb tagine with prunes, almonds and egg', 'Lamb tagine with prunes, almonds and egg.', 'tagines'],
+        ['Tajin cordero con ciruela y almendras', 'tajin_ternera_ciruelas', 'Tajín de ternera con ciruelas, almendras y huevo', 18.50, 'Tajín de ternera con ciruelas, almendras y huevo.', 'Beef tagine with prunes, almonds and egg', 'Beef tagine with prunes, almonds and egg.', 'tagines'],
+        ['Tajin cordero con ciruela y almendras', 'tajin_pollo_pasasycebolla', 'Tajín de pollo con pasas y cebolla caramelizada', 18.00, 'Pollo con pasas y cebolla caramelizada.', 'Chicken tagine with raisins and caramelized onion', 'Chicken with raisins and caramelized onion.', 'tagines'],
+        ['Tajin de Albondigas', 'tajin_albondigas_ternera', 'Tajín de albóndigas de ternera con huevo', 18.00, 'Albóndigas de ternera guisadas con huevo.', 'Beef meatball tagine with egg', 'Beef meatballs simmered with egg.', 'tagines'],
+        ['Cuscús vegetal', 'cuscus_vegetal', 'Cuscús vegetal con pasas y cebolla caramelizada', 16.00, 'Cuscús vegetal con pasas y cebolla caramelizada.', 'Vegetable couscous with raisins and caramelized onion', 'Vegetable couscous with raisins and caramelized onion.', 'cuscus'],
+        ['Cuscús de pollo', 'cuscus_pollo', 'Cuscús de pollo con verduras, pasas y cebolla caramelizada', 18.00, 'Pollo, verduras, pasas y cebolla caramelizada.', 'Chicken couscous with vegetables, raisins and caramelized onion', 'Chicken, vegetables, raisins and caramelized onion.', 'cuscus'],
+        ['Cuscús de cordero', 'cuscus_cordero', 'Cuscús de cordero con verduras, pasas y cebolla caramelizada', 19.00, 'Cordero, verduras, pasas y cebolla caramelizada.', 'Lamb couscous with vegetables, raisins and caramelized onion', 'Lamb, vegetables, raisins and caramelized onion.', 'cuscus'],
+        ['Pizza Margarita', 'margarita', 'Pizza Margarita con aceitunas', 13.00, 'Salsa de tomate, mozzarella, aceitunas negras y orégano.', 'Margherita pizza with olives', 'Tomato sauce, mozzarella, black olives and oregano.', 'pizzas'],
+        ['Paella del Mar', 'paella_mar', 'Paella de marisco', 17.50, 'Paella de marisco.', 'Seafood paella', 'Seafood paella.', 'arroces'],
+        ['Pinchitos De Pollo Con Arroz', 'Pinchitos De Pollo Con Arroz', 'Pinchitos de pollo', 18.00, 'Pinchitos de pollo a la parrilla.', 'Chicken skewers', 'Grilled chicken skewers.', 'grill'],
+        ['Pinchitos Pollo Con Arroz', 'Pinchitos michtos con arroz y ensalada', 'Pinchitos mixtos', 19.50, 'Selección mixta de pinchitos a la parrilla.', 'Mixed grilled skewers', 'A mixed selection of grilled skewers.', 'grill'],
+        ['Pinchitos cordero Con Arroz', 'Pinchitos cordero Con Arroz', 'Pinchitos de cordero', 19.00, 'Pinchitos de cordero a la parrilla.', 'Lamb skewers', 'Grilled lamb skewers.', 'grill'],
+        ['Pinchitos Kefta con Patatas Fritas', 'Pinchitos Kefta con Patatas Fritas', 'Pinchitos de kefta (ternera picada)', 18.50, 'Pinchitos de ternera picada a la parrilla.', 'Kefta skewers (minced beef)', 'Grilled minced beef skewers.', 'grill'],
+        ['Baklava de pistacho', 'baklava', 'Baklava de pistacho (1 unidad)', 2.50, 'Dulce árabe de pistacho.', 'Pistachio baklava (1 piece)', 'Pistachio Arabic pastry.', 'postres'],
+        ['Surtido dulces árabes (3uds)', 'surtido', 'Surtido de dulces árabes (3 unidades)', 5.50, 'Selección de tres dulces árabes.', 'Assorted Arabic sweets (3 pieces)', 'A selection of three Arabic sweets.', 'postres'],
+        ['Té marroquí', 'te', 'Té marroquí tradicional', 4.50, 'Té verde con hierbabuena y menta.', 'Traditional Moroccan tea', 'Green tea with spearmint and mint.', 'bebidas'],
+        ['Cerveza sin alcohol', 'cerveza', 'Cerveza 0,0', 3.00, 'Cerveza sin alcohol.', 'Alcohol-free beer', 'Alcohol-free beer.', 'bebidas'],
+        ['Limonada de menta', 'limonada', 'Limonada casera con menta fresca', 5.00, 'Limonada casera con menta fresca.', 'Homemade lemonade with fresh mint', 'Homemade lemonade with fresh mint.', 'bebidas']
+    ];
+
+    const menuLanguages = ['es', 'en', 'fr', 'ar', 'de', 'ru', 'it', 'el', 'pt', 'zh', 'zh-tw', 'ja', 'ko', 'hi', 'nl', 'pl', 'tr', 'uk'];
+
+    // Add photos as images/dishes/<dish-id>.jpg, or override a path here.
+    const menuImageOverrides = {
+        ensalada: 'images/ensaladamarroqui.jpg',
+        hummus: 'images/hummos.jpg',
+        falafel: 'images/4falafel.jpg',
+        pastela: 'images/PASTELA  .jpeg',
+        zaalouk: 'images/zaalouk.jpeg',
+        Taktouka: 'images/taktoka.jpg',
+        gambas: 'images/Gambas pil pil.jpeg',
+        harira: 'images/HARIRA.png',
+        pollo_limon: 'images/3.png',
+        'Tajin Verdura': 'images/TAJIN VERDURA.jpeg',
+        tanjia: 'images/65f1ab54-9824-476d-8175-b94d3dd9363f 2.JPG',
+        tajin_albondigas_ternera: 'images/As tajin albóndigas.jpeg',
+        cordero: 'images/TAJIN CORDERO CON CIRUELA Y ALMENDRAS.jpeg',
+        cuscus_pollo: 'images/couscous pollo.jpeg',
+        cuscus_cordero: 'images/b4cf3d74-cb9f-4077-af1e-473c3836da0a 2.JPG',
+        'Degustación marroquí Las Palmeras': 'images/SURTIDO 4 ensaladas.jpeg',
+        'Pinchitos De Pollo Con Arroz': 'images/Pinchitos pollo con arroz.jpg',
+        'Pinchitos michtos con arroz y ensalada': 'images/pichitos arroz kefta.jpeg',
+        'Pinchitos cordero Con Arroz': 'images/pinchitos cordero arroz.jpeg',
+        'Pinchitos Kefta con Patatas Fritas': 'images/pinchitos kefta con patata fritas.jpeg',
+        cigars_surtido: 'images/SURTIDO CIGAR  .jpeg'
+    };
+
+    function getMenuImagePath(id) {
+        if (menuImageOverrides[id]) return menuImageOverrides[id];
+        const filename = id.normalize('NFD')
+            .replace(/[\u0300-\u036f]/g, '')
+            .toLowerCase()
+            .replace(/[^a-z0-9]+/g, '-')
+            .replace(/^-|-$/g, '');
+        return `images/dishes/${filename}.jpg`;
+    }
+
+    function applyMenuImages() {
+        document.querySelectorAll('.menu-item').forEach(card => {
+            const id = card.dataset.id;
+            if (!id) {
+                console.error('Menu image target is missing a data-id.');
+                return;
+            }
+
+            let imageFrame = card.querySelector('.item-img');
+            if (!imageFrame) {
+                imageFrame = document.createElement('div');
+                imageFrame.className = 'item-img';
+                card.insertBefore(imageFrame, card.firstChild);
+            }
+
+            let image = imageFrame.querySelector('img');
+            if (!image) {
+                image = document.createElement('img');
+                image.loading = 'lazy';
+                imageFrame.appendChild(image);
+            }
+
+            let fallback = imageFrame.querySelector('.emoji-fallback');
+            if (!fallback) {
+                fallback = document.createElement('span');
+                fallback.className = 'emoji-fallback';
+                fallback.setAttribute('aria-hidden', 'true');
+                fallback.textContent = '🍽️';
+                imageFrame.appendChild(fallback);
+            }
+
+            const spanishName = card.getAttribute('data-name-es') ||
+                card.querySelector('.item-name')?.textContent.trim() ||
+                id;
+            image.alt = spanishName;
+            image.classList.remove('image-missing');
+            imageFrame.classList.remove('has-image');
+            image.onload = () => imageFrame.classList.add('has-image');
+            image.onerror = () => image.classList.add('image-missing');
+            image.src = getMenuImagePath(id);
+        });
+    }
+    const menuAdditions = {
+        entrantes: [
+        ],
+        cigars: [
+            ['cigars_vegetal', 'Cigar vegetal (2 unidades)', 6.50, 'Dos cigars vegetales.', 'Vegetable cigar (2 pieces)', 'Two vegetable cigars.'],
+            ['cigars_kefta', 'Cigar de kefta (2 unidades)', 7.50, 'Dos cigars de ternera picada.', 'Kefta cigar (2 pieces)', 'Two minced beef cigars.'],
+            ['cigars_espinacas_queso', 'Cigar de espinacas y queso (2 unidades)', 8.50, 'Dos cigars de espinacas y queso.', 'Spinach and cheese cigar (2 pieces)', 'Two spinach and cheese cigars.'],
+            ['cigars_marisco', 'Cigar de marisco (2 unidades)', 8.00, 'Dos cigars de marisco.', 'Seafood cigar (2 pieces)', 'Two seafood cigars.'],
+            ['cigars_surtido', 'Surtido de cigars marroquíes (4 unidades)', 9.90, 'Surtido de cuatro cigars marroquíes.', 'Assorted Moroccan cigars (4 pieces)', 'A selection of four Moroccan cigars.']
+        ],
+        sopas: [
+            ['sopa_lentejas', 'Sopa de lentejas', 7.50, 'Sopa de lentejas.', 'Lentil soup', 'Lentil soup.']
+        ],
+        tagines: [
+            ['tajin_cordero_verduras', 'Tajín de cordero con verduras', 19.00, 'Tajín de cordero con verduras.', 'Lamb tagine with vegetables', 'Lamb tagine with vegetables.'],
+            ['tajin_ternera_verduras', 'Tajín de ternera con verduras', 18.00, 'Tajín de ternera con verduras.', 'Beef tagine with vegetables', 'Beef tagine with vegetables.']
+        ],
+        cuscus: [
+            ['cuscus_ternera', 'Cuscús de ternera con verduras, pasas y cebolla caramelizada', 18.50, 'Ternera, verduras, pasas y cebolla caramelizada.', 'Beef couscous with vegetables, raisins and caramelized onion', 'Beef, vegetables, raisins and caramelized onion.']
+        ],
+        grill: [
+            ['pinchitos_morunos', 'Pinchitos morunos (3 unidades)', null, 'Tres pinchitos a la parrilla, acompañados de ensalada y arroz o patatas fritas.', 'Moorish skewers (3 pieces)', 'Three grilled skewers served with salad and rice or fries.'],
+            ['chuletas_cordero', 'Chuletas de cordero a la plancha', 21.00, 'Chuletas de cordero a la plancha.', 'Grilled lamb chops', 'Grilled lamb chops.']
+        ],
+        arroces: [
+            ['arroz_pollo_curry', 'Arroz con pollo al curry', 19.00, 'Arroz con pollo al curry.', 'Curry chicken rice', 'Rice with curry chicken.'],
+            ['arroz_negro_marisco', 'Arroz negro de marisco', 17.00, 'Arroz negro con marisco.', 'Black seafood rice', 'Black rice with seafood.'],
+            ['paella_senorito', 'Paella de marisco señorito', 17.00, 'Paella de marisco señorito.', 'Señorito seafood paella', 'Señorito seafood paella.'],
+            ['paella_verduras', 'Paella de verduras', 15.50, 'Paella de verduras.', 'Vegetable paella', 'Vegetable paella.']
+        ],
+        pizzas: [
+            ['pizza_kasbah_pollo', 'Pizza Kasbah de pollo', 14.50, 'Salsa de tomate, mozzarella, pollo marinado con especias y cebolla caramelizada.', 'Chicken Kasbah pizza', 'Tomato sauce, mozzarella, spiced marinated chicken and caramelized onion.'],
+            ['pizza_kefta', 'Pizza Kefta marroquí', 15.00, 'Salsa barbacoa, mozzarella, ternera picada especiada y cebolla caramelizada.', 'Moroccan kefta pizza', 'BBQ sauce, mozzarella, spiced minced beef and caramelized onion.'],
+            ['pizza_cuatro_quesos', 'Pizza cuatro quesos', 15.00, 'Base blanca sin tomate, mozzarella, emmental, gouda y un suave toque de gorgonzola.', 'Four cheese pizza', 'White base without tomato, mozzarella, Emmental, Gouda and a touch of Gorgonzola.'],
+            ['pizza_carbonara_halal', 'Pizza carbonara halal', 15.00, 'Base cremosa de nata, mozzarella, bacon de ternera halal, champiñones, cebolla y pimienta negra.', 'Halal carbonara pizza', 'Creamy base, mozzarella, halal beef bacon, mushrooms, onion and black pepper.'],
+            ['pizza_marinera', 'Pizza marinera', 15.00, 'Salsa de tomate, mozzarella y selección de mariscos.', 'Seafood pizza', 'Tomato sauce, mozzarella and a selection of seafood.'],
+            ['pizza_vegetariana', 'Pizza vegetariana', 13.50, 'Salsa de tomate, mozzarella, pimiento, cebolla, calabacín y aceitunas negras.', 'Vegetarian pizza', 'Tomato sauce, mozzarella, pepper, onion, courgette and black olives.']
+        ],
+        postres: [
+            ['copa_helado_palmeras', 'Copa de helado Las Palmeras', 7.00, 'Helado de pistacho y vainilla.', 'Las Palmeras ice cream sundae', 'Pistachio and vanilla ice cream.'],
+            ['dulce_arabe', 'Dulce árabe (1 unidad)', 2.00, 'Dulce árabe.', 'Arabic sweet (1 piece)', 'Arabic sweet.']
+        ],
+        bebidas: [
+            ['cerveza_dubai_00', 'Cerveza de Dubái 0,0', 4.50, 'Cerveza de Dubái sin alcohol.', 'Dubai 0.0 beer', 'Dubai non-alcoholic beer.'],
+            ['agua_mineral', 'Agua mineral', 3.00, 'Agua mineral.', 'Mineral water', 'Mineral water.'],
+            ['agua_con_gas', 'Agua con gas', 3.00, 'Agua mineral con gas.', 'Sparkling water', 'Sparkling mineral water.'],
+            ['refrescos', 'Refrescos', 3.00, 'Coca-Cola, Coca-Cola Zero, Fanta Naranja, Fanta Limón, Sprite, Nestea, Hawaï o Poms.', 'Soft drinks', 'Coca-Cola, Coca-Cola Zero, Fanta Orange, Fanta Lemon, Sprite, Nestea, Hawaï or Poms.'],
+            ['zumo_fruta', 'Zumo de fruta', 2.90, 'Piña, naranja o melocotón.', 'Fruit juice', 'Pineapple, orange or peach.']
+        ],
+        acompanamientos: [
+            ['arroz_blanco', 'Ración de arroz blanco', 3.50, 'Ración de arroz blanco.', 'Portion of white rice', 'Portion of white rice.'],
+            ['patatas_fritas', 'Ración de patatas fritas', 4.50, 'Ración de patatas fritas.', 'Portion of French fries', 'Portion of French fries.'],
+            ['pan_arabe', 'Pan árabe casero', 1.90, 'Pan árabe casero.', 'Homemade Arabic bread', 'Homemade Arabic bread.'],
+            ['pan_pita', 'Pan de pita', 1.50, 'Pan de pita.', 'Pita bread', 'Pita bread.']
+        ],
+        tes: [
+            ['te_khamsa_zaatar', 'Té Khamsa Zaatar', 4.00, 'Té negro con orégano marroquí.', 'Khamsa Zaatar tea', 'Black tea with Moroccan oregano.'],
+            ['te_khamsa_grey', 'Té Khamsa Grey', 4.00, 'Té negro con hierbabuena, piel de naranja y bergamota.', 'Khamsa Grey tea', 'Black tea with spearmint, orange peel and bergamot.'],
+            ['te_khamsa_louisa', 'Té Khamsa Louisa', 4.00, 'Infusión de verbena marroquí.', 'Khamsa Louisa tea', 'Moroccan verbena infusion.'],
+            ['te_khamsa_green_mint', 'Té Khamsa Green Tea Mint', 4.00, 'Té verde con hierbabuena y menta.', 'Khamsa Green Tea Mint', 'Green tea with spearmint and mint.']
+        ],
+        smoothies: [
+            ['smoothie_paradise', 'Paradise', null, 'Fresa y mango.', 'Paradise', 'Strawberry and mango.'],
+            ['smoothie_sunshine', 'Sunshine', null, 'Piña y mango.', 'Sunshine', 'Pineapple and mango.'],
+            ['smoothie_tropical', 'Tropical', null, 'Fresa y plátano.', 'Tropical', 'Strawberry and banana.'],
+            ['smoothie_sunset', 'Sunset', null, 'Fresa y frambuesa.', 'Sunset', 'Strawberry and raspberry.'],
+            ['smoothie_pina_colada', 'Piña colada', null, 'Piña y coco.', 'Piña colada', 'Pineapple and coconut.']
+        ]
+    };
+
+    const categoryTitles = {
+        cigars: '🥟 Cigars marroquíes',
+        pastela: '🥧 Pastela marroquí',
+        acompanamientos: '🍟 Acompañamientos',
+        tes: '🍵 Tés e infusiones',
+        smoothies: '🥭 Smoothies'
+    };
+
+    function setMenuCard(card, dish) {
+        const [id, name, price, description, englishName, englishDescription] = dish;
+        card.dataset.id = id;
+        card.dataset.price = price === null ? 'consult' : price.toFixed(2);
+        for (const lang of menuLanguages) {
+            const translatedName = lang === 'es' ? name : (englishName || name);
+            const translatedDescription = lang === 'es' ? description : (englishDescription || description);
+
+            card.setAttribute(`data-name-${lang}`, translatedName);
+            card.setAttribute(`data-desc-${lang}`, translatedDescription);
+        }
+        const info = card.querySelector('.item-info') || document.createElement('div');
+        info.className = 'item-info';
+        let nameEl = info.querySelector('.item-name');
+        if (!nameEl) {
+            nameEl = document.createElement('div');
+            nameEl.className = 'item-name';
+            info.appendChild(nameEl);
+        }
+        nameEl.textContent = name;
+        let descEl = info.querySelector('.item-desc');
+        if (!descEl) {
+            descEl = document.createElement('div');
+            descEl.className = 'item-desc';
+            info.appendChild(descEl);
+        }
+        descEl.textContent = description;
+        if (!info.parentElement) card.appendChild(info);
+        const priceAdd = card.querySelector('.price-add') || document.createElement('div');
+        priceAdd.className = 'price-add';
+        let priceEl = priceAdd.querySelector('.price');
+        if (!priceEl) {
+            priceEl = document.createElement('div');
+            priceEl.className = 'price';
+            priceAdd.appendChild(priceEl);
+        }
+        priceEl.textContent = price === null ? 'Consultar precio' : price.toFixed(2);
+        let button = priceAdd.querySelector('.add-btn');
+        if (!button) {
+            button = document.createElement('button');
+            button.className = 'add-btn';
+            priceAdd.appendChild(button);
+        }
+        button.type = 'button';
+        button.textContent = price === null ? 'Consultar' : 'Añadir';
+        button.disabled = price === null;
+        button.title = price === null ? 'Consulta el precio con nuestro personal' : '';
+        if (!priceAdd.parentElement) card.appendChild(priceAdd);
+    }
+
+    function getMenuSection(category) {
+        let section = document.querySelector(`.menu-section[data-category="${category}"]`);
+        if (section) return section;
+        section = document.createElement('section');
+        section.className = 'menu-section';
+        section.dataset.category = category;
+        const title = document.createElement('div');
+        title.className = 'section-title';
+        title.textContent = categoryTitles[category];
+        section.appendChild(title);
+        document.getElementById('menuContainer').appendChild(section);
+        return section;
+    }
+
+    function normalizeMenuLabel(value) {
+        return (value || '').trim().normalize('NFD')
+            .replace(/[\u0300-\u036f]/g, '')
+            .toLocaleLowerCase('es')
+            .replace(/[^a-z0-9]+/g, '');
+    }
+
+    function applyMenuOverrides() {
+        for (const [oldName, id, name, price, description, englishName, englishDescription, category] of menuOverrides) {
+            const card = Array.from(document.querySelectorAll('.menu-item')).find(item =>
+                [
+                    item.getAttribute('data-name-es'),
+                    item.querySelector('.item-name')?.textContent
+                ].some(label => normalizeMenuLabel(label) === normalizeMenuLabel(oldName))
+            );
+            if (!card) {
+                console.error(`Menu update target not found: ${oldName}`);
+                continue;
+            }
+            setMenuCard(card, [id, name, price, description, englishName, englishDescription]);
+            getMenuSection(category).appendChild(card);
+        }
+    }
+
+    function addMenuProducts() {
+        for (const [category, products] of Object.entries(menuAdditions)) {
+            const section = getMenuSection(category);
+            for (const product of products) {
+                const card = document.createElement('div');
+                card.className = 'menu-item';
+                setMenuCard(card, product);
+                section.appendChild(card);
+            }
+        }
+    }
+
+    function addCategoryFilters() {
+        const filters = document.getElementById('filterTabs');
+        for (const [category, title] of Object.entries(categoryTitles)) {
+            if (filters.querySelector(`[data-filter="${category}"]`)) continue;
+            const chip = document.createElement('button');
+            chip.type = 'button';
+            chip.className = 'cat-chip';
+            chip.dataset.filter = category;
+            chip.textContent = title.replace(/^[^ ]+ /, '');
+            filters.appendChild(chip);
+            chip.addEventListener('click', function() {
+                filterMenu(this.dataset.filter);
+                scrollChipIntoView(this);
+            });
+        }
+    }
+
     // ─── INICIO ───
+    applyMenuOverrides();
+    addMenuProducts();
+    applyMenuImages();
+    addCategoryFilters();
     loadOrder();
     attachAddButtons();
     filterMenu('all');
     applyTranslation();
 </script>
 </body>
+<!-- ▼▼▼ PASSWORD LOCK SYSTEM ▼▼▼ -->
+<div id="passwordLockScreen" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: #f2ebe1; z-index: 999999; display: flex; flex-direction: column; align-items: center; justify-content: center; font-family: sans-serif;">
+    <div style="background: #faf6f0; padding: 40px 30px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); text-align: center; max-width: 90%; width: 350px;">
+        <h2 style="color: #3d2317; margin-top: 0;">🔒 Acceso Restringido</h2>
+        <p style="color: #8a725e; font-size: 14px; margin-bottom: 20px;">Introduce la contraseña para ver el menú</p>
+        
+        <input type="password" id="pwdInput" placeholder="Contraseña" style="width: 100%; padding: 12px; border: 1px solid #d4c0b0; border-radius: 10px; margin-bottom: 15px; font-size: 16px; box-sizing: border-box; outline: none;">
+        
+        <button onclick="checkPassword()" style="width: 100%; padding: 12px; background: #5c3d2e; color: #f7e7b0; border: none; border-radius: 10px; font-size: 16px; font-weight: bold; cursor: pointer; transition: 0.2s;">
+            Desbloquear
+        </button>
+        <p id="errorMsg" style="color: #d32f2f; font-size: 13px; margin-top: 15px; display: none; font-weight: bold;">❌ Contraseña incorrecta</p>
+    </div>
+</div>
+
+<script>
+    // 👇 CHANGE THIS TO YOUR DESIRED PASSWORD 👇
+    const SECRET_PASSWORD = "LasPalmeras2026"; 
+
+    // Check if already unlocked in this session
+    if (sessionStorage.getItem('website_unlocked') === 'true') {
+        document.getElementById('passwordLockScreen').style.display = 'none';
+    }
+
+    function checkPassword() {
+        const input = document.getElementById('pwdInput').value;
+        const errorMsg = document.getElementById('errorMsg');
+        
+        if (input === SECRET_PASSWORD) {
+            // Correct password
+            sessionStorage.setItem('website_unlocked', 'true');
+            document.getElementById('passwordLockScreen').style.display = 'none';
+        } else {
+            // Wrong password
+            errorMsg.style.display = 'block';
+            document.getElementById('pwdInput').value = ''; // Clear input
+        }
+    }
+
+    // Allow pressing "Enter" to submit
+    document.getElementById('pwdInput').addEventListener('keypress', function (e) {
+        if (e.key === 'Enter') {
+            checkPassword();
+        }
+    });
+</script>
+<!-- ▲▲▲ END PASSWORD LOCK SYSTEM ▲▲▲ -->
 </html>
