@@ -2209,38 +2209,386 @@ data-price="4.50">
         dropdown.classList.toggle('show');
         arrow.classList.toggle('open');
     });
-
-    // ─── TRADUCCIONES UI ───
-    const translations = {
-        es: { orderHeader: "🛒 Mi pedido", clearBtn: "Vaciar", emptyList: "✨ Añade tus platos favoritos", total: "💰 Total" },
-        en: { orderHeader: "🛒 My order", clearBtn: "Clear", emptyList: "✨ Add your favorite dishes", total: "💰 Total" },
-        fr: { orderHeader: "🛒 Ma commande", clearBtn: "Vider", emptyList: "✨ Ajoutez vos plats", total: "💰 Total" },
-        ar: { orderHeader: "🛒 طلبي", clearBtn: "إفراغ", emptyList: "✨ أضف أطباقك", total: "💰 المجموع" },
-        de: { orderHeader: "🛒 Meine Bestellung", clearBtn: "Leeren", emptyList: "✨ Füge deine Lieblingsgerichte hinzu",
-            total: "💰 Gesamt" },
-        ru: { orderHeader: "🛒 Мой заказ", clearBtn: "Очистить", emptyList: "✨ Добавьте свои любимые блюда",
-            total: "💰 Итого" },
-        it: { orderHeader: "🛒 Il mio ordine", clearBtn: "Svuota", emptyList: "✨ Aggiungi i tuoi piatti preferiti",
-            total: "💰 Totale" },
-        el: { orderHeader: "🛒 Η παραγγελία μου", clearBtn: "Άδειασμα", emptyList: "✨ Προσθέστε τα αγαπημένα σας πιάτα",
-            total: "💰 Σύνολο" },
-        pt: { orderHeader: "🛒 Meu pedido", clearBtn: "Limpar", emptyList: "✨ Adicione seus pratos favoritos",
-            total: "💰 Total" },
-        zh: { orderHeader: "🛒 我的订单", clearBtn: "清空", emptyList: "✨ 添加您喜欢的菜肴", total: "💰 总计" },
-        'zh-tw': { orderHeader: "🛒 我的訂單", clearBtn: "清空", emptyList: "✨ 添加您喜歡的菜餚", total: "💰 總計" },
-        ja: { orderHeader: "🛒 注文", clearBtn: "空にする", emptyList: "✨ お気に入りの料理を追加", total: "💰 合計" },
-        ko: { orderHeader: "🛒 내 주문", clearBtn: "비우기", emptyList: "✨ 좋아하는 요리 추가", total: "💰 합계" },
-        hi: { orderHeader: "🛒 मेरा आदेश", clearBtn: "खाली करें", emptyList: "✨ अपने पसंदीदा व्यंजन जोड़ें",
-            total: "💰 कुल" },
-        nl: { orderHeader: "🛒 Mijn bestelling", clearBtn: "Leegmaken", emptyList: "✨ Voeg je favoriete gerechten toe",
-            total: "💰 Totaal" },
-        pl: { orderHeader: "🛒 Moje zamówienie", clearBtn: "Opróżnij", emptyList: "✨ Dodaj swoje ulubione dania",
-            total: "💰 Razem" },
-        tr: { orderHeader: "🛒 Siparişim", clearBtn: "Temizle", emptyList: "✨ Favori yemeklerini ekle", total: "💰 Toplam" },
-        uk: { orderHeader: "🛒 Моє замовлення", clearBtn: "Очистити", emptyList: "✨ Додайте свої улюблені страви",
-            total: "💰 Загалом" }
-    };
-
+const translations = {
+    es: {
+        orderHeader: "🛒 Mi pedido", clearBtn: "Vaciar",
+        emptyList: "✨ Añade tus platos favoritos", total: "💰 Total",
+        addBtn: "Añadir", consultBtn: "Consultar", consultPrice: "Consultar precio",
+        navFavorites: "Favoritos", navContact: "Contacto", navMenu: "Menú", navMyList: "Mi selección",
+        selectionTitle: "📋 Mi selección", backToMenu: "⬅️ Volver al Menú",
+        contactTitle: "📞 Contacto", contactAddress: "Dirección",
+        contactPhone: "Teléfono", contactWhatsapp: "WhatsApp",
+        contactHowToGet: "Cómo llegar", contactCall: "Llamar", contactOpen: "Abrir",
+        contactWriteUs: "Escríbenos un mensaje",
+        contactFooter: "Las Palmeras · Cocina Mediterránea · Halal",
+        tagline: "✦ cocina marroquí casera ✦",
+        heroBadge: "✓ Sabores auténticos preparados con cariño",
+        allergensNote: "Si tienes alguna alergia o intolerancia alimentaria, consulta con nuestro personal antes de realizar tu pedido. Disponemos de información sobre los alérgenos presentes en nuestros platos.",
+        catAll: "🍽️ Todo", catEntrantes: "🥗 Entrantes", catSopas: "🥣 Sopas",
+        catTagines: "🍲 Tajines", catCuscus: "🍚 Cuscús", catPizzas: "🍕 Pizza",
+        catArroces: "🥘 Arroces", catGrill: "🔥 Grill", catPostres: "🍰 Postres",
+        catBebidas: "🥤 Bebidas", catCigars: "🥟 Cigars", catPastela: "🥧 Pastela",
+        catAcompanamientos: "🍟 Acompañamientos", catTes: "🍵 Tés e infusiones",
+        catSmoothies: "🥭 Smoothies"
+    },
+    en: {
+        orderHeader: "🛒 My order", clearBtn: "Clear",
+        emptyList: "✨ Add your favorite dishes", total: "💰 Total",
+        addBtn: "Add", consultBtn: "Ask", consultPrice: "Ask for price",
+        navFavorites: "Favorites", navContact: "Contact", navMenu: "Menu", navMyList: "My selection",
+        selectionTitle: "📋 My selection", backToMenu: "⬅️ Back to Menu",
+        contactTitle: "📞 Contact", contactAddress: "Address",
+        contactPhone: "Phone", contactWhatsapp: "WhatsApp",
+        contactHowToGet: "Directions", contactCall: "Call", contactOpen: "Open",
+        contactWriteUs: "Send us a message",
+        contactFooter: "Las Palmeras · Mediterranean Cuisine · Halal",
+        tagline: "✦ homemade Moroccan cuisine ✦",
+        heroBadge: "✓ Authentic flavors prepared with care",
+        allergensNote: "If you have any food allergy or intolerance, please consult our staff before placing your order. We have information about the allergens present in our dishes.",
+        catAll: "🍽️ All", catEntrantes: "🥗 Starters", catSopas: "🥣 Soups",
+        catTagines: "🍲 Tagines", catCuscus: "🍚 Couscous", catPizzas: "🍕 Pizza",
+        catArroces: "🥘 Rice", catGrill: "🔥 Grill", catPostres: "🍰 Desserts",
+        catBebidas: "🥤 Drinks", catCigars: "🥟 Cigars", catPastela: "🥧 Pastilla",
+        catAcompanamientos: "🍟 Sides", catTes: "🍵 Teas & infusions",
+        catSmoothies: "🥭 Smoothies"
+    },
+    fr: {
+        orderHeader: "🛒 Ma commande", clearBtn: "Vider",
+        emptyList: "✨ Ajoutez vos plats favoris", total: "💰 Total",
+        addBtn: "Ajouter", consultBtn: "Demander", consultPrice: "Demander le prix",
+        navFavorites: "Favoris", navContact: "Contact", navMenu: "Menu", navMyList: "Ma sélection",
+        selectionTitle: "📋 Ma sélection", backToMenu: "⬅️ Retour au menu",
+        contactTitle: "📞 Contact", contactAddress: "Adresse",
+        contactPhone: "Téléphone", contactWhatsapp: "WhatsApp",
+        contactHowToGet: "Itinéraire", contactCall: "Appeler", contactOpen: "Ouvrir",
+        contactWriteUs: "Envoyez-nous un message",
+        contactFooter: "Las Palmeras · Cuisine Méditerranéenne · Halal",
+        tagline: "✦ cuisine marocaine maison ✦",
+        heroBadge: "✓ Saveurs authentiques préparées avec soin",
+        allergensNote: "Si vous avez une allergie ou une intolérance alimentaire, consultez notre personnel avant de passer votre commande. Nous disposons d'informations sur les allergènes présents dans nos plats.",
+        catAll: "🍽️ Tout", catEntrantes: "🥗 Entrées", catSopas: "🥣 Soupes",
+        catTagines: "🍲 Tajines", catCuscus: "🍚 Couscous", catPizzas: "🍕 Pizza",
+        catArroces: "🥘 Riz", catGrill: "🔥 Grill", catPostres: "🍰 Desserts",
+        catBebidas: "🥤 Boissons", catCigars: "🥟 Cigares", catPastela: "🥧 Pastilla",
+        catAcompanamientos: "🍟 Accompagnements", catTes: "🍵 Thés et infusions",
+        catSmoothies: "🥭 Smoothies"
+    },
+    ar: {
+        orderHeader: "🛒 طلبي", clearBtn: "إفراغ",
+        emptyList: "✨ أضف أطباقك المفضلة", total: "💰 المجموع",
+        addBtn: "أضف", consultBtn: "اسأل", consultPrice: "اسأل عن السعر",
+        navFavorites: "المفضلة", navContact: "اتصل", navMenu: "القائمة", navMyList: "اختياري",
+        selectionTitle: "📋 اختياري", backToMenu: "⬅️ العودة إلى القائمة",
+        contactTitle: "📞 اتصل بنا", contactAddress: "العنوان",
+        contactPhone: "الهاتف", contactWhatsapp: "واتساب",
+        contactHowToGet: "الاتجاهات", contactCall: "اتصل", contactOpen: "افتح",
+        contactWriteUs: "أرسل لنا رسالة",
+        contactFooter: "لاس بالميراس · مطبخ متوسطي · حلال",
+        tagline: "✦ مطبخ مغربي منزلي ✦",
+        heroBadge: "✓ نكهات أصيلة محضرة بحب",
+        allergensNote: "إذا كان لديك أي حساسية أو عدم تحمل غذائي، يرجى استشارة موظفينا قبل تقديم طلبك. لدينا معلومات حول مسببات الحساسية الموجودة في أطباقنا.",
+        catAll: "🍽️ الكل", catEntrantes: "🥗 المقبلات", catSopas: "🥣 الحساء",
+        catTagines: "🍲 الطاجين", catCuscus: "🍚 الكسكس", catPizzas: "🍕 بيتزا",
+        catArroces: "🥘 الأرز", catGrill: "🔥 المشويات", catPostres: "🍰 الحلويات",
+        catBebidas: "🥤 المشروبات", catCigars: "🥟 السيجار", catPastela: "🥧 الباستيلا",
+        catAcompanamientos: "🍟 المقبلات الجانبية", catTes: "🍵 الشاي والمنقوعات",
+        catSmoothies: "🥭 سموذي"
+    },
+    de: {
+        orderHeader: "🛒 Meine Bestellung", clearBtn: "Leeren",
+        emptyList: "✨ Füge deine Lieblingsgerichte hinzu", total: "💰 Gesamt",
+        addBtn: "Hinzufügen", consultBtn: "Fragen", consultPrice: "Preis erfragen",
+        navFavorites: "Favoriten", navContact: "Kontakt", navMenu: "Menü", navMyList: "Meine Auswahl",
+        selectionTitle: "📋 Meine Auswahl", backToMenu: "⬅️ Zurück zum Menü",
+        contactTitle: "📞 Kontakt", contactAddress: "Adresse",
+        contactPhone: "Telefon", contactWhatsapp: "WhatsApp",
+        contactHowToGet: "Route", contactCall: "Anrufen", contactOpen: "Öffnen",
+        contactWriteUs: "Schreib uns eine Nachricht",
+        contactFooter: "Las Palmeras · Mediterrane Küche · Halal",
+        tagline: "✦ hausgemachte marokkanische Küche ✦",
+        heroBadge: "✓ Authentische Aromen, mit Liebe zubereitet",
+        allergensNote: "Wenn Sie eine Lebensmittelallergie oder -unverträglichkeit haben, wenden Sie sich bitte vor Ihrer Bestellung an unser Personal. Wir haben Informationen über die Allergene in unseren Gerichten.",
+        catAll: "🍽️ Alle", catEntrantes: "🥗 Vorspeisen", catSopas: "🥣 Suppen",
+        catTagines: "🍲 Tagines", catCuscus: "🍚 Couscous", catPizzas: "🍕 Pizza",
+        catArroces: "🥘 Reis", catGrill: "🔥 Grill", catPostres: "🍰 Desserts",
+        catBebidas: "🥤 Getränke", catCigars: "🥟 Cigars", catPastela: "🥧 Pastilla",
+        catAcompanamientos: "🍟 Beilagen", catTes: "🍵 Tees & Aufgüsse",
+        catSmoothies: "🥭 Smoothies"
+    },
+    ru: {
+        orderHeader: "🛒 Мой заказ", clearBtn: "Очистить",
+        emptyList: "✨ Добавьте свои любимые блюда", total: "💰 Итого",
+        addBtn: "Добавить", consultBtn: "Спросить", consultPrice: "Узнать цену",
+        navFavorites: "Избранное", navContact: "Контакт", navMenu: "Меню", navMyList: "Мой выбор",
+        selectionTitle: "📋 Мой выбор", backToMenu: "⬅️ Назад в меню",
+        contactTitle: "📞 Контакт", contactAddress: "Адрес",
+        contactPhone: "Телефон", contactWhatsapp: "WhatsApp",
+        contactHowToGet: "Маршрут", contactCall: "Позвонить", contactOpen: "Открыть",
+        contactWriteUs: "Напишите нам",
+        contactFooter: "Las Palmeras · Средиземноморская кухня · Халяль",
+        tagline: "✦ домашняя марокканская кухня ✦",
+        heroBadge: "✓ Аутентичные вкусы, приготовленные с любовью",
+        allergensNote: "Если у вас аллергия или непереносимость продуктов, проконсультируйтесь с нашим персоналом перед заказом. У нас есть информация об аллергенах в наших блюдах.",
+        catAll: "🍽️ Все", catEntrantes: "🥗 Закуски", catSopas: "🥣 Супы",
+        catTagines: "🍲 Тажины", catCuscus: "🍚 Кускус", catPizzas: "🍕 Пицца",
+        catArroces: "🥘 Рис", catGrill: "🔥 Гриль", catPostres: "🍰 Десерты",
+        catBebidas: "🥤 Напитки", catCigars: "🥟 Сигары", catPastela: "🥧 Пастилла",
+        catAcompanamientos: "🍟 Гарниры", catTes: "🍵 Чаи и настои",
+        catSmoothies: "🥭 Смузи"
+    },
+    it: {
+        orderHeader: "🛒 Il mio ordine", clearBtn: "Svuota",
+        emptyList: "✨ Aggiungi i tuoi piatti preferiti", total: "💰 Totale",
+        addBtn: "Aggiungi", consultBtn: "Chiedi", consultPrice: "Chiedi il prezzo",
+        navFavorites: "Preferiti", navContact: "Contatto", navMenu: "Menu", navMyList: "La mia selezione",
+        selectionTitle: "📋 La mia selezione", backToMenu: "⬅️ Torna al menu",
+        contactTitle: "📞 Contatto", contactAddress: "Indirizzo",
+        contactPhone: "Telefono", contactWhatsapp: "WhatsApp",
+        contactHowToGet: "Indicazioni", contactCall: "Chiama", contactOpen: "Apri",
+        contactWriteUs: "Scrivici un messaggio",
+        contactFooter: "Las Palmeras · Cucina Mediterranea · Halal",
+        tagline: "✦ cucina marocchina casalinga ✦",
+        heroBadge: "✓ Sapori autentici preparati con cura",
+        allergensNote: "Se hai allergie o intolleranze alimentari, consulta il nostro personale prima di effettuare l'ordine. Abbiamo informazioni sugli allergeni presenti nei nostri piatti.",
+        catAll: "🍽️ Tutto", catEntrantes: "🥗 Antipasti", catSopas: "🥣 Zuppe",
+        catTagines: "🍲 Tajine", catCuscus: "🍚 Couscous", catPizzas: "🍕 Pizza",
+        catArroces: "🥘 Riso", catGrill: "🔥 Griglia", catPostres: "🍰 Dolci",
+        catBebidas: "🥤 Bevande", catCigars: "🥟 Sigari", catPastela: "🥧 Pastilla",
+        catAcompanamientos: "🍟 Contorni", catTes: "🍵 Tè e infusi",
+        catSmoothies: "🥭 Smoothie"
+    },
+    el: {
+        orderHeader: "🛒 Η παραγγελία μου", clearBtn: "Άδειασμα",
+        emptyList: "✨ Προσθέστε τα αγαπημένα σας πιάτα", total: "💰 Σύνολο",
+        addBtn: "Προσθήκη", consultBtn: "Ρωτήστε", consultPrice: "Ρωτήστε την τιμή",
+        navFavorites: "Αγαπημένα", navContact: "Επικοινωνία", navMenu: "Μενού", navMyList: "Η επιλογή μου",
+        selectionTitle: "📋 Η επιλογή μου", backToMenu: "⬅️ Πίσω στο μενού",
+        contactTitle: "📞 Επικοινωνία", contactAddress: "Διεύθυνση",
+        contactPhone: "Τηλέφωνο", contactWhatsapp: "WhatsApp",
+        contactHowToGet: "Οδηγίες", contactCall: "Κλήση", contactOpen: "Άνοιγμα",
+        contactWriteUs: "Στείλτε μας μήνυμα",
+        contactFooter: "Las Palmeras · Μεσογειακή Κουζίνα · Halal",
+        tagline: "✦ σπιτική μαροκινή κουζίνα ✦",
+        heroBadge: "✓ Αυθεντικές γεύσεις φτιαγμένες με αγάπη",
+        allergensNote: "Εάν έχετε αλλεργία ή δυσανεξία στα τρόφιμα, συμβουλευτείτε το προσωπικό μας πριν κάνετε την παραγγελία σας. Έχουμε πληροφορίες για τα αλλεργιογόνα στα πιάτα μας.",
+        catAll: "🍽️ Όλα", catEntrantes: "🥗 Ορεκτικά", catSopas: "🥣 Σούπες",
+        catTagines: "🍲 Ταζίν", catCuscus: "🍚 Κουσκούς", catPizzas: "🍕 Πίτσα",
+        catArroces: "🥘 Ρύζι", catGrill: "🔥 Σχάρα", catPostres: "🍰 Γλυκά",
+        catBebidas: "🥤 Ποτά", catCigars: "🥟 Πούρα", catPastela: "🥧 Παστίλα",
+        catAcompanamientos: "🍟 Συνοδευτικά", catTes: "🍵 Τσάι και αφεψήματα",
+        catSmoothies: "🥭 Smoothies"
+    },
+    pt: {
+        orderHeader: "🛒 Meu pedido", clearBtn: "Limpar",
+        emptyList: "✨ Adicione seus pratos favoritos", total: "💰 Total",
+        addBtn: "Adicionar", consultBtn: "Perguntar", consultPrice: "Perguntar o preço",
+        navFavorites: "Favoritos", navContact: "Contato", navMenu: "Menu", navMyList: "Minha seleção",
+        selectionTitle: "📋 Minha seleção", backToMenu: "⬅️ Voltar ao menu",
+        contactTitle: "📞 Contato", contactAddress: "Endereço",
+        contactPhone: "Telefone", contactWhatsapp: "WhatsApp",
+        contactHowToGet: "Direções", contactCall: "Ligar", contactOpen: "Abrir",
+        contactWriteUs: "Envie-nos uma mensagem",
+        contactFooter: "Las Palmeras · Cozinha Mediterrânea · Halal",
+        tagline: "✦ cozinha marroquina caseira ✦",
+        heroBadge: "✓ Sabores autênticos preparados com carinho",
+        allergensNote: "Se você tem alguma alergia ou intolerância alimentar, consulte nossa equipe antes de fazer seu pedido. Temos informações sobre os alérgenos presentes em nossos pratos.",
+        catAll: "🍽️ Tudo", catEntrantes: "🥗 Entradas", catSopas: "🥣 Sopas",
+        catTagines: "🍲 Tajines", catCuscus: "🍚 Cuscuz", catPizzas: "🍕 Pizza",
+        catArroces: "🥘 Arroz", catGrill: "🔥 Grelhados", catPostres: "🍰 Sobremesas",
+        catBebidas: "🥤 Bebidas", catCigars: "🥟 Cigarros", catPastela: "🥧 Pastilla",
+        catAcompanamientos: "🍟 Acompanhamentos", catTes: "🍵 Chás e infusões",
+        catSmoothies: "🥭 Smoothies"
+    },
+    zh: {
+        orderHeader: "🛒 我的订单", clearBtn: "清空",
+        emptyList: "✨ 添加您喜欢的菜肴", total: "💰 总计",
+        addBtn: "添加", consultBtn: "咨询", consultPrice: "咨询价格",
+        navFavorites: "收藏", navContact: "联系", navMenu: "菜单", navMyList: "我的选择",
+        selectionTitle: "📋 我的选择", backToMenu: "⬅️ 返回菜单",
+        contactTitle: "📞 联系方式", contactAddress: "地址",
+        contactPhone: "电话", contactWhatsapp: "WhatsApp",
+        contactHowToGet: "路线", contactCall: "拨打", contactOpen: "打开",
+        contactWriteUs: "给我们发消息",
+        contactFooter: "Las Palmeras · 地中海美食 · 清真",
+        tagline: "✦ 家常摩洛哥美食 ✦",
+        heroBadge: "✓ 用心烹制的正宗风味",
+        allergensNote: "如果您有任何食物过敏或不耐受，请在下单前咨询我们的工作人员。我们掌握菜肴中过敏原的信息。",
+        catAll: "🍽️ 全部", catEntrantes: "🥗 前菜", catSopas: "🥣 汤类",
+        catTagines: "🍲 塔吉锅", catCuscus: "🍚 古斯米", catPizzas: "🍕 披萨",
+        catArroces: "🥘 米饭", catGrill: "🔥 烧烤", catPostres: "🍰 甜点",
+        catBebidas: "🥤 饮品", catCigars: "🥟 卷饼", catPastela: "🥧 千层酥",
+        catAcompanamientos: "🍟 配菜", catTes: "🍵 茶与冲泡饮品",
+        catSmoothies: "🥭 冰沙"
+    },
+    'zh-tw': {
+        orderHeader: "🛒 我的訂單", clearBtn: "清空",
+        emptyList: "✨ 添加您喜歡的菜餚", total: "💰 總計",
+        addBtn: "添加", consultBtn: "諮詢", consultPrice: "諮詢價格",
+        navFavorites: "收藏", navContact: "聯繫", navMenu: "菜單", navMyList: "我的選擇",
+        selectionTitle: "📋 我的選擇", backToMenu: "⬅️ 返回菜單",
+        contactTitle: "📞 聯繫方式", contactAddress: "地址",
+        contactPhone: "電話", contactWhatsapp: "WhatsApp",
+        contactHowToGet: "路線", contactCall: "撥打", contactOpen: "打開",
+        contactWriteUs: "給我們發消息",
+        contactFooter: "Las Palmeras · 地中海美食 · 清真",
+        tagline: "✦ 家常摩洛哥美食 ✦",
+        heroBadge: "✓ 用心烹製的正宗風味",
+        allergensNote: "如果您有任何食物過敏或不耐受，請在下單前諮詢我們的工作人員。我們掌握菜餚中過敏原的信息。",
+        catAll: "🍽️ 全部", catEntrantes: "🥗 前菜", catSopas: "🥣 湯類",
+        catTagines: "🍲 塔吉鍋", catCuscus: "🍚 古斯米", catPizzas: "🍕 披薩",
+        catArroces: "🥘 米飯", catGrill: "🔥 燒烤", catPostres: "🍰 甜點",
+        catBebidas: "🥤 飲品", catCigars: "🥟 捲餅", catPastela: "🥧 千層酥",
+        catAcompanamientos: "🍟 配菜", catTes: "🍵 茶與沖泡飲品",
+        catSmoothies: "🥭 冰沙"
+    },
+    ja: {
+        orderHeader: "🛒 注文", clearBtn: "空にする",
+        emptyList: "✨ お気に入りの料理を追加", total: "💰 合計",
+        addBtn: "追加", consultBtn: "問い合わせ", consultPrice: "価格を問い合わせ",
+        navFavorites: "お気に入り", navContact: "連絡先", navMenu: "メニュー", navMyList: "私の選択",
+        selectionTitle: "📋 私の選択", backToMenu: "⬅️ メニューに戻る",
+        contactTitle: "📞 連絡先", contactAddress: "住所",
+        contactPhone: "電話", contactWhatsapp: "WhatsApp",
+        contactHowToGet: "ルート", contactCall: "電話する", contactOpen: "開く",
+        contactWriteUs: "メッセージを送る",
+        contactFooter: "Las Palmeras · 地中海料理 · ハラル",
+        tagline: "✦ 家庭風モロッコ料理 ✦",
+        heroBadge: "✓ 心を込めて作られた本物の味",
+        allergensNote: "食物アレルギーや不耐性がある場合は、ご注文前にお店のスタッフにご相談ください。料理に含まれるアレルゲン情報をご用意しています。",
+        catAll: "🍽️ すべて", catEntrantes: "🥗 前菜", catSopas: "🥣 スープ",
+        catTagines: "🍲 タジン", catCuscus: "🍚 クスクス", catPizzas: "🍕 ピザ",
+        catArroces: "🥘 ライス", catGrill: "🔥 グリル", catPostres: "🍰 デザート",
+        catBebidas: "🥤 飲み物", catCigars: "🥟 シガー", catPastela: "🥧 パスティラ",
+        catAcompanamientos: "🍟 サイド", catTes: "🍵 お茶とハーブティー",
+        catSmoothies: "🥭 スムージー"
+    },
+    ko: {
+        orderHeader: "🛒 내 주문", clearBtn: "비우기",
+        emptyList: "✨ 좋아하는 요리 추가", total: "💰 합계",
+        addBtn: "추가", consultBtn: "문의", consultPrice: "가격 문의",
+        navFavorites: "즐겨찾기", navContact: "연락처", navMenu: "메뉴", navMyList: "내 선택",
+        selectionTitle: "📋 내 선택", backToMenu: "⬅️ 메뉴로 돌아가기",
+        contactTitle: "📞 연락처", contactAddress: "주소",
+        contactPhone: "전화", contactWhatsapp: "WhatsApp",
+        contactHowToGet: "길찾기", contactCall: "전화하기", contactOpen: "열기",
+        contactWriteUs: "메시지 보내기",
+        contactFooter: "Las Palmeras · 지중해 요리 · 할랄",
+        tagline: "✦ 가정식 모로코 요리 ✦",
+        heroBadge: "✓ 정성으로 준비한 정통 맛",
+        allergensNote: "식품 알레르기나 불내증이 있는 경우 주문 전에 직원에게 문의하세요. 요리에 포함된 알레르겐 정보를 제공합니다.",
+        catAll: "🍽️ 전체", catEntrantes: "🥗 전채", catSopas: "🥣 수프",
+        catTagines: "🍲 타진", catCuscus: "🍚 쿠스쿠스", catPizzas: "🍕 피자",
+        catArroces: "🥘 라이스", catGrill: "🔥 그릴", catPostres: "🍰 디저트",
+        catBebidas: "🥤 음료", catCigars: "🥟 시가", catPastela: "🥧 파스틸라",
+        catAcompanamientos: "🍟 사이드", catTes: "🍵 차와 허브티",
+        catSmoothies: "🥭 스무디"
+    },
+    hi: {
+        orderHeader: "🛒 मेरा आदेश", clearBtn: "खाली करें",
+        emptyList: "✨ अपने पसंदीदा व्यंजन जोड़ें", total: "💰 कुल",
+        addBtn: "जोड़ें", consultBtn: "पूछें", consultPrice: "कीमत पूछें",
+        navFavorites: "पसंदीदा", navContact: "संपर्क", navMenu: "मेनू", navMyList: "मेरा चयन",
+        selectionTitle: "📋 मेरा चयन", backToMenu: "⬅️ मेनू पर वापस जाएं",
+        contactTitle: "📞 संपर्क", contactAddress: "पता",
+        contactPhone: "फ़ोन", contactWhatsapp: "WhatsApp",
+        contactHowToGet: "दिशा-निर्देश", contactCall: "कॉल करें", contactOpen: "खोलें",
+        contactWriteUs: "हमें संदेश भेजें",
+        contactFooter: "Las Palmeras · भूमध्यसागरीय भोजन · हलाल",
+        tagline: "✦ घर का बना मोरक्कन भोजन ✦",
+        heroBadge: "✓ प्यार से तैयार किए गए प्रामाणिक स्वाद",
+        allergensNote: "यदि आपको कोई खाद्य एलर्जी या असहिष्णुता है, तो कृपया अपना ऑर्डर देने से पहले हमारे कर्मचारियों से परामर्श करें। हमारे व्यंजनों में मौजूद एलर्जेन की जानकारी हमारे पास है।",
+        catAll: "🍽️ सभी", catEntrantes: "🥗 स्टार्टर", catSopas: "🥣 सूप",
+        catTagines: "🍲 ताजीन", catCuscus: "🍚 कूसकूस", catPizzas: "🍕 पिज़्ज़ा",
+        catArroces: "🥘 चावल", catGrill: "🔥 ग्रिल", catPostres: "🍰 मिठाई",
+        catBebidas: "🥤 पेय", catCigars: "🥟 सिगार", catPastela: "🥧 पस्टिला",
+        catAcompanamientos: "🍟 साइड", catTes: "🍵 चाय और हर्बल",
+        catSmoothies: "🥭 स्मूदी"
+    },
+    nl: {
+        orderHeader: "🛒 Mijn bestelling", clearBtn: "Leegmaken",
+        emptyList: "✨ Voeg je favoriete gerechten toe", total: "💰 Totaal",
+        addBtn: "Toevoegen", consultBtn: "Vraag", consultPrice: "Vraag prijs",
+        navFavorites: "Favorieten", navContact: "Contact", navMenu: "Menu", navMyList: "Mijn selectie",
+        selectionTitle: "📋 Mijn selectie", backToMenu: "⬅️ Terug naar menu",
+        contactTitle: "📞 Contact", contactAddress: "Adres",
+        contactPhone: "Telefoon", contactWhatsapp: "WhatsApp",
+        contactHowToGet: "Route", contactCall: "Bellen", contactOpen: "Openen",
+        contactWriteUs: "Stuur ons een bericht",
+        contactFooter: "Las Palmeras · Mediterrane keuken · Halal",
+        tagline: "✦ huisgemaakte Marokkaanse keuken ✦",
+        heroBadge: "✓ Authentieke smaken met zorg bereid",
+        allergensNote: "Als je een voedselallergie of -intolerantie hebt, raadpleeg ons personeel voordat je je bestelling plaatst. We hebben informatie over de allergenen in onze gerechten.",
+        catAll: "🍽️ Alles", catEntrantes: "🥗 Voorgerechten", catSopas: "🥣 Soepen",
+        catTagines: "🍲 Tagines", catCuscus: "🍚 Couscous", catPizzas: "🍕 Pizza",
+        catArroces: "🥘 Rijst", catGrill: "🔥 Grill", catPostres: "🍰 Desserts",
+        catBebidas: "🥤 Dranken", catCigars: "🥟 Cigars", catPastela: "🥧 Pastilla",
+        catAcompanamientos: "🍟 Bijgerechten", catTes: "🍵 Thee en infusies",
+        catSmoothies: "🥭 Smoothies"
+    },
+    pl: {
+        orderHeader: "🛒 Moje zamówienie", clearBtn: "Opróżnij",
+        emptyList: "✨ Dodaj swoje ulubione dania", total: "💰 Razem",
+        addBtn: "Dodaj", consultBtn: "Zapytaj", consultPrice: "Zapytaj o cenę",
+        navFavorites: "Ulubione", navContact: "Kontakt", navMenu: "Menu", navMyList: "Mój wybór",
+        selectionTitle: "📋 Mój wybór", backToMenu: "⬅️ Powrót do menu",
+        contactTitle: "📞 Kontakt", contactAddress: "Adres",
+        contactPhone: "Telefon", contactWhatsapp: "WhatsApp",
+        contactHowToGet: "Trasa", contactCall: "Zadzwoń", contactOpen: "Otwórz",
+        contactWriteUs: "Napisz do nas",
+        contactFooter: "Las Palmeras · Kuchnia Śródziemnomorska · Halal",
+        tagline: "✦ domowa kuchnia marokańska ✦",
+        heroBadge: "✓ Autentyczne smaki przygotowane z miłością",
+        allergensNote: "Jeśli masz alergię lub nietolerancję pokarmową, skonsultuj się z naszym personelem przed złożeniem zamówienia. Mamy informacje o alergenach w naszych daniach.",
+        catAll: "🍽️ Wszystko", catEntrantes: "🥗 Przystawki", catSopas: "🥣 Zupy",
+        catTagines: "🍲 Taginy", catCuscus: "🍚 Kuskus", catPizzas: "🍕 Pizza",
+        catArroces: "🥘 Ryż", catGrill: "🔥 Grill", catPostres: "🍰 Desery",
+        catBebidas: "🥤 Napoje", catCigars: "🥟 Cygara", catPastela: "🥧 Pastilla",
+        catAcompanamientos: "🍟 Dodatki", catTes: "🍵 Herbaty i napary",
+        catSmoothies: "🥭 Smoothie"
+    },
+    tr: {
+        orderHeader: "🛒 Siparişim", clearBtn: "Temizle",
+        emptyList: "✨ Favori yemeklerini ekle", total: "💰 Toplam",
+        addBtn: "Ekle", consultBtn: "Sor", consultPrice: "Fiyat sor",
+        navFavorites: "Favoriler", navContact: "İletişim", navMenu: "Menü", navMyList: "Seçimim",
+        selectionTitle: "📋 Seçimim", backToMenu: "⬅️ Menüye dön",
+        contactTitle: "📞 İletişim", contactAddress: "Adres",
+        contactPhone: "Telefon", contactWhatsapp: "WhatsApp",
+        contactHowToGet: "Yol tarifi", contactCall: "Ara", contactOpen: "Aç",
+        contactWriteUs: "Bize mesaj gönder",
+        contactFooter: "Las Palmeras · Akdeniz Mutfağı · Helal",
+        tagline: "✦ ev yapımı Fas mutfağı ✦",
+        heroBadge: "✓ Sevgiyle hazırlanan otantik lezzetler",
+        allergensNote: "Gıda alerjiniz veya intoleransınız varsa, sipariş vermeden önce personelimize danışın. Yemeklerimizdeki alerjenler hakkında bilgimiz var.",
+        catAll: "🍽️ Tümü", catEntrantes: "🥗 Başlangıçlar", catSopas: "🥣 Çorbalar",
+        catTagines: "🍲 Tajinler", catCuscus: "🍚 Kuskus", catPizzas: "🍕 Pizza",
+        catArroces: "🥘 Pilav", catGrill: "🔥 Izgara", catPostres: "🍰 Tatlılar",
+        catBebidas: "🥤 İçecekler", catCigars: "🥟 Sigaralar", catPastela: "🥧 Pastilla",
+        catAcompanamientos: "🍟 Garnitürler", catTes: "🍵 Çaylar ve bitki çayları",
+        catSmoothies: "🥭 Smoothie"
+    },
+    uk: {
+        orderHeader: "🛒 Моє замовлення", clearBtn: "Очистити",
+        emptyList: "✨ Додайте свої улюблені страви", total: "💰 Загалом",
+        addBtn: "Додати", consultBtn: "Запитати", consultPrice: "Запитати ціну",
+        navFavorites: "Обране", navContact: "Контакт", navMenu: "Меню", navMyList: "Мій вибір",
+        selectionTitle: "📋 Мій вибір", backToMenu: "⬅️ Назад до меню",
+        contactTitle: "📞 Контакт", contactAddress: "Адреса",
+        contactPhone: "Телефон", contactWhatsapp: "WhatsApp",
+        contactHowToGet: "Маршрут", contactCall: "Зателефонувати", contactOpen: "Відкрити",
+        contactWriteUs: "Напишіть нам",
+        contactFooter: "Las Palmeras · Середземноморська кухня · Халяль",
+        tagline: "✦ домашня марокканська кухня ✦",
+        heroBadge: "✓ Автентичні смаки, приготовані з любов'ю",
+        allergensNote: "Якщо у вас алергія або непереносимість їжі, проконсультуйтеся з нашим персоналом перед замовленням. У нас є інформація про алергени в наших стравах.",
+        catAll: "🍽️ Усе", catEntrantes: "🥗 Закуски", catSopas: "🥣 Супи",
+        catTagines: "🍲 Тажини", catCuscus: "🍚 Кускус", catPizzas: "🍕 Піца",
+        catArroces: "🥘 Рис", catGrill: "🔥 Гриль", catPostres: "🍰 Десерти",
+        catBebidas: "🥤 Напої", catCigars: "🥟 Сигари", catPastela: "🥧 Пастила",
+        catAcompanamientos: "🍟 Гарніри", catTes: "🍵 Чаї та настої",
+        catSmoothies: "🥭 Смузі"
+    }
+};
     const languageStorageKey = 'lasPalmerasSelectedLanguage';
     let currentLang = (() => {
         try {
@@ -2270,29 +2618,134 @@ data-price="4.50">
             // Ignore storage errors in restricted browsers.
         }
     }
+function applyTranslation() {
+    const t = translations[currentLang] || translations.es;
 
-    function applyTranslation() {
-        const t = translations[currentLang] || translations.es;
+    // 1. Menu items: name, description, price button
+    document.querySelectorAll('.menu-item').forEach(item => {
+        const nameEl = item.querySelector('.item-name');
+        const descEl = item.querySelector('.item-desc');
+        const attrLang = currentLang.toLowerCase();
 
-        const orderHeaderEl = document.querySelector('.order-header-text');
-        const clearBtnEl = document.getElementById('clearOrderBtn');
+        const newName = item.getAttribute(`data-name-${attrLang}`);
+        const newDesc = item.getAttribute(`data-desc-${attrLang}`);
 
-        if (orderHeaderEl) orderHeaderEl.textContent = t.orderHeader;
-        if (clearBtnEl) clearBtnEl.textContent = t.clearBtn;
+        if (newName && nameEl) nameEl.textContent = newName;
+        if (newDesc && descEl) descEl.textContent = newDesc;
 
-        document.querySelectorAll('.menu-item').forEach(item => {
-            const nameEl = item.querySelector('.item-name');
-            const descEl = item.querySelector('.item-desc');
-            const attrLang = currentLang.toLowerCase();
-            const newName = item.getAttribute(`data-name-${attrLang}`);
-            const newDesc = item.getAttribute(`data-desc-${attrLang}`);
-            if (newName && nameEl) nameEl.textContent = newName;
-            if (newDesc && descEl) descEl.textContent = newDesc;
-        });
+        // Price & button
+        const priceEl = item.querySelector('.price');
+        const btnEl   = item.querySelector('.add-btn');
+        const rawPrice = item.dataset.price;
 
-        syncLanguageUI();
-        renderOrder();
-    }
+        if (priceEl) {
+            priceEl.textContent = (rawPrice === 'consult' || rawPrice === null)
+                ? t.consultPrice
+                : parseFloat(rawPrice).toFixed(2);
+        }
+        if (btnEl) {
+            const isConsult = (rawPrice === 'consult' || rawPrice === null);
+            btnEl.textContent = isConsult ? t.consultBtn : t.addBtn;
+            btnEl.disabled = isConsult;
+            btnEl.title = isConsult ? t.consultPrice : '';
+        }
+    });
+
+    // 2. Category chips
+    const chipLabels = {
+        all: t.catAll, entrantes: t.catEntrantes, sopas: t.catSopas,
+        tagines: t.catTagines, cuscus: t.catCuscus, pizzas: t.catPizzas,
+        arroces: t.catArroces, grill: t.catGrill, postres: t.catPostres,
+        bebidas: t.catBebidas, cigars: t.catCigars, pastela: t.catPastela,
+        acompanamientos: t.catAcompanamientos, tes: t.catTes,
+        smoothies: t.catSmoothies
+    };
+    document.querySelectorAll('.cat-chip').forEach(chip => {
+        const f = chip.dataset.filter;
+        if (chipLabels[f]) chip.textContent = chipLabels[f];
+    });
+
+    // 3. Section titles
+    const sectionTitleMap = {
+        entrantes: `🥗 ${t.catEntrantes.replace(/^[^ ]+ /, '')}`,
+        sopas: `🥣 ${t.catSopas.replace(/^[^ ]+ /, '')}`,
+        tagines: `🍲 ${t.catTagines.replace(/^[^ ]+ /, '')}`,
+        cuscus: `🍚 ${t.catCuscus.replace(/^[^ ]+ /, '')}`,
+        pizzas: `🍕 ${t.catPizzas.replace(/^[^ ]+ /, '')}`,
+        arroces: `🥘 ${t.catArroces.replace(/^[^ ]+ /, '')}`,
+        grill: `🔥 ${t.catGrill.replace(/^[^ ]+ /, '')}`,
+        postres: `🍰 ${t.catPostres.replace(/^[^ ]+ /, '')}`,
+        bebidas: `🥤 ${t.catBebidas.replace(/^[^ ]+ /, '')}`,
+        cigars: `🥟 ${t.catCigars.replace(/^[^ ]+ /, '')}`,
+        pastela: `🥧 ${t.catPastela.replace(/^[^ ]+ /, '')}`,
+        acompanamientos: `🍟 ${t.catAcompanamientos.replace(/^[^ ]+ /, '')}`,
+        tes: `🍵 ${t.catTes.replace(/^[^ ]+ /, '')}`,
+        smoothies: `🥭 ${t.catSmoothies.replace(/^[^ ]+ /, '')}`
+    };
+    document.querySelectorAll('.menu-section').forEach(section => {
+        const cat = section.dataset.category;
+        const titleEl = section.querySelector('.section-title');
+        if (titleEl && sectionTitleMap[cat]) titleEl.textContent = sectionTitleMap[cat];
+    });
+
+    // 4. Cart panel
+    const orderHeaderEl = document.querySelector('.order-header-text');
+    const clearBtnEl = document.getElementById('clearOrderBtn');
+    if (orderHeaderEl) orderHeaderEl.textContent = t.orderHeader;
+    if (clearBtnEl) clearBtnEl.textContent = t.clearBtn;
+
+    // 5. Selection page
+    const selTitle = document.querySelector('.selection-page-title');
+    const backBtn  = document.getElementById('backToMenuBtn');
+    if (selTitle) selTitle.textContent = t.selectionTitle;
+    if (backBtn)  backBtn.textContent  = t.backToMenu;
+
+    // 6. Bottom nav labels
+    const navLabels = {
+        favorites: t.navFavorites, contact: t.navContact,
+        menu: t.navMenu, mylist: t.navMyList
+    };
+    document.querySelectorAll('.nav-item').forEach(nav => {
+        const span = nav.querySelector('span');
+        if (span && navLabels[nav.dataset.nav]) span.textContent = navLabels[nav.dataset.nav];
+    });
+
+    // 7. Contact sheet
+    const contactTitleEl = document.querySelector('.contact-title h2');
+    if (contactTitleEl) contactTitleEl.textContent = t.contactTitle;
+
+    const contactCards = document.querySelectorAll('.contact-card');
+    const labels = [t.contactAddress, t.contactPhone, t.contactWhatsapp];
+    const actions = [t.contactHowToGet, t.contactCall, t.contactOpen];
+    contactCards.forEach((card, i) => {
+        const labelEl = card.querySelector('.contact-card-label');
+        const actionEl = card.querySelector('.contact-card-action');
+        if (labelEl && labels[i]) labelEl.textContent = labels[i];
+        if (actionEl && actions[i]) actionEl.textContent = actions[i];
+    });
+
+    const waVal = document.querySelectorAll('.contact-card-value')[2];
+    if (waVal) waVal.textContent = t.contactWriteUs;
+
+    const contactFooter = document.querySelector('.contact-footer-note');
+    if (contactFooter) contactFooter.textContent = t.contactFooter;
+
+    // 8. Hero & allergens
+    const taglineEl = document.querySelector('.logo-text .tagline');
+    if (taglineEl) taglineEl.textContent = t.tagline;
+
+    const heroBadge = document.querySelector('.halal-badge');
+    if (heroBadge) heroBadge.textContent = t.heroBadge;
+
+    const allergyNote = document.querySelector('.allergen-note');
+    if (allergyNote) allergyNote.textContent = t.allergensNote;
+
+    // 9. Re-render cart (uses translations internally)
+    renderOrder();
+
+    // 10. Sync language UI
+    syncLanguageUI();
+}
 
     // ─── SCROLL HELPERS ───
     function scrollToElement(el, offset = 10) {
@@ -2684,69 +3137,71 @@ data-price="4.50">
         smoothies: '🥭 Smoothies'
     };
 
-    function setMenuCard(card, dish) {
-        const [id, name, price, description, englishName, englishDescription] = dish;
-        card.dataset.id = id;
-        card.dataset.price = price === null ? 'consult' : price.toFixed(2);
-        for (const lang of menuLanguages) {
-            const translatedName = lang === 'es' ? name : (englishName || name);
-            const translatedDescription = lang === 'es' ? description : (englishDescription || description);
+   function setMenuCard(card, dish) {
+    const [id, name, price, description, englishName, englishDescription, extraLangs] = dish;
 
-            card.setAttribute(`data-name-${lang}`, translatedName);
-            card.setAttribute(`data-desc-${lang}`, translatedDescription);
-        }
-        const info = card.querySelector('.item-info') || document.createElement('div');
-        info.className = 'item-info';
-        let nameEl = info.querySelector('.item-name');
-        if (!nameEl) {
-            nameEl = document.createElement('div');
-            nameEl.className = 'item-name';
-            info.appendChild(nameEl);
-        }
-        nameEl.textContent = name;
-        let descEl = info.querySelector('.item-desc');
-        if (!descEl) {
-            descEl = document.createElement('div');
-            descEl.className = 'item-desc';
-            info.appendChild(descEl);
-        }
-        descEl.textContent = description;
-        if (!info.parentElement) card.appendChild(info);
-        const priceAdd = card.querySelector('.price-add') || document.createElement('div');
-        priceAdd.className = 'price-add';
-        let priceEl = priceAdd.querySelector('.price');
-        if (!priceEl) {
-            priceEl = document.createElement('div');
-            priceEl.className = 'price';
-            priceAdd.appendChild(priceEl);
-        }
-        priceEl.textContent = price === null ? 'Consultar precio' : price.toFixed(2);
-        let button = priceAdd.querySelector('.add-btn');
-        if (!button) {
-            button = document.createElement('button');
-            button.className = 'add-btn';
-            priceAdd.appendChild(button);
-        }
-        button.type = 'button';
-        button.textContent = price === null ? 'Consultar' : 'Añadir';
-        button.disabled = price === null;
-        button.title = price === null ? 'Consulta el precio con nuestro personal' : '';
-        if (!priceAdd.parentElement) card.appendChild(priceAdd);
-    }
+    card.dataset.id = id;
+    card.dataset.price = price === null ? 'consult' : price.toFixed(2);
 
-    function getMenuSection(category) {
-        let section = document.querySelector(`.menu-section[data-category="${category}"]`);
-        if (section) return section;
-        section = document.createElement('section');
-        section.className = 'menu-section';
-        section.dataset.category = category;
-        const title = document.createElement('div');
-        title.className = 'section-title';
-        title.textContent = categoryTitles[category];
-        section.appendChild(title);
-        document.getElementById('menuContainer').appendChild(section);
-        return section;
+    for (const lang of menuLanguages) {
+    let translatedName = name;
+    let translatedDescription = description;
+    if (lang !== 'es') {
+        // Prefer a real translation attribute if one was already set,
+        // otherwise fall back to the English text.
+        translatedName        = card.getAttribute(`data-name-${lang}`)        || englishName        || name;
+        translatedDescription = card.getAttribute(`data-desc-${lang}`)        || englishDescription || description;
     }
+    card.setAttribute(`data-name-${lang}`, translatedName);
+    card.setAttribute(`data-desc-${lang}`, translatedDescription);
+}
+    // ─── .item-info (name + description) ───
+    const info = card.querySelector('.item-info') || document.createElement('div');
+    info.className = 'item-info';
+
+    let nameEl = info.querySelector('.item-name');
+    if (!nameEl) {
+        nameEl = document.createElement('div');
+        nameEl.className = 'item-name';
+        info.appendChild(nameEl);
+    }
+    nameEl.textContent = name;
+
+    let descEl = info.querySelector('.item-desc');
+    if (!descEl) {
+        descEl = document.createElement('div');
+        descEl.className = 'item-desc';
+        info.appendChild(descEl);
+    }
+    descEl.textContent = description;
+
+    if (!info.parentElement) card.appendChild(info);
+
+    // ─── .price-add (price + button) ───
+    const priceAdd = card.querySelector('.price-add') || document.createElement('div');
+    priceAdd.className = 'price-add';
+
+    let priceEl = priceAdd.querySelector('.price');
+    if (!priceEl) {
+        priceEl = document.createElement('div');
+        priceEl.className = 'price';
+        priceAdd.appendChild(priceEl);
+    }
+    priceEl.textContent = price === null ? 'Consultar precio' : price.toFixed(2);
+
+    let button = priceAdd.querySelector('.add-btn');
+    if (!button) {
+        button = document.createElement('button');
+        button.className = 'add-btn';
+        priceAdd.appendChild(button);
+    }
+    button.type = 'button';
+    button.textContent = price === null ? 'Consultar' : 'Añadir';
+    button.disabled = price === null;
+    button.title = price === null ? 'Consulta el precio con nuestro personal' : '';
+
+    if (!priceAdd.parentElement) card.appendChild(priceAdd);
+}
 
     function normalizeMenuLabel(value) {
         return (value || '').trim().normalize('NFD')
