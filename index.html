@@ -465,15 +465,10 @@
             color: #2c1810;
             line-height: 1.2;
         }
-        .item-desc {
-            font-size: 0.7rem;
-            color: #8a725e;
-            line-height: 1.3;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-        }
+      .item-desc {
+    /* Remove the line-clamp and overflow rules so it shows all text */
+    white-space: normal; 
+}
         .allergy-icons {
             display: flex;
             flex-wrap: wrap;
@@ -1057,7 +1052,7 @@
                 <div class="menu-item" data-id="ensalada" data-name-es="Ensalada marroquí" data-desc-es="Tomate, pepino, cebolla, pimiento" data-name-en="Moroccan Salad" data-desc-en="Tomato, cucumber, onion, pepper" data-name-fr="Salade marocaine" data-desc-fr="Tomate, concombre, oignon, poivron" data-name-ar="سلطة مغربية" data-desc-ar="طماطم، خيار، بصل، فلفل" data-name-de="Marokkanischer Salat" data-desc-de="Tomate, Gurke, Zwiebel, Paprika" data-name-ru="Марокканский салат" data-desc-ru="Помидор, огурец, лук, перец" data-name-it="Insalata marocchina" data-desc-it="Pomodoro, cetriolo, cipolla, peperone" data-name-el="Μαροκινή σαλάτα" data-desc-el="Ντομάτα, αγγούρι, κρεμμύδι, πιπεριά" data-name-pt="Salada marroquina" data-desc-pt="Tomate, pepino, cebola, pimentão" data-name-zh="摩洛哥沙拉" data-desc-zh="番茄，黄瓜，洋葱，辣椒" data-name-zh-tw="摩洛哥沙拉" data-desc-zh-tw="番茄，黃瓜，洋蔥，辣椒" data-name-ja="モロッコサラダ" data-desc-ja="トマト、キュウリ、タマネギ、ピーマン" data-name-ko="모로코 샐러드" data-desc-ko="토마토, 오이, 양파, 피망" data-name-hi="मोरक्कन सलाद" data-desc-hi="टमाटर, खीरा, प्याज, शिमला मिर्च" data-name-nl="Marokkaanse salade" data-desc-nl="Tomaat, komkommer, ui, paprika" data-name-pl="Sałatka marokańska" data-desc-pl="Pomidor, ogórek, cebula, papryka" data-name-tr="Fasülye salatası" data-desc-tr="Domates, salatalık, soğan, biber" data-name-uk="Марокканський салат" data-desc-uk="Помідор, огірок, цибуля, перець" data-price="7.00">
                     <div class="item-img"><img src="images/ensaladamarroqui.jpg" alt="Ensalada marroquí" loading="lazy" /></div>
                     <div class="item-info"><div class="item-name">Ensalada marroquí</div><div class="item-desc">Tomate, pepino, cebolla, pimiento</div><div class="allergy-icons"><span class="allergy-icon">🌱 Soja</span><span class="allergy-icon">🌿 Apio</span></div></div>
-                    <div class="price-add"><div class="price">7.00</div><button class="add-btn">Añadir</button></div>
+                    <div class="price-add"><div class="price">8.00</div><button class="add-btn">Añadir</button></div>
                 </div>
 
                 <div class="menu-item" data-id="hummus" data-name-es="Hummus con pan de pita" data-desc-es="Garbanzos, tahini, limón" data-name-en="Hummus with pita bread" data-desc-en="Chickpeas, tahini, lemon" data-name-fr="Hoummous avec pain pita" data-desc-fr="Pois chiches, tahini, citron" data-name-ar="حمص مع خبز بيتا" data-desc-ar="حمص، طحينة، ليمون" data-name-de="Hummus mit Fladenbrot" data-desc-de="Kichererbsen, Tahini, Zitrone" data-name-ru="Хумус с питой" data-desc-ru="Нут, тахини, лимон" data-name-it="Hummus con pane pita" data-desc-it="Ceci, tahini, limone" data-name-el="Χούμους με πίτα" data-desc-el="Ρεβίθια, ταχίνι, λεμόνι" data-name-pt="Homus com pão pita" data-desc-pt="Grão-de-bico, tahine, limão" data-name-zh="鹰嘴豆泥配皮塔饼" data-desc-zh="鹰嘴豆，芝麻酱，柠檬" data-name-zh-tw="鷹嘴豆泥配皮塔餅" data-desc-zh-tw="鷹嘴豆，芝麻醬，檸檬" data-name-ja="フムス（ピタパン付き）" data-desc-ja="ひよこ豆、タヒニ、レモン" data-name-ko="후무스 (피타빵 포함)" data-desc-ko="병아리콩, 타히니, 레몬" data-name-hi="हम्मस पीटा ब्रेड के साथ" data-desc-hi="काबुली चना, ताहिनी, नींबू" data-name-nl="Hummus met pitabrood" data-desc-nl="Kikkererwten, tahini, citroen" data-name-pl="Hummus z chlebem pita" data-desc-pl="Ciecierzyca, tahini, cytryna" data-name-tr="Humuslu pide" data-desc-tr="Nohut, tahin, limon" data-name-uk="Хумус з пітою" data-desc-uk="Нут, тахіні, лимон" data-price="8.00">
@@ -1069,31 +1064,33 @@
                 <div class="menu-item" data-id="falafel" data-name-es="Falafel (4uds)" data-desc-es="Garbanzos, perejil, especias" data-name-en="Falafel (4pcs)" data-desc-en="Chickpeas, parsley, spices" data-name-fr="Falafel (4pcs)" data-desc-fr="Pois chiches, persil, épices" data-name-ar="فلافل" data-desc-ar="حمص، بقدونس، بهارات" data-name-de="Falafel (4 Stk)" data-desc-de="Kichererbsen, Petersilie, Gewürze" data-name-ru="Фалафель (4 шт)" data-desc-ru="Нут, петрушка, специи" data-name-it="Falafel (4 pz)" data-desc-it="Ceci, prezzemolo, spezie" data-name-el="Φαλάφελ (4 τεμ)" data-desc-el="Ρεβίθια, μαϊντανός, μπαχαρικά" data-name-pt="Falafel (4 unid.)" data-desc-pt="Grão-de-bico, salsa, especiarias" data-name-zh="沙拉三明治 (4个)" data-desc-zh="鹰嘴豆，欧芹，香料" data-name-zh-tw="沙拉三明治 (4個)" data-desc-zh-tw="鷹嘴豆，歐芹，香料" data-name-ja="ファラフェル (4個)" data-desc-ja="ひよこ豆、パセリ、スパイス" data-name-ko="팔라펠 (4개)" data-desc-ko="병아리콩, 파슬리, 향신료" data-name-hi="फलाफेल (4 टुकड़े)" data-desc-hi="काबुली चना, अजमोद, मसाले" data-name-nl="Falafel (4 stuks)" data-desc-nl="Kikkererwten, peterselie, kruiden" data-name-pl="Falafel (4 szt.)" data-desc-pl="Ciecierzyca, pietruszka, przyprawy" data-name-tr="Falafel (4 adet)" data-desc-tr="Nohut, maydanoz, baharatlar" data-name-uk="Фалафель (4 шт)" data-desc-uk="Нут, петрушка, спеції" data-price="7.50">
                     <div class="item-img"><img src="images/4falafel.jpg" alt="Falafel" loading="lazy" /></div>
                     <div class="item-info"><div class="item-name">Falafel (4 uds.)</div><div class="item-desc">Garbanzos, perejil, especias</div><div class="allergy-icons"><span class="allergy-icon">🌾 Gluten</span><span class="allergy-icon">🌱 Sésamo</span></div></div>
-                    <div class="price-add"><div class="price">7.50</div><button class="add-btn">Añadir</button></div>
+                    <div class="price-add"><div class="price">8.00</div><button class="add-btn">Añadir</button></div>
                 </div>
 
-                <div class="menu-item" data-id="pastela" data-name-es="Pastela de pollo y almendras" data-desc-es="Hojaldre, pollo, almendras, canela" data-name-en="Chicken pastilla" data-desc-en="Puff pastry, chicken, almonds, cinnamon" data-name-fr="Pastilla au poulet" data-desc-fr="Pâte feuilletée, poulet, amandes, cannelle" data-name-ar="باستيلا" data-desc-ar="معجنات، دجاج، لوز، قرفة" data-name-de="Hühnchen-Pastilla mit Mandeln" data-desc-de="Blätterteig, Hühnchen, Mandeln, Zimt" data-name-ru="Пастила с курицей и миндалем" data-desc-ru="Слоеное тесто, курица, миндаль, корица" data-name-it="Pastilla di pollo e mandorle" data-desc-it="Pasta sfoglia, pollo, mandorle, cannella" data-name-el="Παστίλα με κοτόπουλο και αμύγδαλα" data-desc-el="Σφολιάτα, κοτόπουλο, αμύγδαλα, κανέλα" data-name-pt="Pastila de frango e amêndoas" data-desc-pt="Massa folhada, frango, amêndoas, canela" data-name-zh="鸡肉杏仁千层酥" data-desc-zh="酥皮，鸡肉，杏仁，肉桂" data-name-zh-tw="雞肉杏仁千層酥" data-desc-zh-tw="酥皮，雞肉，杏仁，肉桂" data-name-ja="チキンとアーモンドのパスティラ" data-desc-ja="パイ生地、チキン、アーモンド、シナモン" data-name-ko="치킨 아몬드 파스틸라" data-desc-ko="퍼프 페이스트리, 닭고기, 아몬드, 계피" data-name-hi="चिकन और बादाम पेस्ट्री" data-desc-hi="पफ पेस्ट्री, चिकन, बादाम, दालचीनी" data-name-nl="Kip- en amandelpastilla" data-desc-nl="Bladerdeeg, kip, amandelen, kaneel" data-name-pl="Pastilla z kurczakiem i migdałami" data-desc-pl="Ciasto francuskie, kurczak, migdały, cynamon" data-name-tr="Tavuk ve bademli pastilla" data-desc-tr="Milföy hamuru, tavuk, badem, tarçın" data-name-uk="Пастила з куркою та мигдалем" data-desc-uk="Листкове тісто, курка, мигдаль, кориця" data-price="18.00">
+                <div class="menu-item" data-id="pastela" data-name-es="Pastela de pollo y almendras" data-desc-es="  Fina y crujiente masa rellena de pollo especiado y almendras, con el  
+       tradicional toque dulce de canela y azúcar glas." data-name-en="Chicken pastilla" data-desc-en="  Delicate crispy pastry filled with spiced chicken and almonds, finished with 
+        the  traditional sweet touch of cinnamon and powdered sugar." data-name-fr="Pastilla au poulet" data-desc-fr="Pâte feuilletée, poulet, amandes, cannelle" data-name-ar="باستيلا" data-desc-ar="بسطيلة بالدجاج واللوز" data-name-de="Hühnchen-Pastilla mit Mandeln" data-desc-de="Blätterteig, Hühnchen, Mandeln, Zimt" data-name-ru="Пастила с курицей и миндалем" data-desc-ru="Слоеное тесто, курица, миндаль, корица" data-name-it="Pastilla di pollo e mandorle" data-desc-it="Pasta sfoglia, pollo, mandorle, cannella" data-name-el="Παστίλα με κοτόπουλο και αμύγδαλα" data-desc-el="Σφολιάτα, κοτόπουλο, αμύγδαλα, κανέλα" data-name-pt="Pastila de frango e amêndoas" data-desc-pt="Massa folhada, frango, amêndoas, canela" data-name-zh="鸡肉杏仁千层酥" data-desc-zh="酥皮，鸡肉，杏仁，肉桂" data-name-zh-tw="雞肉杏仁千層酥" data-desc-zh-tw="酥皮，雞肉，杏仁，肉桂" data-name-ja="チキンとアーモンドのパスティラ" data-desc-ja="パイ生地、チキン、アーモンド、シナモン" data-name-ko="치킨 아몬드 파스틸라" data-desc-ko="퍼프 페이스트리, 닭고기, 아몬드, 계피" data-name-hi="चिकन और बादाम पेस्ट्री" data-desc-hi="पफ पेस्ट्री, चिकन, बादाम, दालचीनी" data-name-nl="Kip- en amandelpastilla" data-desc-nl="Bladerdeeg, kip, amandelen, kaneel" data-name-pl="Pastilla z kurczakiem i migdałami" data-desc-pl="Ciasto francuskie, kurczak, migdały, cynamon" data-name-tr="Tavuk ve bademli pastilla" data-desc-tr="Milföy hamuru, tavuk, badem, tarçın" data-name-uk="Пастила з куркою та мигдалем" data-desc-uk="Листкове тісто, курка, мигдаль, кориця" data-price="18.00">
                     <div class="item-img"><img src="images/PASTELA  .jpeg" alt="Pastela" loading="lazy" /></div>
                     <div class="item-info"><div class="item-name">Pastela de pollo y almendras</div><div class="item-desc">Hojaldre, pollo, almendras, canela</div><div class="allergy-icons"><span class="allergy-icon">🌾 Gluten</span><span class="allergy-icon">🌰 Frutos cáscara</span><span class="allergy-icon">🥚 Huevos</span></div></div>
-                    <div class="price-add"><div class="price">18.00</div><button class="add-btn">Añadir</button></div>
+                    <div class="price-add"><div class="price">19.50</div><button class="add-btn">Añadir</button></div>
                 </div>
 
-                <div class="menu-item" data-id="zaalouk" data-name-es="Zaalouk berenjena" data-desc-es="Berenjena asada, tomate, ajo, comino" data-name-en="Roasted eggplant" data-desc-en="Roasted eggplant, tomato, garlic, cumin" data-name-fr="Aubergine rôtie" data-desc-fr="Aubergine rôtie, tomate, ail, cumin" data-name-ar="باذنجان مشوي" data-desc-ar="باذنجان مشوي، طماطم، ثوم، كمون" data-name-de="Gebackene Aubergine" data-desc-de="Gebackene Aubergine, Tomate, Knoblauch, Kreuzkümmel" data-name-ru="Запеченные баклажаны" data-desc-ru="Запеченные баклажаны, помидор, чеснок, тмин" data-name-it="Melanzane arrostite" data-desc-it="Melanzane arrostite, pomodoro, aglio, cumino" data-name-el="Ψητή μελιτζάνα" data-desc-el="Ψητή μελιτζάνα, ντομάτα, σκόρδο, κύμινο" data-name-pt="Beringela assada" data-desc-pt="Beringela assada, tomate, alho, cominho" data-name-zh="烤茄子" data-desc-zh="烤茄子，番茄，大蒜，孜然" data-name-zh-tw="烤茄子" data-desc-zh-tw="烤茄子，番茄，大蒜，孜然" data-name-ja="焼きナス" data-desc-ja="焼きナス、トマト、ニンニク、クミン" data-name-ko="구운 가지" data-desc-ko="구운 가지, 토마토, 마늘, 커민" data-name-hi="भुना बैंगन" data-desc-hi="भुना बैंगन, टमाटर, लहसुन, जीरा" data-name-nl="Geroosterde aubergine" data-desc-nl="Geroosterde aubergine, tomaat, knoflook, komijn" data-name-pl="Pieczony bakłażan" data-desc-pl="Pieczony bakłażan, pomidor, czosnek, kminek" data-name-tr="Izgara patlıcan" data-desc-tr="Izgara patlıcan, domates, sarımsak, kimyon" data-name-uk="Смажений баклажан" data-desc-uk="Смажений баклажан, помідор, часник, кмин" data-price="8.00">
+                <div class="menu-item" data-id="zaalouk" data-name-es="Zaalouk·Ensalada de berenjena" data-desc-es="Berenjena asada, tomate, ajo, comino" data-name-en="Roasted eggplant" data-desc-en="Roasted eggplant, tomato, garlic, cumin" data-name-fr="Aubergine rôtie" data-desc-fr="Aubergine rôtie, tomate, ail, cumin" data-name-ar="باذنجان مشوي" data-desc-ar="باذنجان مشوي، طماطم، ثوم، كمون" data-name-de="Gebackene Aubergine" data-desc-de="Gebackene Aubergine, Tomate, Knoblauch, Kreuzkümmel" data-name-ru="Запеченные баклажаны" data-desc-ru="Запеченные баклажаны, помидор, чеснок, тмин" data-name-it="Melanzane arrostite" data-desc-it="Melanzane arrostite, pomodoro, aglio, cumino" data-name-el="Ψητή μελιτζάνα" data-desc-el="Ψητή μελιτζάνα, ντομάτα, σκόρδο, κύμινο" data-name-pt="Beringela assada" data-desc-pt="Beringela assada, tomate, alho, cominho" data-name-zh="烤茄子" data-desc-zh="烤茄子，番茄，大蒜，孜然" data-name-zh-tw="烤茄子" data-desc-zh-tw="烤茄子，番茄，大蒜，孜然" data-name-ja="焼きナス" data-desc-ja="焼きナス、トマト、ニンニク、クミン" data-name-ko="구운 가지" data-desc-ko="구운 가지, 토마토, 마늘, 커민" data-name-hi="भुना बैंगन" data-desc-hi="भुना बैंगन, टमाटर, लहसुन, जीरा" data-name-nl="Geroosterde aubergine" data-desc-nl="Geroosterde aubergine, tomaat, knoflook, komijn" data-name-pl="Pieczony bakłażan" data-desc-pl="Pieczony bakłażan, pomidor, czosnek, kminek" data-name-tr="Izgara patlıcan" data-desc-tr="Izgara patlıcan, domates, sarımsak, kimyon" data-name-uk="Смажений баклажан" data-desc-uk="Смажений баклажан, помідор, часник, кмин" data-price="8.00">
                     <div class="item-img"><img src="images/zaalouk.jpeg" alt="Zaalouk" loading="lazy" /></div>
                     <div class="item-info"><div class="item-name">Zaalouk · Berenjena asada</div><div class="item-desc">Berenjena, tomate, ajo, comino</div><div class="allergy-icons"><span class="allergy-icon">🌱 Soja</span></div></div>
-                    <div class="price-add"><div class="price">8.00</div><button class="add-btn">Añadir</button></div>
+                    <div class="price-add"><div class="price">8.50</div><button class="add-btn">Añadir</button></div>
                 </div>
 
-                <div class="menu-item" data-id="Taktouka" data-name-es="Taktouka" data-desc-es="Berenjena asada, tomate, ajo, comino" data-name-en="Roasted eggplant" data-desc-en="Roasted eggplant, tomato, garlic, cumin" data-name-fr="Aubergine rôtie" data-desc-fr="Aubergine rôtie, tomate, ail, cumin" data-name-ar="باذنجان مشوي" data-desc-ar="باذنجان مشوي، طماطم، ثوم، كمون" data-name-de="Gebackene Aubergine" data-desc-de="Gebackene Aubergine, Tomate, Knoblauch, Kreuzkümmel" data-name-ru="Запеченные баклажаны" data-desc-ru="Запеченные баклажаны, помидор, чеснок, тмин" data-name-it="Melanzane arrostite" data-desc-it="Melanzane arrostite, pomodoro, aglio, cumino" data-name-el="Ψητή μελιτζάνα" data-desc-el="Ψητή μελιτζάνα, ντομάτα, σκόρδο, κύμινο" data-name-pt="Beringela assada" data-desc-pt="Beringela assada, tomate, alho, cominho" data-name-zh="烤茄子" data-desc-zh="烤茄子，番茄，大蒜，孜然" data-name-zh-tw="烤茄子" data-desc-zh-tw="烤茄子，番茄，大蒜，孜然" data-name-ja="焼きナス" data-desc-ja="焼きナス、トマト、ニンニク、クミン" data-name-ko="구운 가지" data-desc-ko="구운 가지, 토마토, 마늘, 커민" data-name-hi="भुना बैंगन" data-desc-hi="भुना बैंगन, टमाटर, लहसुन, जीरा" data-name-nl="Geroosterde aubergine" data-desc-nl="Geroosterde aubergine, tomaat, knoflook, komijn" data-name-pl="Pieczony bakłażan" data-desc-pl="Pieczony bakłażan, pomidor, czosnek, kminek" data-name-tr="Izgara patlıcan" data-desc-tr="Izgara patlıcan, domates, sarımsak, kimyon" data-name-uk="Смажений баклажан" data-desc-uk="Смажений баклажан, помідор, часник, кмин" data-price="8.00">
+                <div class="menu-item" data-id="Taktouka" data-name-es="Taktouka·Ensalada de Pimientos" data-desc-es="Tomate y pimientos cocinados con especias marroquíes." data-name-en="Roasted eggplant" data-desc-en="Taktouka — Cooked tomatoes and peppers with Moroccan spices." data-name-fr="Aubergine rôtie" data-desc-fr="Aubergine rôtie, tomate, ail, cumin" data-name-ar="باذنجان مشوي" data-desc-ar="تكتوكا - طماطم وفلفل مطبوخ مع توابل مغربية." data-name-de="Gebackene Aubergine" data-desc-de="Gebackene Aubergine, Tomate, Knoblauch, Kreuzkümmel" data-name-ru="Запеченные баклажаны" data-desc-ru="Запеченные баклажаны, помидор, чеснок, тмин" data-name-it="Melanzane arrostite" data-desc-it="Melanzane arrostite, pomodoro, aglio, cumino" data-name-el="Ψητή μελιτζάνα" data-desc-el="Ψητή μελιτζάνα, ντομάτα, σκόρδο, κύμινο" data-name-pt="Beringela assada" data-desc-pt="Beringela assada, tomate, alho, cominho" data-name-zh="烤茄子" data-desc-zh="烤茄子，番茄，大蒜，孜然" data-name-zh-tw="烤茄子" data-desc-zh-tw="烤茄子，番茄，大蒜，孜然" data-name-ja="焼きナス" data-desc-ja="焼きナス、トマト、ニンニク、クミン" data-name-ko="구운 가지" data-desc-ko="구운 가지, 토마토, 마늘, 커민" data-name-hi="भुना बैंगन" data-desc-hi="भुना बैंगन, टमाटर, लहसुन, जीरा" data-name-nl="Geroosterde aubergine" data-desc-nl="Geroosterde aubergine, tomaat, knoflook, komijn" data-name-pl="Pieczony bakłażan" data-desc-pl="Pieczony bakłażan, pomidor, czosnek, kminek" data-name-tr="Izgara patlıcan" data-desc-tr="Izgara patlıcan, domates, sarımsak, kimyon" data-name-uk="Смажений баклажан" data-desc-uk="Смажений баклажан, помідор, часник, кмин" data-price="8.00">
                     <div class="item-img"><img src="images/taktoka.jpg" alt="Taktouka" loading="lazy" /></div>
                     <div class="item-info"><div class="item-name">Taktouka · Berenjena asada</div><div class="item-desc">Berenjena, tomate, ajo, comino</div><div class="allergy-icons"><span class="allergy-icon">🌱 Soja</span></div></div>
-                    <div class="price-add"><div class="price">8.00</div><button class="add-btn">Añadir</button></div>
+                    <div class="price-add"><div class="price">8.50</div><button class="add-btn">Añadir</button></div>
                 </div>
 
                 <div class="menu-item" data-id="Degustación marroquí Las Palmeras" data-name-es="Degustación marroquí Las Palmeras" data-desc-es="Selección de cuatro ensaladas y entrantes marroquíes." data-name-en="Roasted eggplant" data-desc-en="Roasted eggplant, tomato, garlic, cumin" data-name-fr="Aubergine rôtie" data-desc-fr="Aubergine rôtie, tomate, ail, cumin" data-name-ar=" تذوق المغربي في لاس بالماس " data-desc-ar="تشكيلة من أربعة أنواع من السلطات والمقبلات المغربية." data-name-de="Gebackene Aubergine" data-desc-de="Gebackene Aubergine, Tomate, Knoblauch, Kreuzkümmel" data-name-ru="Запеченные баклажаны" data-desc-ru="Запеченные баклажаны, помидор, чеснок, тмин" data-name-it="Melanzane arrostite" data-desc-it="Melanzane arrostite, pomodoro, aglio, cumino" data-name-el="Ψητή μελιτζάνα" data-desc-el="Ψητή μελιτζάνα, ντομάτα, σκόρδο, κύμινο" data-name-pt="Beringela assada" data-desc-pt="Beringela assada, tomate, alho, cominho" data-name-zh="烤茄子" data-desc-zh="烤茄子，番茄，大蒜，孜然" data-name-zh-tw="烤茄子" data-desc-zh-tw="烤茄子，番茄，大蒜，孜然" data-name-ja="焼きナス" data-desc-ja="焼きナス、トマト、ニンニク、クミン" data-name-ko="구운 가지" data-desc-ko="구운 가지, 토마토, 마늘, 커민" data-name-hi="भुना बैंगन" data-desc-hi="भुना बैंगन, टमाटर, लहसुन, जीरा" data-name-nl="Geroosterde aubergine" data-desc-nl="Geroosterde aubergine, tomaat, knoflook, komijn" data-name-pl="Pieczony bakłażan" data-desc-pl="Pieczony bakłażan, pomidor, czosnek, kminek" data-name-tr="Izgara patlıcan" data-desc-tr="Izgara patlıcan, domates, sarımsak, kimyon" data-name-uk="Смажений баклажан" data-desc-uk="Смажений баклажан, помідор, часник, кмин" data-price="8.00">
                     <div class="item-img"><img src="images/taktoka.jpg" alt="Taktouka" loading="lazy" /></div>
-                    <div class="item-info"><div class="item-name">Taktouka · Berenjena asada</div><div class="item-desc">Berenjena, tomate, ajo, comino</div><div class="allergy-icons"><span class="allergy-icon">🌱 Soja</span></div></div>
-                    <div class="price-add"><div class="price">8.00</div><button class="add-btn">Añadir</button></div>
+                    <div class="item-info"><div class="item-name"></div><div class="item-desc"></div><div class="allergy-icons"><span class="allergy-icon">🌱 Soja</span></div></div>
+                    <div class="price-add"><div class="price">14.00</div><button class="add-btn">Añadir</button></div>
                 </div>
 
                 <div class="menu-item" data-id="gambas" data-name-es="Gambas al pil pil" data-desc-es="Gambas, ajo, guindilla" data-name-en="Prawns pil-pil" data-desc-en="Prawns, garlic, chili" data-name-fr="Crevettes pil-pil" data-desc-fr="Crevettes, ail, piment" data-name-ar="جمبري بيل بيل" data-desc-ar="جمبري، ثوم، فلفل حار" data-name-de="Garnelen Pil-Pil" data-desc-de="Garnelen, Knoblauch, Chili" data-name-ru="Креветки пиль-пиль" data-desc-ru="Креветки, чеснок, перец чили" data-name-it="Gamberi al pil pil" data-desc-it="Gamberi, aglio, peperoncino" data-name-el="Γαρίδες πιλ πιλ" data-desc-el="Γαρίδες, σκόρδο, τσίλι" data-name-pt="Camarões pil-pil" data-desc-pt="Camarões, alho, pimenta" data-name-zh="蒜蓉辣椒虾" data-desc-zh="虾，大蒜，辣椒" data-name-zh-tw="蒜蓉辣椒蝦" data-desc-zh-tw="蝦，大蒜，辣椒" data-name-ja="ガーリックシュリンプ" data-desc-ja="エビ、ニンニク、唐辛子" data-name-ko="마늘 새우" data-desc-ko="새우, 마늘, 고추" data-name-hi="लहसुन झींगा" data-desc-hi="झींगा, लहसुन, मिर्च" data-name-nl="Garnalen pil-pil" data-desc-nl="Garnalen, knoflook, chili" data-name-pl="Krewetki pil-pil" data-desc-pl="Krewetki, czosnek, papryka chili" data-name-tr="Sarımsaklı karides" data-desc-tr="Karides, sarımsak, acı biber" data-name-uk="Креветки піль-піль" data-desc-uk="Креветки, часник, чилі" data-price="12.50">
@@ -1102,16 +1099,22 @@
                     <div class="price-add"><div class="price">12.50</div><button class="add-btn">Añadir</button></div>
                 </div>
 
-                <div class="menu-item" data-id="Hummus Las Palmeras" data-name-es="Hummus Las Palmeras" data-desc-es="Hummus, berenjena, tomate" data-name-en="Hummus Las Palmeras" data-desc-en="Hummus, eggplant, tomato" data-name-fr="Hummus Las Palmeras" data-desc-fr="Hummus, aubergine, tomate" data-name-ar="حُمُس لاس بالميراس" data-desc-ar="حُمُس، باذنجان، طماطم" data-name-de="Hummus Las Palmeras" data-desc-de="Hummus, Aubergine, Tomate" data-name-ru="Хуммус Лас Пальмерас" data-desc-ru="Хуммус, баклажан, помидор" data-name-it="Hummus Las Palmeras" data-desc-it="Hummus, melanzana, pomodoro" data-name-el="Χούμος Λας Παλμεράς" data-desc-el="Χούμος, μελιτζάνα, ντομάτα" data-name-pt="Hummus Las Palmeras" data-desc-pt="Hummus, berinjela, tomate" data-name-zh="鹰嘴豆泥拉斯帕尔梅拉斯" data-desc-zh="鹰嘴豆泥，茄子，番茄" data-name-zh-tw="鷹嘴豆泥拉斯帕爾梅拉斯" data-desc-zh-tw="鷹嘴豆泥，茄子，番茄" data-name-ja="ハムス ラス パルメラス" data-desc-ja="ハムス、ナス、トマト" data-name-ko="햄스 라스 팔메라스" data-desc-ko="햄스, 가지, 토마토" data-name-hi="हम्मस लास पैलमेरास" data-desc-hi="हम्मस, बैंगनी, टमाटर" data-name-nl="Hummus Las Palmeras" data-desc-nl="Hummus, aubergine, tomaat" data-name-pl="Hummus Las Palmeras" data-desc-pl="Hummus, bakłażan, pomidor" data-name-tr="Hummus Las Palmeras" data-desc-tr="Hummus, patlıcan, domates" data-name-uk="Хуммус Лас Пальмерас" data-desc-uk="Хуммус, баклажан, помідор" data-price="8.00">
+                <div class="menu-item" data-id="Hummus Las Palmeras" data-name-es="Hummus Las Palmeras" data-desc-es="Hummus cremoso con carne picada de ternera especiada, pequeños dados de tomate " data-name-en="Hummus Las Palmeras" data-desc-en="Creamy hummus topped with spiced minced beef, fresh diced tomato and 
+                toasted almonds, served with pita bread." data-name-fr="Hummus Las Palmeras" data-desc-fr="Hummus, aubergine, tomate" data-name-ar="حُمُس لاس بالميراس" data-desc-ar="حمص كريمي مع لحم بقري مفروم متبل وطماطم مكعبات" data-name-de="Hummus Las Palmeras" data-desc-de="Hummus, Aubergine, Tomate" data-name-ru="Хуммус Лас Пальмерас" data-desc-ru="Хуммус, баклажан, помидор" data-name-it="Hummus Las Palmeras" data-desc-it="Hummus, melanzana, pomodoro" data-name-el="Χούμος Λας Παλμεράς" data-desc-el="Χούμος, μελιτζάνα, ντομάτα" data-name-pt="Hummus Las Palmeras" data-desc-pt="Hummus, berinjela, tomate" data-name-zh="鹰嘴豆泥拉斯帕尔梅拉斯" data-desc-zh="鹰嘴豆泥，茄子，番茄" data-name-zh-tw="鷹嘴豆泥拉斯帕爾梅拉斯" data-desc-zh-tw="鷹嘴豆泥，茄子，番茄" data-name-ja="ハムス ラス パルメラス" data-desc-ja="ハムス、ナス、トマト" data-name-ko="햄스 라스 팔메라스" data-desc-ko="햄스, 가지, 토마토" data-name-hi="हम्मस लास पैलमेरास" data-desc-hi="हम्मस, बैंगनी, टमाटर" data-name-nl="Hummus Las Palmeras" data-desc-nl="Hummus, aubergine, tomaat" data-name-pl="Hummus Las Palmeras" data-desc-pl="Hummus, bakłażan, pomidor" data-name-tr="Hummus Las Palmeras" data-desc-tr="Hummus, patlıcan, domates" data-name-uk="Хуммус Лас Пальмерас" data-desc-uk="Хуммус, баклажан, помідор" data-price="8.00">
                     <div class="item-img"><img src="images/hummos.jpg" alt="Hummus Las Palmeras" loading="lazy" /></div>
-                    <div class="item-info"><div class="item-name">Hummus Las Palmeras</div><div class="item-desc">Hummus, berenjena, tomate</div></div>
-                    <div class="price-add"><div class="price">8.00</div><button class="add-btn">Añadir</button></div>
+                    <div class="item-info"><div class="item-name">Hummus Las Palmeras</div><div class="item-desc">Hummus cremoso con carne picada de ternera especiada, pequeños dados de tomate</div></div>
+                    <div class="price-add"><div class="price">12.00</div><button class="add-btn">Añadir</button></div>
                 </div>
 
                 <div class="menu-item" data-id="Hummus con harissa" data-name-es="Hummus con Harissa" data-desc-es="Hummus, Harissa" data-name-en="Hummus with Harissa" data-desc-en="Hummus, Harissa" data-name-fr="Hummus avec Harissa" data-desc-fr="Hummus, Harissa" data-name-ar="حُمُس مع الحَرِّسَة" data-desc-ar="حُمُس، الحَرِّسَة" data-name-de="Hummus mit Harissa" data-desc-de="Hummus, Harissa" data-name-ru="Хумус с хариссой" data-desc-ru="Хумус, харисса" data-name-it="Hummus con Harissa" data-desc-it="Hummus, Harissa" data-name-el="Χουμους με Χαρίσσα" data-desc-el="Χουμους, Χαρίσσα" data-name-pt="Hummus com Harissa" data-desc-pt="Hummus, Harissa" data-name-zh="蒜蓉辣椒虾" data-desc-zh="虾，大蒜，辣椒" data-name-zh-tw="蒜蓉辣椒蝦" data-desc-zh-tw="蝦，大蒜，辣椒" data-name-ja="ガーリックシュリンプ" data-desc-ja="エビ、ニンニク、唐辛子" data-name-ko="마늘 새우" data-desc-ko="새우, 마늘, 고추" data-name-hi="लहसुन झींगा" data-desc-hi="झींगा, लहसुन, मिर्च" data-name-nl="Garnalen pil-pil" data-desc-nl="Garnalen, knoflook, chili" data-name-pl="Krewetki pil-pil" data-desc-pl="Krewetki, czosnek, papryka chili" data-name-tr="Sarımsaklı karides" data-desc-tr="Karides, sarımsak, acı biber" data-name-uk="Креветки піль-піль" data-desc-uk="Креветки, часник, чилі" data-price="9.00">
                     <div class="item-img"><img src="images/Hummus con harissa.jpeg" alt="Hummus con Harissa" loading="lazy" /></div>
                     <div class="item-info"><div class="item-name">Hummus con Harissa</div><div class="item-desc">Hummus, Harissa</div><div class="allergy-icons"><span class="allergy-icon">🌾 Gluten</span></div></div>
                     <div class="price-add"><div class="price">9.00</div><button class="add-btn">Añadir</button></div>
+                </div>
+                <div class="menu-item" data-id="Hummus clásico con pan pita" data-name-es="Hummus clásico con pan pita" data-desc-es="Hummus clásico con pan pita" data-name-en="Hummus with Harissa" data-desc-en="Hummus, Harissa" data-name-fr="Hummus avec Harissa" data-desc-fr="Hummus, Harissa" data-name-ar="حُمُس مع الحَرِّسَة" data-desc-ar="حُمُس، الحَرِّسَة" data-name-de="Hummus mit Harissa" data-desc-de="Hummus, Harissa" data-name-ru="Хумус с хариссой" data-desc-ru="Хумус, харисса" data-name-it="Hummus con Harissa" data-desc-it="Hummus, Harissa" data-name-el="Χουμους με Χαρίσσα" data-desc-el="Χουμους, Χαρίσσα" data-name-pt="Hummus com Harissa" data-desc-pt="Hummus, Harissa" data-name-zh="蒜蓉辣椒虾" data-desc-zh="虾，大蒜，辣椒" data-name-zh-tw="蒜蓉辣椒蝦" data-desc-zh-tw="蝦，大蒜，辣椒" data-name-ja="ガーリックシュリンプ" data-desc-ja="エビ、ニンニク、唐辛子" data-name-ko="마늘 새우" data-desc-ko="새우, 마늘, 고추" data-name-hi="लहसुन झींगा" data-desc-hi="झींगा, लहसुन, मिर्च" data-name-nl="Garnalen pil-pil" data-desc-nl="Garnalen, knoflook, chili" data-name-pl="Krewetki pil-pil" data-desc-pl="Krewetki, czosnek, papryka chili" data-name-tr="Sarımsaklı karides" data-desc-tr="Karides, sarımsak, acı biber" data-name-uk="Креветки піль-піль" data-desc-uk="Креветки, часник, чилі" data-price="9.00">
+                    <div class="item-img"><img src="images/Hummus con harissa.jpeg" alt="Hummus clásico con pan pita" loading="lazy" /></div>
+                    <div class="item-info"><div class="item-name">Hummus clásico con pan pita</div><div class="item-desc">Hummus, Pan de pita</div><div class="allergy-icons"><span class="allergy-icon">🌾 Gluten</span></div></div>
+                    <div class="price-add"><div class="price">8.00</div><button class="add-btn">Añadir</button></div>
                 </div>
             </div>
             <!-- END ENTRANTES -->
@@ -1123,7 +1126,15 @@
                 <div class="menu-item" data-id="harira" data-name-es="Harira (sopa marroquí)" data-desc-es="Garbanzos, lentejas, tomate" data-name-en="Harira soup" data-desc-en="Chickpeas, lentils, tomato" data-name-fr="Harira" data-desc-fr="Pois chiches, lentilles, tomates" data-name-ar="حريرة" data-desc-ar="حمص، عدس، طماطم" data-name-de="Harira-Suppe" data-desc-de="Kichererbsen, Linsen, Tomate" data-name-ru="Суп Харира" data-desc-ru="Нут, чечевица, помидор" data-name-it="Zuppa Harira" data-desc-it="Ceci, lenticchie, pomodoro" data-name-el="Σούπα Χαρίρα" data-desc-el="Ρεβίθια, φακές, ντομάτα" data-name-pt="Sopa Harira" data-desc-pt="Grão-de-bico, lentilhas, tomate" data-name-zh="哈里拉汤" data-desc-zh="鹰嘴豆，扁豆，番茄" data-name-zh-tw="哈里拉湯" data-desc-zh-tw="鷹嘴豆，扁豆，番茄" data-name-ja="ハリラスープ" data-desc-ja="ひよこ豆、レンズ豆、トマト" data-name-ko="하리라 수프" data-desc-ko="병아리콩, 렌틸콩, 토마토" data-name-hi="हरीरा सूप" data-desc-hi="काबुली चना, मसूर, टमाटर" data-name-nl="Harira-soep" data-desc-nl="Kikkererwten, linzen, tomaat" data-name-pl="Zupa Harira" data-desc-pl="Ciecierzyca, soczewica, pomidor" data-name-tr="Harira çorbası" data-desc-tr="Nohut, mercimek, domates" data-name-uk="Суп Харіра" data-desc-uk="Нут, сочевиця, помідор" data-price="7.00">
                     <div class="item-img"><img src="images/HARIRA.png" alt="Harira" loading="lazy" /></div>
                     <div class="item-info"><div class="item-name">Harira tradicional</div><div class="item-desc">Garbanzos, lentejas, tomate</div><div class="allergy-icons"><span class="allergy-icon">🌾 Gluten</span></div></div>
-                    <div class="price-add"><div class="price">7.00</div><button class="add-btn">Añadir</button></div>
+                    <div class="price-add"><div class="price">8.00</div><button class="add-btn">Añadir</button></div>
+                </div>
+            </div>
+            <div class="menu-section" data-category="sopas">
+                <div class="menu-item" data-id="Lentejas" data-name-es="Sopa De lentejas" data-desc-es="Garbanzos, lentejas, tomate" data-name-en="lentil soup" data-desc-en="Chickpeas, lentils, tomato" data-name-fr="Harira" data-desc-fr="Pois chiches, lentilles, tomates" data-name-ar="حريرة" data-desc-ar="حمص، عدس، طماطم" data-name-de="Harira-Suppe" data-desc-de="Kichererbsen, Linsen, Tomate" data-name-ru="Суп Харира" data-desc-ru="Нут, чечевица, помидор" data-name-it="Zuppa Harira" data-desc-it="Ceci, lenticchie, pomodoro" data-name-el="Σούπα Χαρίρα" data-desc-el="Ρεβίθια, φακές, ντομάτα" data-name-pt="Sopa Harira" data-desc-pt="Grão-de-bico, lentilhas, tomate" data-name-zh="哈里拉汤" data-desc-zh="鹰嘴豆，扁豆，番茄" data-name-zh-tw="哈里拉湯" data-desc-zh-tw="鷹嘴豆，扁豆，番茄" data-name-ja="ハリラスープ" data-desc-ja="ひよこ豆、レンズ豆、トマト" data-name-ko="하리라 수프" data-desc-ko="병아리콩, 렌틸콩, 토마토" data-name-hi="हरीरा सूप" data-desc-hi="काबुली चना, मसूर, टमाटर" data-name-nl="Harira-soep" data-desc-nl="Kikkererwten, linzen, tomaat" data-name-pl="Zupa Harira" data-desc-pl="Ciecierzyca, soczewica, pomidor" data-name-tr="Harira çorbası" data-desc-tr="Nohut, mercimek, domates" data-name-uk="Суп Харіра" data-desc-uk="Нут, сочевиця, помідор" data-price="7.00">
+                    <div class="item-img"><img src="images/HARIRA.png" alt="Harira" loading="lazy}" /></div>
+                                    <div class="item-info"><div class="item-name">Harira tradicional</div><div class="item-desc">Garbanzos, lentejas, tomate</div><div class="allergy-icons"><span class="allergy-icon">🌾 Gluten</span></div></div>
+                    <div class="price-add"><div class="price">7.50</div><button class="add-btn">Añadir</button></div>
+                
                 </div>
             </div>
             <!-- END SOPAS -->
@@ -1288,7 +1299,102 @@
                 </div>
             </div>
             <!-- END POSTRES -->
+    <!-- CIGARS MARROQUÍES -->
+    <div class="menu-section" data-category="cigars">
+        <div class="section-title">🥟 Cigars Marroquíes</div>
+        
+        <!-- Vegetal -->
+        <div class="menu-item" data-id="cigar_vegetal" 
+             data-name-es="Cigars Vegetal (2 Uds.)" data-desc-es="Vegetal." 
+             data-name-en="Vegetable Cigars (2 Uds.)" data-desc-en="Vegetable." 
+             data-name-fr="Cigares aux Légumes (2 Uds.)" data-desc-fr="Légumes." 
+             data-name-ar="لفائف خضار (2 قطع)" data-desc-ar="لفائف خضار.">
+            <div class="item-img"><img src="images/placeholder.jpg" alt="Vegetable Cigars" loading="lazy" /></div>
+            <div class="item-info">
+                <div class="item-name">Vegetable Cigars (2 Uds.)</div>
+                <div class="item-desc">Vegetable.</div>
+                <div class="allergy-icons"></div>
+            </div>
+            <div class="price-add">
+                <div class="price">6.50€</div>
+                <button class="add-btn">Añadir</button>
+            </div>
+        </div>
 
+        <!-- Kefta -->
+        <div class="menu-item" data-id="cigar_kefta" 
+             data-name-es="Cigars Kefta (2 Uds.)" data-desc-es="Kefta. Carne picada." 
+             data-name-en="Kefta Cigars (2 Uds.)" data-desc-en="Kefta. Minced Beef." 
+             data-name-fr="Cigares Kefta (2 Uds.)" data-desc-fr="Kefta. Viande hachée." 
+             data-name-ar="لفائف كفتة (2 قطع)" data-desc-ar="كفتة.">
+            <div class="item-img"><img src="images/placeholder.jpg" alt="Kefta Cigars" loading="lazy" /></div>
+            <div class="item-info">
+                <div class="item-name">Kefta Cigars (2 Uds.)</div>
+                <div class="item-desc">Kefta. Minced Beef.</div>
+                <div class="allergy-icons"></div>
+            </div>
+            <div class="price-add">
+                <div class="price">7.50€</div>
+                <button class="add-btn">Añadir</button>
+            </div>
+        </div>
+
+        <!-- Espinacas y Queso -->
+        <div class="menu-item" data-id="cigar_espinacas" 
+             data-name-es="Cigars de Espinacas y Queso (2 Uds.)" data-desc-es="Espinacas y Queso." 
+             data-name-en="Spinach & Cheese Cigars (2 Uds.)" data-desc-en="Spinach & Cheese." 
+             data-name-fr="Cigares aux Épinards et Fromage (2 Uds.)" data-desc-fr="Épinards et Fromage." 
+             data-name-ar="لفائف بالسبانخ والجبنة (2 قطع)" data-desc-ar="سبانخ وجبنة.">
+            <div class="item-img"><img src="images/placeholder.jpg" alt="Spinach and Cheese Cigars" loading="lazy" /></div>
+            <div class="item-info">
+                <div class="item-name">Spinach & Cheese Cigars (2 Uds.)</div>
+                <div class="item-desc">Spinach & Cheese.</div>
+                <div class="allergy-icons"><span class="allergy-icon">🌾 Gluten</span><span class="allergy-icon">🥛 Lactosa</span></div>
+            </div>
+            <div class="price-add">
+                <div class="price">8.00€</div>
+                <button class="add-btn">Añadir</button>
+            </div>
+        </div>
+
+        <!-- Marisco -->
+        <div class="menu-item" data-id="cigar_marisco" 
+             data-name-es="Cigars de Marisco (2 Uds.)" data-desc-es="Marisco." 
+             data-name-en="Seafood Cigars (2 Uds.)" data-desc-en="Seafood." 
+             data-name-fr="Cigares aux Fruits de Mer (2 Uds.)" data-desc-fr="Fruits de mer." 
+             data-name-ar="لفائف المأكولات البحرية (2 قطع)" data-desc-ar="المأكولات البحرية.">
+            <div class="item-img"><img src="images/placeholder.jpg" alt="Seafood Cigars" loading="lazy" /></div>
+            <div class="item-info">
+                <div class="item-name">Seafood Cigars (2 Uds.)</div>
+                <div class="item-desc">Seafood.</div>
+                <div class="allergy-icons"><span class="allergy-icon">🌾 Gluten</span><span class="allergy-icon">🦐 Crustáceos</span></div>
+            </div>
+            <div class="price-add">
+                <div class="price">8.00€</div>
+                <button class="add-btn">Añadir</button>
+            </div>
+        </div>
+
+        <!-- Surtido -->
+        <div class="menu-item" data-id="cigar_surtido" 
+             data-name-es="Surtido de Cigars (4 Uds.)" data-desc-es="Surtido de Cigars." 
+             data-name-en="Cigar Assortment (4 Uds.)" data-desc-en="Cigar Assortment." 
+             data-name-fr="Assortiment de Cigares (4 Uds.)" data-desc-fr="Assortiment de Cigares." 
+             data-name-ar="تشكيلة سيجار (4 قطع)" data-desc-ar="تشكيلة سيجار.">
+            <div class="item-img"><img src="images/placeholder.jpg" alt="Cigar Assortment" loading="lazy" /></div>
+            <div class="item-info">
+                <div class="item-name">Cigar Assortment (4 Uds.)</div>
+                <div class="item-desc">Cigar Assortment.</div>
+                <div class="allergy-icons"><span class="allergy-icon">🌾 Gluten</span><span class="allergy-icon">🥛 Lactosa</span><span class="allergy-icon">🦐 Crustáceos</span></div>
+            </div>
+            <div class="price-add">
+                <div class="price">9.90€</div>
+                <button class="add-btn">Añadir</button>
+            </div>
+        </div>
+
+    </div>
+    <!-- END CIGARS MARROQUÍES -->
 
             <!-- ─── BEBIDAS ─── -->
             <div class="menu-section" data-category="bebidas">
