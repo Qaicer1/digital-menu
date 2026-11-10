@@ -968,7 +968,84 @@
                 justify-content: flex-start;
             }
         }
+        
+                /* ─── IMAGE LIGHTBOX ─── */
+        .item-img {
+            cursor: zoom-in;
+        }
+        .img-lightbox {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.92);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+            padding: 20px;
+            cursor: zoom-out;
+        }
+        .img-lightbox.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        .img-lightbox img {
+            max-width: 95vw;
+            max-height: 90vh;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+            object-fit: contain;
+            transform: scale(0.85);
+            transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+            cursor: default;
+        }
+        .img-lightbox.show img {
+            transform: scale(1);
+        }
+        .img-lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.15);
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(10px);
+            transition: all 0.2s ease;
+            padding: 0;
+            line-height: 1;
+        }
+        .img-lightbox-close:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: rotate(90deg);
+        }
+        .img-lightbox-caption {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #f7e7b0;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-align: center;
+            padding: 8px 20px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            max-width: 90vw;
+        }
+    
     </style>
+    
 </head>
 <body>
     <div class="app-container" id="appContainer">
@@ -1059,7 +1136,7 @@
                      data-name-it="Tanjia di Marrakech" data-desc-it="Specialità tradizionale di Marrakech a base di manzo marinato, cotto lentamente con limone conservato e zafferano, servito con patate marinate."
                      data-name-pt="Tanjia de Marrakech" data-desc-pt="Especialidade tradicional de Marrakech de carne marinada, cozinhada lentamente com limão em conserva e açafrão, servida com batatas marinadas."
                      data-price="20.00">
-                    <div class="item-img"><img src="images/tanjia.jpg" alt="Tanjia de Marrakech" loading="lazy" /></div>
+                    <div class="item-img"><img src="images/TANGIA.jpeg" alt="Tanjia de Marrakech" loading="lazy" /></div>
                     <div class="item-info">
                         <div class="item-name">Tanjia de Marrakech</div>
                         <div class="item-desc">Especialidad tradicional de Marrakech elaborada con ternera marinada, cocinada lentamente con limón confitado y azafrán, acompañada de patatas marinadas.</div>
@@ -1082,7 +1159,7 @@
                      data-name-it="Hummus Las Palmeras con pane pita" data-desc-it="Hummus cremoso guarnito con carne macinata speziata, dadini di pomodoro fresco e mandorle tostate, servito con pane pita."
                      data-name-pt="Hummus Las Palmeras com pão pita" data-desc-pt="Hummus cremoso coberto com carne picada temperada, tomate fresco em cubos e amêndoas torradas, servido com pão pita."
                      data-price="12.00">
-                    <div class="item-img"><img src="images/hummos.jpg" alt="Hummus Las Palmeras" loading="lazy" /></div>
+                    <div class="item-img"><img src="images/Humus las palmeras.jpeg" alt="Hummus Las Palmeras" loading="lazy" /></div>
                     <div class="item-info">
                         <div class="item-name">Hummus Las Palmeras con pan pita</div>
                         <div class="item-desc">Hummus cremoso con carne picada de ternera especiada, pequeños dados de tomate fresco y almendras tostadas, acompañado de pan pita.</div>
@@ -1158,7 +1235,7 @@
                      data-name-it="Hummus Las Palmeras con pane pita" data-desc-it="Hummus cremoso con carne macinata speziata, servito con pane pita."
                      data-name-pt="Hummus Las Palmeras com pão pita" data-desc-pt="Hummus cremoso coberto com carne picada temperada, servido com pão pita."
                      data-price="12.00">
-                    <div class="item-img"><img src="images/hummos.jpg" alt="Hummus Las Palmeras" loading="lazy" /></div>
+                    <div class="item-img"><img src="images/Humus las palmeras.jpeg" alt="Hummus Las Palmeras" loading="lazy" /></div>
                     <div class="item-info">
                         <div class="item-name">Hummus Las Palmeras con pan pita</div>
                         <div class="item-desc">Hummus cremoso con carne picada de ternera especiada. Servido con pan de pita.</div>
@@ -1227,7 +1304,7 @@
                      data-name-it="Hummus con Harissa 🌶️ e pane pita" data-desc-it="Hummus con harissa, leggermente piccante, servito con pane pita."
                      data-name-pt="Hummus com Harissa 🌶️ e pão pita" data-desc-pt="Hummus com harissa, ligeiramente picante, servido com pão pita."
                      data-price="9.00">
-                    <div class="item-img"><img src="images/hummos.jpg" alt="Hummus con Harisa" loading="lazy" /></div>
+                    <div class="item-img"><img src="images/Humus con harísa.jpeg" alt="Hummus con Harisa" loading="lazy" /></div>
                     <div class="item-info">
                         <div class="item-name">Hummus con Harisa 🌶️ y pan pita</div>
                         <div class="item-desc">Hummus con harissa, ligeramente picante, servido con pan de pita.</div>
@@ -1319,7 +1396,7 @@
                      data-name-it="Falafel (4 pezzi)" data-desc-it="Ceci, prezzemolo, spezie."
                      data-name-pt="Falafel (4 un)" data-desc-pt="Grão-de-bico, salsa, especiarias."
                      data-price="8.00">
-                    <div class="item-img"><img src="images/4falafel.jpeg" alt="Falafel" loading="lazy" /></div>
+                    <div class="item-img"><img src="images/4falafel.jpg" alt="Falafel" loading="lazy" /></div>
                     <div class="item-info">
                         <div class="item-name">Falafel (4 Uds.)</div>
                         <div class="item-desc">Garbanzos, perejil, especias.</div>
@@ -1369,7 +1446,7 @@
             </div>
             <div class="menu-section" data-category="sopas">
                 <div class="menu-item" data-id="Lentejas" data-name-es="Sopa De lentejas" data-desc-es="Garbanzos, lentejas, tomate" data-name-en="lentil soup" data-desc-en="Chickpeas, lentils, tomato" data-name-fr="Harira" data-desc-fr="Pois chiches, lentilles, tomates" data-name-ar="حريرة" data-desc-ar="حمص، عدس، طماطم" data-name-de="Harira-Suppe" data-desc-de="Kichererbsen, Linsen, Tomate" data-name-ru="Суп Харира" data-desc-ru="Нут, чечевица, помидор" data-name-it="Zuppa Harira" data-desc-it="Ceci, lenticchie, pomodoro" data-name-el="Σούπα Χαρίρα" data-desc-el="Ρεβίθια, φακές, ντομάτα" data-name-pt="Sopa Harira" data-desc-pt="Grão-de-bico, lentilhas, tomate" data-name-zh="哈里拉汤" data-desc-zh="鹰嘴豆，扁豆，番茄" data-name-zh-tw="哈里拉湯" data-desc-zh-tw="鷹嘴豆，扁豆，番茄" data-name-ja="ハリラスープ" data-desc-ja="ひよこ豆、レンズ豆、トマト" data-name-ko="하리라 수프" data-desc-ko="병아리콩, 렌틸콩, 토마토" data-name-hi="हरीरा सूप" data-desc-hi="काबुली चना, मसूर, टमाटर" data-name-nl="Harira-soep" data-desc-nl="Kikkererwten, linzen, tomaat" data-name-pl="Zupa Harira" data-desc-pl="Ciecierzyca, soczewica, pomidor" data-name-tr="Harira çorbası" data-desc-tr="Nohut, mercimek, domates" data-name-uk="Суп Харіра" data-desc-uk="Нут, сочевиця, помідор" data-price="7.00">
-                    <div class="item-img"><img src="images/HARIRA.png" alt="Harira" loading="lazy" /></div>
+                    <div class="item-img"><img src="images/SOPA DE LENTEJA.jpeg" alt="Harira" loading="lazy" /></div>
                     <div class="item-info"><div class="item-name">Harira tradicional</div><div class="item-desc">Garbanzos, lentejas, tomate</div><div class="allergy-icons"><span class="allergy-icon">🌾 Gluten</span></div></div>
                     <div class="price-add"><div class="price">7.50</div><button class="add-btn">Añadir</button></div>
                 </div>
@@ -1414,7 +1491,7 @@
                      data-name-it="Tajine di manzo con prugne, mandorle e uovo" data-desc-it="Tajine di manzo con prugne, mandorle e uovo sodo."
                      data-name-pt="Tajine de Vaca com Ameixas, Amêndoas e Ovo" data-desc-pt="Tajine de vaca com ameixas, amêndoas e ovo cozido."
                      data-price="18.50">
-                    <div class="item-img"><img src="images/b4cf3d74-cb9f-4077-af1e-473c3836da0a 2.JPG" alt="Tajín de Ternera" loading="lazy" /></div>
+                    <div class="item-img"><img src="" alt="Tajín de Ternera" loading="lazy" /></div>
                     <div class="item-info">
                         <div class="item-name">Tajín de Ternera con Ciruelas, Almendras y Huevo</div>
                         <div class="item-desc">Beef Tagine with Prunes, Almonds and Boiled Egg.</div>
@@ -1437,7 +1514,7 @@
                      data-name-it="Tajine di pollo con limone e olive" data-desc-it="Tajine di pollo con limone conservato e olive."
                      data-name-pt="Tajine de Frango com Limão e Azeitonas" data-desc-pt="Tajine de frango com limão em conserva e azeitonas."
                      data-price="18.00">
-                    <div class="item-img"><img src="images/3.png" alt="Tajín de Pollo" loading="lazy" /></div>
+                    <div class="item-img"><img src="images/TAJIN POLLO.jpeg" alt="Tajín de Pollo" loading="lazy" /></div>
                     <div class="item-info">
                         <div class="item-name">Tajín de Pollo con Limón y Aceitunas</div>
                         <div class="item-desc">Chicken Tagine with Preserved Lemon and Olives.</div>
@@ -1605,7 +1682,7 @@
                      data-name-it="Tè marocchino tradizionale alla menta" data-desc-it="Tè verde con menta."
                      data-name-pt="Chá Marroquino Tradicional de Menta" data-desc-pt="Chá verde com hortelã."
                      data-price="4.50">
-                    <div class="item-img"><img src="images/teeMarroqui.jpg" alt="Té Marroquí Tradicional" loading="lazy" /></div>
+                    <div class="item-img"><img src="images/TE MARROQUI.jpeg" alt="Té Marroquí Tradicional" loading="lazy" /></div>
                     <div class="item-info">
                         <div class="item-name">Té Marroquí Tradicional</div>
                         <div class="item-desc">Té verde con hierbabuena y menta.</div>
@@ -1773,7 +1850,7 @@
                      data-name-it="Cuscus di pollo con verdure, uvetta e cipolle caramellate" data-desc-it="Pollo, verdure, uvetta e cipolle caramellate."
                      data-name-pt="Cuscuz de Frango com Legumes, Passas e Cebola Caramelizada" data-desc-pt="Frango, legumes, passas e cebola caramelizada."
                      data-price="18.00">
-                    <div class="item-img"><img src="images/couscous pollo.jpeg" alt="Cuscús de Pollo" loading="lazy" /></div>
+                    <div class="item-img"><img src="images/COUSCOUS POLLO.jpeg" alt="Cuscús de Pollo" loading="lazy" /></div>
                     <div class="item-info">
                         <div class="item-name">Cuscús de Pollo con Verduras, Pasas y Cebolla Caramelizada</div>
                         <div class="item-desc">Pollo, verduras, pasas y cebolla caramelizada.</div>
@@ -1995,7 +2072,7 @@
                      data-name-it="Riso al pollo al curry" data-desc-it="Riso con pollo al curry."
                      data-name-pt="Arroz com Frango ao Curry" data-desc-pt="Arroz com frango ao curry."
                      data-price="19.00">
-                    <div class="item-img"><img src="images/arroz_pollo_curry.jpeg" alt="Arroz con pollo al curry" loading="lazy" /></div>
+                    <div class="item-img"><img src="images/ARROZ CON POLLO AL CURRY.jpeg" alt="Arroz con pollo al curry" loading="lazy" /></div>
                     <div class="item-info">
                         <div class="item-name">Arroz con pollo al curry</div>
                         <div class="item-desc">Arroz con pollo al curry.</div>
@@ -2018,7 +2095,7 @@
                      data-name-it="Paella ai frutti di mare" data-desc-it="Salsa di pomodoro, mozzarella e frutti di mare."
                      data-name-pt="Paella de Frutos do Mar" data-desc-pt="Molho de tomate, mozzarella e frutos do mar."
                      data-price="17.50">
-                    <div class="item-img"><img src="images/paella_marisco.jpeg" alt="Paella de Marisco" loading="lazy" /></div>
+                    <div class="item-img"><img src="images/PAELLA MARISCO.jpeg" alt="Paella de Marisco" loading="lazy" /></div>
                     <div class="item-info">
                         <div class="item-name">Paella de Marisco</div>
                         <div class="item-desc">Salsa de tomate, mozzarella y selección de mariscos.</div>
@@ -2064,7 +2141,7 @@
                      data-name-it="Paella ai frutti di mare Señorito" data-desc-it="Paella ai frutti di mare con gamberi sgusciati."
                      data-name-pt="Paella de Frutos do Mar Señorito" data-desc-pt="Paella de frutos do mar com camarão descascado."
                      data-price="17.00">
-                    <div class="item-img"><img src="images/Marisco.jpg" alt="Paella de marisco Señorito" loading="lazy" /></div>
+                    <div class="item-img"><img src="images/PAELLA SEÑORITO.jpeg" alt="Paella de marisco Señorito" loading="lazy" /></div>
                     <div class="item-info">
                         <div class="item-name">Paella de marisco Señorito</div>
                         <div class="item-desc">Paella de marisco Señorito.</div>
@@ -2087,7 +2164,7 @@
                      data-name-it="Paella di verdure" data-desc-it="Paella di verdure."
                      data-name-pt="Paella de Legumes" data-desc-pt="Paella de legumes."
                      data-price="15.50">
-                    <div class="item-img"><img src="images/Paella Vigital.jpg" alt="Paella de verduras" loading="lazy" /></div>
+                    <div class="item-img"><img src="images/PAELLA VERDURA.jpeg" alt="Paella de verduras" loading="lazy" /></div>
                     <div class="item-info">
                         <div class="item-name">Paella de verduras</div>
                         <div class="item-desc">Paella de verduras.</div>
@@ -2106,30 +2183,7 @@
             <!-- ─── PLANCHA Y PARRILLA ─── -->
             <div class="menu-section" data-category="grill">
                 <div class="section-title" data-name-es="Plancha y Parrilla · Grill" data-name-en="Grill & Griddle" data-name-fr="Grill et Plancha" data-name-ar="مشاوي" data-name-de="Grill & Grillplatte" data-name-ru="Гриль и сковорода" data-name-it="Griglia e Piastra" data-name-pt="Grelhados" data-name-el="Σχάρας" data-name-zh="烧烤与铁板" data-name-zh-tw="燒烤與鐵板" data-name-ja="グリルと鉄板焼き" data-name-ko="그릴" data-name-hi="ग्रिल और तवा" data-name-nl="Grill & Bakplaat" data-name-pl="Grill i Płyta" data-name-tr="Izgara" data-name-uk="Гриль та сковорода"> Plancha y Parrilla · Grill</div>
-
-                <!-- Pinchitos Morunos (3 Unidades) -->
-                <div class="menu-item" data-id="pinchitos_morunos" 
-                     data-name-es="Pinchitos Morunos (3 Unidades)" data-desc-es="Tres pinchitos a la parrilla, acompañados de ensalada y arroz O patatas fritas." 
-                     data-name-en="Moroccan Skewers (3 Pieces)" data-desc-en="Three grilled Moroccan skewers served with salad and rice OR French fries." 
-                     data-name-fr="Brochettes Marocaines (3 Pièces)" data-desc-fr="Trois brochettes grillées, servies avec salade et riz OU frites." 
-                     data-name-ar="أسياخ مغربية (3 قطع)" data-desc-ar="ثلاثة أسياخ مشوية، مرفقة بالسلطة والأرز أو البطاطس المقلية." 
-                     data-name-de="Marokkanische Spieße (3 Stück)" data-desc-de="Drei gegrillte marokkanische Spieße, serviert mit Salat und Reis ODER Pommes frites."
-                     data-name-ru="Марокканские шашлыки (3 шт.)" data-desc-ru="Три шашлыка на гриле с салатом и рисом ИЛИ картофелем фри."
-                     data-name-it="Spiedini marocchini (3 pezzi)" data-desc-it="Tre spiedini marocchini alla griglia serviti con insalata e riso O patatine fritte."
-                     data-name-pt="Espetadas Marroquinas (3 Unidades)" data-desc-pt="Três espetadas grelhadas servidas com salada e arroz OU batatas fritas."
-                     data-price="18.00">
-                    <div class="item-img"><img src="images/pinchitos_morunos.jpeg" alt="Pinchitos Morunos" loading="lazy" /></div>
-                    <div class="item-info">
-                        <div class="item-name">Pinchitos Morunos (3 Unidades)</div>
-                        <div class="item-desc">Tres pinchitos a la parrilla, acompañados de ensalada y arroz O patatas fritas.</div>
-                        <div class="allergy-icons"><span class="allergy-icon">🌱 Soja</span></div>
-                    </div>
-                    <div class="price-add">
-                        <div class="price">18.00</div> 
-                        <button class="add-btn">Añadir</button>
-                    </div>
-                </div>
-
+               
                 <!-- 1. Pinchitos Mixtos -->
                 <div class="menu-item" data-id="pinchitos_mixtos" 
                      data-name-es="Pinchitos Mixtos" data-desc-es="Selección mixta de pinchitos a la parrilla." 
@@ -2141,7 +2195,7 @@
                      data-name-it="Spiedini misti" data-desc-it="Selezione mista di spiedini alla griglia."
                      data-name-pt="Espetadas Mistas" data-desc-pt="Seleção mista de espetadas grelhadas."
                      data-price="19.50">
-                    <div class="item-img"><img src="images/pinchitos_mixtos.jpeg" alt="Pinchitos Mixtos" loading="lazy" /></div>
+                    <div class="item-img"><img src="images/PINCHITOS MIXTOS.jpeg" alt="Pinchitos Mixtos" loading="lazy" /></div>
                     <div class="item-info">
                         <div class="item-name">Pinchitos Mixtos</div>
                         <div class="item-desc">Selección mixta de pinchitos a la parrilla.</div>
@@ -2164,7 +2218,7 @@
                      data-name-it="Costolette di agnello alla griglia" data-desc-it="Costolette di agnello alla griglia."
                      data-name-pt="Costeletas de Cordeiro Grelhadas" data-desc-pt="Costeletas de cordeiro grelhadas."
                      data-price="21.00">
-                    <div class="item-img"><img src="images/chuletas_cordero.jpeg" alt="Chuletas de Cordero" loading="lazy" /></div>
+                    <div class="item-img"><img src="images/CHULETAS DE CORDERO.jpeg" alt="Chuletas de Cordero" loading="lazy" /></div>
                     <div class="item-info">
                         <div class="item-name">Chuletas de Cordero a la Plancha</div>
                         <div class="item-desc">Chuletas de cordero a la plancha.</div>
@@ -2176,9 +2230,9 @@
                     </div>
                 </div>
 
-                <!-- 3. Pinchitos de Cordero -->
+                                <!-- 3. Pinchitos de Cordero -->
                 <div class="menu-item" data-id="pinchitos_cordero" 
-                     data-name-es="Pinchitos de Cordero" data-desc-es="أسياخ لحم الضأن المشوية." 
+                     data-name-es="Pinchitos de Cordero" data-desc-es="Pinchitos de cordero a la parrilla." 
                      data-name-en="Grilled Lamb Skewers" data-desc-en="Grilled lamb skewers." 
                      data-name-fr="Brochettes d'Agneau" data-desc-fr="Brochettes d'agneau grillées." 
                      data-name-ar="أسياخ لحم الضأن المشوية" data-desc-ar="أسياخ لحم الضأن المشوية." 
@@ -2187,10 +2241,10 @@
                      data-name-it="Spiedini di agnello" data-desc-it="Spiedini di agnello alla griglia."
                      data-name-pt="Espetadas de Cordeiro" data-desc-pt="Espetadas de cordeiro grelhadas."
                      data-price="19.00">
-                    <div class="item-img"><img src="images/pinchitos_cordero.jpeg" alt="Pinchitos de Cordero" loading="lazy" /></div>
+                    <div class="item-img"><img src="images/PINCHITOS CORDERO CON ARROZ.jpeg" alt="Pinchitos de Cordero" loading="lazy" /></div>
                     <div class="item-info">
                         <div class="item-name">Pinchitos de Cordero</div>
-                        <div class="item-desc">أسياخ لحم الضأن المشوية.</div>
+                        <div class="item-desc">Pinchitos de cordero a la parrilla.</div>
                         <div class="allergy-icons"><span class="allergy-icon">🌱 Soja</span></div>
                     </div>
                     <div class="price-add">
@@ -2201,7 +2255,7 @@
 
                 <!-- 4. Pinchitos de Kefta (Ternera Picada) -->
                 <div class="menu-item" data-id="pinchitos_kefta" 
-                     data-name-es="Pinchitos de Kefta (Ternera Picada)" data-desc-es="أسياخ الكفتة المشوية (لحم بقري مفروم)." 
+                     data-name-es="Pinchitos de Kefta (Ternera Picada)" data-desc-es="Pinchitos de kefta (ternera picada) a la parrilla." 
                      data-name-en="Grilled Beef Kefta Skewers" data-desc-en="Grilled beef kefta skewers (minced beef)." 
                      data-name-fr="Brochettes de Kefta (Bœuf Haché)" data-desc-fr="Brochettes de kefta grillées (bœuf haché)." 
                      data-name-ar="أسياخ الكفتة المشوية" data-desc-ar="أسياخ الكفتة المشوية (لحم بقري مفروم)." 
@@ -2210,10 +2264,10 @@
                      data-name-it="Spiedini di Kefta (Manzo Macinato)" data-desc-it="Spiedini di kefta alla griglia (carne macinata)."
                      data-name-pt="Espetadas de Kefta (Carne de Vaca Picada)" data-desc-pt="Espetadas de kefta grelhadas (carne picada)."
                      data-price="18.50">
-                    <div class="item-img"><img src="images/pinchitos_kefta.jpeg" alt="Pinchitos de Kefta" loading="lazy" /></div>
+                    <div class="item-img"><img src="images/Pinchitos kefta arroz.jpeg" alt="Pinchitos de Kefta" loading="lazy" /></div>
                     <div class="item-info">
                         <div class="item-name">Pinchitos de Kefta (Ternera Picada)</div>
-                        <div class="item-desc">أسياخ الكفتة المشوية (لحم بقري مفروم).</div>
+                        <div class="item-desc">Pinchitos de kefta (ternera picada) a la parrilla.</div>
                         <div class="allergy-icons"><span class="allergy-icon">🌱 Soja</span></div>
                     </div>
                     <div class="price-add">
@@ -2224,7 +2278,7 @@
 
                 <!-- 5. Pinchitos de Pollo -->
                 <div class="menu-item" data-id="pinchitos_pollo" 
-                     data-name-es="Pinchitos de Pollo" data-desc-es="أسياخ الدجاج المشوية." 
+                     data-name-es="Pinchitos de Pollo" data-desc-es="Pinchitos de pollo a la parrilla." 
                      data-name-en="Grilled Chicken Skewers" data-desc-en="Grilled chicken skewers." 
                      data-name-fr="Brochettes de Poulet" data-desc-fr="Brochettes de poulet grillées." 
                      data-name-ar="أسياخ الدجاج المشوية" data-desc-ar="أسياخ الدجاج المشوية." 
@@ -2233,10 +2287,10 @@
                      data-name-it="Spiedini di pollo" data-desc-it="Spiedini di pollo alla griglia."
                      data-name-pt="Espetadas de Frango" data-desc-pt="Espetadas de frango grelhadas."
                      data-price="18.00">
-                    <div class="item-img"><img src="images/pinchitos_pollo.jpeg" alt="Pinchitos de Pollo" loading="lazy" /></div>
+                    <div class="item-img"><img src="images/PINCHITOS POLLO ARROZ.jpeg" alt="Pinchitos de Pollo" loading="lazy" /></div>
                     <div class="item-info">
                         <div class="item-name">Pinchitos de Pollo</div>
-                        <div class="item-desc">أسياخ الدجاج المشوية.</div>
+                        <div class="item-desc">Pinchitos de pollo a la parrilla.</div>
                         <div class="allergy-icons"><span class="allergy-icon">🌱 Soja</span></div>
                     </div>
                     <div class="price-add">
@@ -2264,7 +2318,7 @@
                      data-name-it="Coppa di gelato Las Palmeras" data-desc-it="Gelato al pistacchio e vaniglia."
                      data-name-pt="Taça de Gelado Las Palmeras" data-desc-pt="Gelado de pistácio e baunilha."
                      data-price="7.00">
-                    <div class="item-img"><img src="images/copa_helado.jpg" alt="Copa de helado Las Palmeras" loading="lazy" /></div>
+                    <div class="item-img"><img src="images/HELADO LAS PALMERAS.jpeg" alt="Copa de helado Las Palmeras" loading="lazy" /></div>
                     <div class="item-info">
                         <div class="item-name">Copa de helado Las Palmeras</div>
                         <div class="item-desc">Helado de pistacho y vainilla.</div>
@@ -2310,7 +2364,7 @@
                      data-name-it="Baklava al pistacchio (1 pezzo)" data-desc-it="Pasticceria araba al pistacchio."
                      data-name-pt="Baklava de Pistácio (1 Un)" data-desc-pt="Doce árabe de pistácio."
                      data-price="2.50">
-                    <div class="item-img"><img src="images/baklava.jpeg" alt="Baklava de pistacho" loading="lazy" /></div>
+                    <div class="item-img"><img src="images/BAKLAWA PISTACHO.jpeg" alt="Baklava de pistacho" loading="lazy" /></div>
                     <div class="item-info">
                         <div class="item-name">Baklava de pistacho (1 Ud.)</div>
                         <div class="item-desc">Dulce árabe de pistacho.</div>
@@ -2333,7 +2387,7 @@
                      data-name-it="Dolce arabo (1 pezzo)" data-desc-it="Dolce arabo tradizionale."
                      data-name-pt="Doce Árabe (1 Un)" data-desc-pt="Doce árabe tradicional."
                      data-price="2.00">
-                    <div class="item-img"><img src="images/dulce_arabe.jpg" alt="Dulce árabe" loading="lazy" /></div>
+                    <div class="item-img"><img src="images/DulceArabe.jpg" alt="Dulce árabe" loading="lazy" /></div>
                     <div class="item-info">
                         <div class="item-name">Dulce árabe (1 Ud.)</div>
                         <div class="item-desc">Dulce árabe tradicional.</div>
@@ -2508,7 +2562,7 @@
                      data-name-it="Birra analcolica" data-desc-it="Birra analcolica (0.0%)."
                      data-name-pt="Cerveja sem Álcool" data-desc-pt="Cerveja sem álcool (0.0%)."
                      data-price="3.00">
-                    <div class="item-img"><img src="images/sinalcohol.jpg" alt="Cerveza 0,0" loading="lazy" /></div>
+                    <div class="item-img"><img src="images/CERVEZA 00.jpeg" alt="Cerveza 0,0" loading="lazy" /></div>
                     <div class="item-info">
                         <div class="item-name">Cerveza 0,0</div>
                         <div class="item-desc">Cerveza sin alcohol (0.0%).</div>
@@ -2531,7 +2585,7 @@
                      data-name-it="Acqua Minerale" data-desc-it="Acqua minerale naturale liscia."
                      data-name-pt="Água Mineral" data-desc-pt="Água mineral natural sem gás."
                      data-price="3.00">
-                    <div class="item-img"><img src="images/agua_mineral.jpeg" alt="Agua Mineral" loading="lazy" /></div>
+                    <div class="item-img"><img src="images/AGUA.jpeg" alt="Agua Mineral" loading="lazy" /></div>
                     <div class="item-info">
                         <div class="item-name">Agua Mineral</div>
                         <div class="item-desc">Agua mineral natural sin gas.</div>
@@ -2554,7 +2608,7 @@
                      data-name-it="Acqua Frizzante" data-desc-it="Acqua minerale gassata."
                      data-name-pt="Água com Gás" data-desc-pt="Água mineral com gás."
                      data-price="3.00">
-                    <div class="item-img"><img src="images/agua_gas.jpeg" alt="Agua con gas" loading="lazy" /></div>
+                    <div class="item-img"><img src="images/AGUA CON GAS.jpeg" alt="Agua con gas" loading="lazy" /></div>
                     <div class="item-info">
                         <div class="item-name">Agua con gas</div>
                         <div class="item-desc">Agua mineral con gas.</div>
@@ -2653,7 +2707,7 @@
                      data-name-it="Paradise" data-desc-it="Fragola e mango."
                      data-name-pt="Paradise" data-desc-pt="Morango e manga."
                      data-price="5.00">
-                    <div class="item-img"><img src="images/Fresa Y Mango.jpg" alt="Paradise Smoothie" loading="lazy" /></div>
+                    <div class="item-img"><img src="images/PARADISE.jpeg" alt="Paradise Smoothie" loading="lazy" /></div>
                     <div class="item-info">
                         <div class="item-name">Paradise</div>
                         <div class="item-desc">Fresa y mango.</div>
@@ -2676,7 +2730,7 @@
                      data-name-it="Sunshine" data-desc-it="Ananas e mango."
                      data-name-pt="Sunshine" data-desc-pt="Ananás e manga."
                      data-price="5.00">
-                    <div class="item-img"><img src="images/Peñay Mango.jpg" alt="Sunshine Smoothie" loading="lazy" /></div>
+                    <div class="item-img"><img src="images/SUNSHINE.jpeg" alt="Sunshine Smoothie" loading="lazy" /></div>
                     <div class="item-info">
                         <div class="item-name">Sunshine</div>
                         <div class="item-desc">Piña y mango.</div>
@@ -2699,7 +2753,7 @@
                      data-name-it="Tropical" data-desc-it="Fragola e banana."
                      data-name-pt="Tropical" data-desc-pt="Morango e banana."
                      data-price="5.00">
-                    <div class="item-img"><img src="images/Fresa y Platano.jpg" alt="Tropical Smoothie" loading="lazy" /></div>
+                    <div class="item-img"><img src="images/TROPICAL.jpeg" alt="Tropical Smoothie" loading="lazy" /></div>
                     <div class="item-info">
                         <div class="item-name">Tropical</div>
                         <div class="item-desc">Fresa y plátano.</div>
@@ -2722,7 +2776,7 @@
                      data-name-it="Sunset" data-desc-it="Fragola e lampone."
                      data-name-pt="Sunset" data-desc-pt="Morango e framboesa."
                      data-price="5.00">
-                    <div class="item-img"><img src="images/zumoDe Freasa.jpg" alt="Sunset Smoothie" loading="lazy" /></div>
+                    <div class="item-img"><img src="images/SUNSET.jpeg" alt="Sunset Smoothie" loading="lazy" /></div>
                     <div class="item-info">
                         <div class="item-name">Sunset</div>
                         <div class="item-desc">Fresa y frambuesa.</div>
@@ -2745,7 +2799,7 @@
                      data-name-it="Piña Colada" data-desc-it="Ananas e cocco."
                      data-name-pt="Piña Colada" data-desc-pt="Ananás e coco."
                      data-price="5.00">
-                    <div class="item-img"><img src="images/zumoCocoYpeña.jpg" alt="Piña Colada Smoothie" loading="lazy" /></div>
+                    <div class="item-img"><img src="images/PIÑA COLADA.jpeg" alt="Piña Colada Smoothie" loading="lazy" /></div>
                     <div class="item-info">
                         <div class="item-name">Piña Colada</div>
                         <div class="item-desc">Piña y coco.</div>
@@ -2821,7 +2875,7 @@
                      data-name-it="Pane arabo fatto in casa" data-desc-it="Pane arabo fatto in casa."
                      data-name-pt="Pão Árabe Caseiro" data-desc-pt="Pão árabe caseiro."
                      data-price="1.90">
-                    <div class="item-img"><img src="images/pan_arabe.jpg" alt="Pan árabe casero" loading="lazy" /></div>
+                    <div class="item-img"><img src="images/PAN ARABE.jpeg" alt="Pan árabe casero" loading="lazy" /></div>
                     <div class="item-info">
                         <div class="item-name">Pan árabe casero</div>
                         <div class="item-desc">Pan árabe casero.</div>
@@ -2844,7 +2898,7 @@
                      data-name-it="Pane pita" data-desc-it="Pane pita."
                      data-name-pt="Pão Pita" data-desc-pt="Pão pita."
                      data-price="1.50">
-                    <div class="item-img"><img src="images/pan_pita.jpg" alt="Pan de pita" loading="lazy" /></div>
+                    <div class="item-img"><img src="images/PAN PITA.jpeg" alt="Pan de pita" loading="lazy" /></div>
                     <div class="item-info">
                         <div class="item-name">Pan de pita</div>
                         <div class="item-desc">Pan de pita.</div>
@@ -2944,10 +2998,71 @@
         <div class="contact-footer-note">Las Palmeras · Cocina Mediterránea · Halal</div>
     </div>
 </div>
-
+<!-- ─── IMAGE LIGHTBOX ─── -->
+<div class="img-lightbox" id="imgLightbox" role="dialog" aria-modal="true" aria-label="Vista ampliada del plato">
+    <button class="img-lightbox-close" id="imgLightboxClose" type="button" aria-label="Cerrar">✕</button>
+    <img id="imgLightboxImg" src="" alt="" />
+    <div class="img-lightbox-caption" id="imgLightboxCaption"></div>
+</div>
 <div id="toastMsg"></div>
 
 <script>
+        // ─── IMAGE LIGHTBOX (Click to Zoom) ───
+    (function () {
+        const imgLightbox      = document.getElementById('imgLightbox');
+        const imgLightboxImg   = document.getElementById('imgLightboxImg');
+        const imgLightboxClose = document.getElementById('imgLightboxClose');
+        const imgLightboxCap   = document.getElementById('imgLightboxCaption');
+        if (!imgLightbox || !imgLightboxImg) return;
+
+        function openImageLightbox(src, alt) {
+            if (!src || src.indexOf('placeholder.jpg') !== -1) return;
+            imgLightboxImg.src = src;
+            imgLightboxImg.alt = alt || '';
+            if (imgLightboxCap) {
+                imgLightboxCap.textContent = alt || '';
+                imgLightboxCap.style.display = alt ? 'block' : 'none';
+            }
+            imgLightbox.classList.add('show');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeImageLightbox() {
+            imgLightbox.classList.remove('show');
+            document.body.style.overflow = '';
+            setTimeout(function () {
+                if (!imgLightbox.classList.contains('show')) imgLightboxImg.removeAttribute('src');
+            }, 300);
+        }
+
+        // This detects the click on the picture
+        document.addEventListener('click', function (e) {
+            const frame = e.target.closest('.item-img');
+            if (!frame) return;
+            if (e.target.closest('.add-btn')) return;
+            
+            const img = frame.querySelector('img');
+            if (!img || img.classList.contains('image-missing')) return;
+            const src = img.getAttribute('src');
+            if (!src) return;
+            
+            e.preventDefault();
+            openImageLightbox(img.currentSrc || img.src, img.alt || '');
+        }, true);
+
+        if (imgLightboxClose) {
+            imgLightboxClose.addEventListener('click', function (e) {
+                e.stopPropagation();
+                closeImageLightbox();
+            });
+        }
+        imgLightbox.addEventListener('click', function (e) {
+            if (e.target === imgLightbox || e.target === imgLightboxImg) closeImageLightbox();
+        });
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && imgLightbox.classList.contains('show')) closeImageLightbox();
+        });
+    })();
     // ─── DESPLEGABLE DE IDIOMAS ───
     const dropdownBtn = document.getElementById('langDropdownBtn');
     const dropdown = document.getElementById('langDropdown');
@@ -3049,15 +3164,15 @@ function applyTranslation() {
 
     const dict = dictionary[lang] || dictionary['en'];
 
-    // 2. Translate Menu Items (Names & Descriptions)
+    // 2. Translate Menu Items (Names & Descriptions) - FIXED FALLBACK LOGIC
     document.querySelectorAll('.menu-item').forEach(item => {
         const nameEl = item.querySelector('.item-name');
         const descEl = item.querySelector('.item-desc');
         const btnEl = item.querySelector('.add-btn');
 
-        // Check if a real translation exists in HTML. If not, use English. If not, Spanish.
-        const newName = item.getAttribute(`data-name-${lang}`) || item.getAttribute('data-name-en') || item.getAttribute('data-name-es');
-        const newDesc = item.getAttribute(`data-desc-${lang}`) || item.getAttribute('data-desc-en') || item.getAttribute('data-desc-es');
+        // Try selected language first, then SPANISH, then English. (This prevents Arabic showing in Spanish).
+        const newName = item.getAttribute(`data-name-${lang}`) || item.getAttribute('data-name-es') || item.getAttribute('data-name-en');
+        const newDesc = item.getAttribute(`data-desc-${lang}`) || item.getAttribute('data-desc-es') || item.getAttribute('data-desc-en');
 
         if (newName && nameEl) nameEl.textContent = newName;
         if (newDesc && descEl) descEl.textContent = newDesc;
@@ -3083,18 +3198,6 @@ function applyTranslation() {
         }
     });
 
-    // 4. Translate Filter Chips
-    document.querySelectorAll('.cat-chip').forEach(chip => {
-        const cat = chip.dataset.filter;
-        if (dict[cat]) {
-            // Preserve the SVG icons, only change the text
-            const svg = chip.querySelector('svg');
-            chip.innerHTML = (svg ? svg.outerHTML : '') + ' <span>' + dict[cat].replace('⭐ ', '') + '</span>';
-        }
-    });
-
-    syncLanguageUI();
-    renderOrder();
 }
 
     // ─── SCROLL HELPERS ───
@@ -3357,34 +3460,39 @@ function applyTranslation() {
 
     const menuLanguages = ['es', 'en', 'fr', 'ar', 'de', 'ru', 'it', 'el', 'pt', 'zh', 'zh-tw', 'ja', 'ko', 'hi', 'nl', 'pl', 'tr', 'uk'];
 
-    // Add photos as images/dishes/<dish-id>.jpg, or override a path here.
-      // Add photos as images/dishes/<dish-id>.jpg, or override a path here.
+        // Add photos as images/dishes/<dish-id>.jpg, or override a path here.
     const menuImageOverrides = {
-        // Items from your screenshot
-        'Tajin Verdura': 'images/TAJIN VERDURA.jpeg',
-        gambas: 'images/Gambas pil pil.jpeg',
-        tajin_albondigas_ternera: 'images/As tajin albóndigas.jpeg',
-        cordero: 'images/TAJIN CORDERO CON CIRUELA Y ALMENDRAS.jpeg',
+        // Drinks - Fixed exact casing and spaces
+        'cerveza_dubai_00': 'images/sinalcohol.jpg',
+        'cerveza': 'images/CERVEZA%2000.jpeg',
+        'agua_mineral': 'images/AGUA.jpeg',
+        'agua_con_gas': 'images/AGUA%20CON%20GAS.jpeg',
+        'refrescos': 'images/CocaCola.jpg',
+        'limonada': 'images/limonada.jpeg',
+
+        // Other items - Fixed spaces with %20
+        'Tajin Verdura': 'images/TAJIN%20VERDURA.jpeg',
+        gambas: 'images/Gambas%20pil%20pil.jpeg',
+        tajin_albondigas_ternera: 'images/As%20tajin%20alb%C3%B3ndigas.jpeg',
+        cordero: 'images/TAJIN%20CORDERO%20CON%20CIRUELA%20Y%20ALMENDRAS.jpeg',
         harira: 'images/HARIRA.png',
         Taktouka: 'images/taktoka.jpg',
         falafel: 'images/4falafel.jpeg',
         hummus: 'images/hummos.jpg',
         ensalada: 'images/ensaladamarroqui.jpg',
-        'Pinchitos De Pollo Con Arroz': 'images/Pinchitos pollo con arroz.jpg',
-        pastela: 'images/PASTELA  .jpeg',
-        'Pinchitos michtos con arroz y ensalada': 'images/pichitos arroz kefta.jpeg',
-        'Pinchitos cordero Con Arroz': 'images/pinchitos cordero arroz.jpeg',
-        'Pinchitos Kefta con Patatas Fritas': 'images/pinchitos kefta con patata fritas.jpeg',
-        'Degustación marroquí Las Palmeras': 'images/SURTIDO 4 ensaladas.jpeg',
-        cigars_surtido: 'images/SURTIDO CIGAR  .jpeg',
+        'Pinchitos De Pollo Con Arroz': 'images/Pinchitos%20pollo%20con%20arroz.jpg',
+        pastela: 'images/PASTELA%20%20.jpeg',
+        'Pinchitos michtos con arroz y ensalada': 'images/pichitos%20arroz%20kefta.jpeg',
+        'Pinchitos cordero Con Arroz': 'images/pinchitos%20cordero%20arroz.jpeg',
+        'Pinchitos Kefta con Patatas Fritas': 'images/pinchitos%20kefta%20con%20patata%20fritas.jpeg',
+        'Degustación marroquí Las Palmeras': 'images/SURTIDO%204%20ensaladas.jpeg',
+        cigars_surtido: 'images/SURTIDO%20CIGAR%20%20.jpeg',
         zaalouk: 'images/zaalouk.jpeg',
-        cuscus_pollo: 'images/couscous pollo.jpeg',
+        cuscus_pollo: 'images/couscous%20pollo.jpeg',
         pollo_limon: 'images/3.png',
-        tanjia: 'images/65f1ab54-9824-476d-8175-b94d3dd9363f 2.JPG',
-        cuscus_cordero: 'images/b4cf3d74-cb9f-4077-af1e-473c3836da0a 2.JPG'
-    };
-
-    function getMenuImagePath(id) {
+        tanjia: 'images/65f1ab54-9824-476d-8175-b94d3dd9363f%202.JPG',
+        cuscus_cordero: 'images/b4cf3d74-cb9f-4077-af1e-473c3836da0a%202.JPG'
+    };    function getMenuImagePath(id) {
         if (menuImageOverrides[id]) return menuImageOverrides[id];
         const filename = id.normalize('NFD')
             .replace(/[\u0300-\u036f]/g, '')
@@ -3637,7 +3745,8 @@ function applyTranslation() {
     applyMenuOverrides();
     addMenuProducts();
     applyMenuImages();
-    addCategoryFilters();</script>
+    addCategoryFilters();
+    </script>
 </body>
 <!-- ▼▼▼ PASSWORD LOCK SYSTEM ▼▼▼ -->
 <div id="passwordLockScreen" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: #f2ebe1; z-index: 999999; display: flex; flex-direction: column; align-items: center; justify-content: center; font-family: sans-serif;">
