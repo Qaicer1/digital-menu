@@ -36,7 +36,8 @@
         /* ─── HERO ─── */
         .hero {
             background: linear-gradient(145deg, #3d2317 0%, #5c3d2e 100%);
-            color: #fef6e8;
+            color: 
+#fee9e8;
             padding: 1.6rem 1.2rem 2rem;
             border-radius: 0 0 32px 32px;
             margin-bottom: 0.5rem;
@@ -425,7 +426,6 @@
             transform: scale(1);
             transition: filter 0.4s ease, transform 0.4s ease;
         }
-        
         .item-img .emoji-fallback {
             position: absolute;
             font-size: 3rem;
@@ -541,8 +541,6 @@
         .menu-item[data-price="consult"] .price::after {
             content: "";
         }
-
-        /* ─── ORDER PANEL ─── */
         .order-panel {
             background: #faf6f0;
             border-top: 1px solid #e4d5c4;
@@ -579,7 +577,6 @@
         #clearOrderBtn:hover {
             background: rgba(184, 134, 11, 0.08);
         }
-        
         .order-list {
             max-height: 180px;
             overflow-y: auto;
@@ -668,7 +665,6 @@
             box-shadow: 0 4px 16px rgba(60, 35, 23, 0.06);
             background: #fefaf5;
         }
-
         /* ─── ALLERGENS FOOTER ─── */
         .allergens-footer {
             background: #f2e6da;
@@ -1100,8 +1096,7 @@
 
                     <!-- ─── FILTROS ─── -->
         <div class="cats-scroll" id="filterTabs">
-            <div class="cat-chip active" data-filter="all" data-name-es="Todo" data-name-en="All" data-name-fr="Tout" data-name-ar="الكل" data-name-de="Alles" data-name-ru="Все" data-name-it="Tutto" data-name-pt="Tudo" data-name-el="Όλα" data-name-zh="全部" data-name-zh-tw="全部" data-name-ja="すべて" data-name-ko="전체" data-name-hi="सभी" data-name-nl="Alles" data-name-pl="Wszystko" data-name-tr="Tümü" data-name-uk="Все">Todo</div>
-            <div class="cat-chip" data-filter="entrantes" data-name-es="Entrantes" data-name-en="Starters" data-name-fr="Entrées" data-name-ar="مقبلات" data-name-de="Vorspeisen" data-name-ru="Закуски" data-name-it="Antipasti" data-name-pt="Entradas" data-name-el="Ορεκτικά" data-name-zh="开胃菜" data-name-zh-tw="開胃菜" data-name-ja="前菜" data-name-ko="에피타이저" data-name-hi="स्टार्टर" data-name-nl="Voorgerechten" data-name-pl="Przystawki" data-name-tr="Başlangıçlar" data-name-uk="Закуски"> Entrantes</div>
+<div class="cat-chip active" data-filter="especialidades" data-name-es="⭐ Especialidades Las Palmeras" data-name-en="⭐ Las Palmeras Specialties" data-name-fr="⭐ Spécialités Las Palmeras" data-name-ar="⭐ تخصصات لاس بالميراس" data-name-de="⭐ Spezialitäten Las Palmeras" data-name-ru="⭐ Фирменные блюда Las Palmeras" data-name-it="⭐ Specialità Las Palmeras" data-name-pt="⭐ Especialidades Las Palmeras" data-name-el="⭐ Σπεσιαλιτέ Las Palmeras" data-name-zh="⭐ Las Palmeras 特色菜" data-name-zh-tw="⭐ Las Palmeras 特色菜" data-name-ja="⭐ Las Palmeras の特産品" data-name-ko="⭐ Las Palmeras 특선" data-name-hi="⭐ Las Palmeras विशेषताएँ" data-name-nl="⭐ Las Palmeras Specialiteiten" data-name-pl="⭐ Specjalności Las Palmeras" data-name-tr="⭐ Las Palmeras Özel Lezzetleri" data-name-uk="⭐ Фірмові страви Las Palmeras">⭐ Especialidades Las Palmeras</div>            <div class="cat-chip" data-filter="entrantes" data-name-es="Entrantes" data-name-en="Starters" data-name-fr="Entrées" data-name-ar="مقبلات" data-name-de="Vorspeisen" data-name-ru="Закуски" data-name-it="Antipasti" data-name-pt="Entradas" data-name-el="Ορεκτικά" data-name-zh="开胃菜" data-name-zh-tw="開胃菜" data-name-ja="前菜" data-name-ko="에피타이저" data-name-hi="स्टार्टर" data-name-nl="Voorgerechten" data-name-pl="Przystawki" data-name-tr="Başlangıçlar" data-name-uk="Закуски"> Entrantes</div>
             <div class="cat-chip" data-filter="sopas" data-name-es="Sopas" data-name-en="Soups" data-name-fr="Soupes" data-name-ar="شوربات" data-name-de="Suppen" data-name-ru="Супы" data-name-it="Zuppe" data-name-pt="Sopas" data-name-el="Σούπες" data-name-zh="汤类" data-name-zh-tw="湯類" data-name-ja="スープ" data-name-ko="수프" data-name-hi="सूप" data-name-nl="Soepen" data-name-pl="Zupy" data-name-tr="Çorbalar" data-name-uk="Супи"> Sopas</div>
             <div class="cat-chip" data-filter="tagines" data-name-es="Tajines" data-name-en="Tagines" data-name-fr="Tajines" data-name-ar="طواجن" data-name-de="Tajines" data-name-ru="Тажины" data-name-it="Tajine" data-name-pt="Tajines" data-name-el="Ταζίν" data-name-zh="塔吉锅" data-name-zh-tw="塔吉鍋" data-name-ja="タジン" data-name-ko="타진" data-name-hi="टैगिन" data-name-nl="Tajines" data-name-pl="Tajine" data-name-tr="Tajinler" data-name-uk="Тажини"> Tajines</div>
             <div class="cat-chip" data-filter="cuscus" data-name-es="Cuscús" data-name-en="Couscous" data-name-fr="Couscous" data-name-ar="كسكس" data-name-de="Couscous" data-name-ru="Кускус" data-name-it="Cuscus" data-name-pt="Cuscuz" data-name-el="Κουσκούς" data-name-zh="库斯库斯" data-name-zh-tw="庫斯庫斯" data-name-ja="クスクス" data-name-ko="쿠스쿠스" data-name-hi="कुस्कस" data-name-nl="Couscous" data-name-pl="Kuskus" data-name-tr="Kuskus" data-name-uk="Кускус"> Cuscús</div>
@@ -1122,8 +1117,16 @@
         <!-- ════════════════════════════════════════════════════════════ -->
         <div id="menuContainer">
             <!-- ─── ESPECIALIDADES LAS PALMERAS ─── -->
+             
             <div class="menu-section" data-category="especialidades">
-                <div class="section-title" data-name-es="⭐ Especialidades Las Palmeras" data-name-en="⭐ Las Palmeras Specialties" data-name-fr="⭐ Spécialités Las Palmeras" data-name-ar="⭐ تخصصات لاس بالميراس" data-name-de="⭐ Spezialitäten Las Palmeras" data-name-ru="⭐ Фирменные блюда Las Palmeras" data-name-it="⭐ Specialità Las Palmeras" data-name-pt="⭐ Especialidades Las Palmeras" data-name-el="⭐ Σπεσιαλιτέ Las Palmeras" data-name-zh="⭐ Las Palmeras 特色菜" data-name-zh-tw="⭐ Las Palmeras 特色菜" data-name-ja="⭐ Las Palmeras の特産品" data-name-ko="⭐ Las Palmeras 특선" data-name-hi="⭐ Las Palmeras विशेषताएँ" data-name-nl="⭐ Las Palmeras Specialiteiten" data-name-pl="⭐ Specjalności Las Palmeras" data-name-tr="⭐ Las Palmeras Özel Lezzetleri" data-name-uk="⭐ Фірмові страви Las Palmeras">⭐ Especialidades Las Palmeras</div>
+
+                <div class="section-title" data-name-es="⭐ Especialidades Las Palmeras" data-name-en="⭐ Las Palmeras Specialties" 
+                data-name-fr="⭐ Spécialités Las Palmeras" data-name-ar="⭐ تخصصات لاس بالميراس" data-name-de="⭐ Spezialitäten Las Palmeras" 
+                data-name-ru="⭐ Фирменные блюда Las Palmeras" data-name-it="⭐ Specialità Las Palmeras" data-name-pt="⭐ Especialidades Las Palmeras" 
+                data-name-el="⭐ Σπεσιαλιτέ Las Palmeras" data-name-zh="⭐ Las Palmeras 特色菜" data-name-zh-tw="⭐ Las Palmeras 特色菜" 
+                data-name-ja="⭐ Las Palmeras の特産品" data-name-ko="⭐ Las Palmeras 특선" data-name-hi="⭐ Las Palmeras विशेषताएँ" data-name-nl="⭐ Las Palmeras Specialiteiten" 
+                data-name-pl="⭐ Specjalności Las Palmeras" data-name-tr="⭐ Las Palmeras Özel Lezzetleri" 
+                data-name-uk="⭐ Фірмові страви Las Palmeras">⭐ Especialidades Las Palmeras</div>
 
                 <!-- 1. Tanjia de Marrakech -->
                 <div class="menu-item" data-id="tanjia" 
@@ -1147,7 +1150,37 @@
                         <button class="add-btn">Añadir</button>
                     </div>
                 </div>
-
+                   <div class="menu-item" data-id="cordero_horno_marrakech" 
+                      data-name-es="Cordero al horno Estilo Marrakech" data-desc-es="Cordero asado lentamente al horno con especias, acompañado de arroz blanco y verduras salteadas." 
+                          data-name-en="Marrakech-Style Roasted Lamb" data-desc-en="Slow-roasted lamb with spices, served with white rice and sautéed vegetables." 
+                       data-name-fr="Agneau Rôti à la Marrakchie" data-desc-fr="Agneau rôti lentement au four avec des épices, accompagné de riz blanc et de légumes sautés." 
+                     data-name-ar="حم الغنم المشوي في الفرن على الطريقة المراكشية" data-desc-ar="لحم الغنم المشوي ببطء في الفرن مع التوابل المغربية، تقدم مع الأرز الأبيض والخضروات المشوحة." 
+                      data-name-de="Lammbraten nach Marrakesch-Art" data-desc-de="Langsam im Ofen gebratenes Lamm mit Gewürzen, serviert mit weißem Reis und sautiertem Gemüse."
+                      data-name-ru="Жареная баранина по-марракешски" data-desc-ru="Медленно запеченная в духовке баранина со специями, подается с белым рисом и обжаренными овощами."
+                data-name-it="Agnello arrosto alla marrakchina" data-desc-it="Agnello arrostito lentamente al forno con spezie, servito con riso bianco e verdure saltate."
+              data-name-pt="Cordeiro Assado ao Estilo Marraquexe" data-desc-pt="Cordeiro assado lentamente no forno com especiarias, servido com arroz branco e legumes salteados."
+             data-name-nl="Geroosterd Lamsvlees op Marrakech-Wijze" data-desc-nl="Langzaam in de oven geroosterd lamsvlees met kruiden, geserveerd met witte rijst en gebakken groenten."
+                  data-name-pl="Pieczona Jagnięcina w Stylu Marrakeszu" data-desc-pl="Powoli pieczona w piekarniku jagnięcina z przyprawami, podawana z białym ryżem i podsmażanymi warzywami."
+             data-name-tr="Marakeş Usulü Fırında Kuzu" data-desc-tr="Baharatlarla fırında yavaşça pişirilmiş kuzu eti, beyaz pirinç ve sote sebzelerle servis edilir."
+               data-name-uk="Запечена ягнятина за марракеським рецептом" data-desc-uk="Повільно запечена в духовці ягнятина зі спеціями, подається з білим рисом та обсмаженими овочами."
+            data-name-el="Ψητό Αρνί σε Στυλ Μαρακές" data-desc-el="Αρνί ψημένο αργά στο φούρνο με μπαχαρικά, σερβίρεται με λευκό ρύζι και σοταρισμένα λαχανικά."
+              data-name-zh="马拉喀什风味烤羊肉" data-desc-zh="用香料慢烤的羊肉，配白米饭和炒蔬菜。"
+                  data-name-zh-tw="馬拉喀什風味烤羊肉" data-desc-zh-tw="用香料慢烤的羊肉，配白米飯和炒蔬菜。"
+             data-name-ja="マラケシュ風ローストラム" data-desc-ja="スパイスでじっくりオーブンで焼いたラム肉。白米とソテーした野菜を添えて。"
+                data-name-ko="마라케시 스타일 구운 양고기" data-desc-ko="향신료와 함께 오븐에서 천천히 구운 양고기. 흰쌀밥과 볶은 채소를 곁들여 제공합니다."
+                 data-name-hi="मराकेश शैली में भुना हुआ मेमना" data-desc-hi="मसालों के साथ ओवन में धीरे-धीरे भुना हुआ मेमना, सफेद चावल और भुनी हुई सब्जियों के साथ परोसा जाता है।"
+                data-price="22.90">
+    <div class="item-img"><img src="images/Cordero al horno Estilo Marrakech.jpeg" alt="Cordero al horno Estilo Marrakech" loading="lazy" /></div>
+    <div class="item-info">
+        <div class="item-name">Cordero al horno Estilo Marrakech</div>
+        <div class="item-desc">Cordero asado lentamente al horno con especias, acompañado de arroz blanco y verduras salteadas.</div>
+        <div class="allergy-icons"></div>
+    </div>
+    <div class="price-add">
+        <div class="price">22.90</div>
+        <button class="add-btn">Añadir</button>
+    </div>
+</div>
                 <!-- 2. Hummus Las Palmeras con pan pita -->
                 <div class="menu-item" data-id="hummus_las_palmeras_esp" 
                      data-name-es="Hummus Las Palmeras con pan pita" data-desc-es="Hummus cremoso con carne picada de ternera especiada, pequeños dados de tomate fresco y almendras tostadas, acompañado de pan pita." 
@@ -1193,7 +1226,43 @@
                         <button class="add-btn">Añadir</button>
                     </div>
                 </div>
-
+                <div class="menu-item" data-id="pastela" 
+                     data-name-es="Pastela de pollo y almendras" data-desc-es="Fina y crujiente masa rellena de pollo especiado y almendras, con el tradicional toque dulce de canela y azúcar glas." 
+                     data-name-en="Chicken and Almond Pastilla" data-desc-en="Delicate crispy pastry filled with spiced chicken and almonds, finished with a traditional touch of cinnamon and icing sugar."
+                     data-name-fr="Pastilla au Poulet et aux Amandes" data-desc-fr="Pâte fine et croustillante farcie de poulet épicé et d'amandes, avec la touche sucrée traditionnelle de cannelle et de sucre glace."
+                     data-name-ar="بسطيلة بالدجاج واللوز" data-desc-ar="عجينة رقيقة ومقرمشة محشوة بالدجاج المتبل واللوز، مع لمسة حلوة تقليدية من القرفة والسكر البودرة."
+                     data-name-de="Hähnchen-Mandel-Pastilla" data-desc-de="Zarter, knuspriger Teig gefüllt mit gewürztem Hähnchen und Mandeln, verfeinert mit der traditionellen süßen Note von Zimt und Puderzucker."
+                     data-name-ru="Пастилла с курицей и миндалем" data-desc-ru="Тонкое хрустящее тесто с начинкой из пряной курицы и миндаля, с традиционной сладкой ноткой корицы и сахарной пудры."
+                     data-name-it="Pastilla di pollo e mandorle" data-desc-it="Pasta sottile e croccante ripiena di pollo speziato e mandorle, con il tradizionale tocco dolce di cannella e zucchero a velo."
+                     data-name-pt="Pastela de Frango e Amêndoas" data-desc-pt="Massa fina e crocante recheada com frango temperado e amêndoas, com o toque doce tradicional de canela e açúcar em pó."
+                     data-name-el="Παστίλα με Κοτόπουλο και Αμύγδαλα" data-desc-el="Λεπτή και τραγανή ζύμη γεμάτη με καρυκευμένο κοτόπουλο και αμύγδαλα, με την παραδοσιακή γλυκιά νότα κανέλας και ζάχαρης άχνη."
+                     data-name-zh="鸡肉杏仁馅饼" data-desc-zh="薄脆的酥皮包裹着香料鸡肉和杏仁，带有传统的肉桂和糖霜甜味。"
+                     data-name-zh-tw="雞肉杏仁餡餅" data-desc-zh-tw="薄脆的酥皮包裹著香料雞肉和杏仁，帶有傳統的肉桂和糖霜甜味。"
+                     data-name-ja="鶏肉とアーモンドのパスティーヤ" data-desc-ja="スパイスで味付けした鶏肉とアーモンドを包んだ薄くてサクサクの生地に、シナモンと粉砂糖の伝統的な甘さをプラス。"
+                     data-name-ko="닭고기와 아몬드 파스티야" data-desc-ko="향신료로 양념한 닭고기와 아몬드를 얇고 바삭한 반죽에 채우고 전통적인 시나몬과 슈가파우더의 달콤함을 더했습니다."
+                     data-name-hi="चिकन और बादाम पस्टिला" data-desc-hi="मसालेदार चिकन और बादाम से भरी पतली और कुरकुरी पेस्ट्री, दालचीनी और आइसिंग शुगर के पारंपरिक मीठे स्पर्श के साथ।"
+                     data-name-nl="Kip en Amandel Pastilla" data-desc-nl="Fijn en knapperig deeg gevuld met gekruid kip en amandelen, met de traditionele zoete toets van kaneel en poedersuiker."
+                     data-name-pl="Pastilla z Kurczakiem i Migdałami" data-desc-pl="Cienkie i chrupiące ciasto wypełnione przyprawionym kurczakiem i migdałami, z tradycyjną słodką nutą cynamonu i cukru pudru."
+                     data-name-tr="Tavuklu ve Bademli Pastilla" data-desc-tr="Baharatlı tavuk ve bademle doldurulmuş ince ve çıtır hamur, geleneksel tarçın ve pudra şekeri tatlılığıyla tamamlanır."
+                     data-name-uk="Пастила з куркою та мигдалем" data-desc-uk="Тонке хрустке тісто з начинкою з пряної курки та мигдалю, з традиційною солодкою ноткою кориці та цукрової пудри."
+                     data-price="19.50">
+                    <div class="item-img">
+                        <img src="images/pastela.png" alt="Pastela de pollo y almendras" loading="lazy" />
+                    </div>
+                    <div class="item-info">
+                        <div class="item-name">Pastela de pollo y almendras</div>
+                        <div class="item-desc">Fina y crujiente masa rellena de pollo especiado y almendras, con el tradicional toque dulce de canela y azúcar glas.</div>
+                        <div class="allergy-icons">
+                            <span class="allergy-icon">🌾 Gluten</span>
+                            <span class="allergy-icon">🌰 Frutos cáscara</span>
+                            <span class="allergy-icon">🥚 Huevos</span>
+                        </div>
+                    </div>
+                    <div class="price-add">
+                        <div class="price">19.50</div>
+                        <button class="add-btn">Añadir</button>
+                    </div>
+                </div>
                 <!-- 4. Harira Tradicional Marroquí -->
                 <div class="menu-item" data-id="harira_tradicional" 
                      data-name-es="Harira Tradicional Marroquí" data-desc-es="Sopa tradicional marroquí." 
@@ -1216,8 +1285,49 @@
                         <button class="add-btn">Añadir</button>
                     </div>
                 </div>
-
             </div>
+                           <!-- ─── PASTELA ─── -->
+            <div class="menu-section" data-category="pastela">
+                <div class="section-title" data-name-es="Pastela" data-name-en="Pastilla" data-name-fr="Pastilla" data-name-ar="بسطيلة" data-name-de="Pastilla" data-name-ru="Пастилла" data-name-it="Pastilla" data-name-pt="Pastela" data-name-el="Παστίλα" data-name-zh="馅饼" data-name-zh-tw="餡餅" data-name-ja="パスティーヤ" data-name-ko="파스티야" data-name-hi="पेस्टिला" data-name-nl="Pastilla" data-name-pl="Pastilla" data-name-tr="Pastilla" data-name-uk="Пастила">Pastela</div>
+                <div class="menu-item" data-id="pastela"
+                     data-name-es="Pastela de pollo y almendras" data-desc-es="Fina y crujiente masa rellena de pollo especiado y almendras, con el tradicional toque dulce de canela y azúcar glas." 
+                     data-name-en="Chicken and Almond Pastilla" data-desc-en="Delicate crispy pastry filled with spiced chicken and almonds, finished with a traditional touch of cinnamon and icing sugar."
+                     data-name-fr="Pastilla au Poulet et aux Amandes" data-desc-fr="Pâte fine et croustillante farcie de poulet épicé et d'amandes, avec la touche sucrée traditionnelle de cannelle et de sucre glace."
+                     data-name-ar="بسطيلة بالدجاج واللوز" data-desc-ar="عجينة رقيقة ومقرمشة محشوة بالدجاج المتبل واللوز، مع لمسة حلوة تقليدية من القرفة والسكر البودرة."
+                     data-name-de="Hähnchen-Mandel-Pastilla" data-desc-de="Zarter, knuspriger Teig gefüllt mit gewürztem Hähnchen und Mandeln, verfeinert mit der traditionellen süßen Note von Zimt und Puderzucker."
+                     data-name-ru="Пастилла с курицей и миндалем" data-desc-ru="Тонкое хрустящее тесто с начинкой из пряной курицы и миндаля, с традиционной сладкой ноткой корицы и сахарной пудры."
+                     data-name-it="Pastilla di pollo e mandorle" data-desc-it="Pasta sottile e croccante ripiena di pollo speziato e mandorle, con il tradizionale tocco dolce di cannella e zucchero a velo."
+                     data-name-pt="Pastela de Frango e Amêndoas" data-desc-pt="Massa fina e crocante recheada com frango temperado e amêndoas, com o toque doce tradicional de canela e açúcar em pó."
+                     data-name-el="Παστίλα με Κοτόπουλο και Αμύγδαλα" data-desc-el="Λεπτή και τραγανή ζύμη γεμάτη με καρυκευμένο κοτόπουλο και αμύγδαλα, με την παραδοσιακή γλυκιά νότα κανέλας και ζάχαρης άχνη."
+                     data-name-zh="鸡肉杏仁馅饼" data-desc-zh="薄脆的酥皮包裹着香料鸡肉和杏仁，带有传统的肉桂和糖霜甜味。"
+                     data-name-zh-tw="雞肉杏仁餡餅" data-desc-zh-tw="薄脆的酥皮包裹著香料雞肉和杏仁，帶有傳統的肉桂和糖霜甜味。"
+                     data-name-ja="鶏肉とアーモンドのパスティーヤ" data-desc-ja="スパイスで味付けした鶏肉とアーモンドを包んだ薄くてサクサクの生地に、シナモンと粉砂糖の伝統的な甘さをプラス。"
+                     data-name-ko="닭고기와 아몬드 파스티야" data-desc-ko="향신료로 양념한 닭고기와 아몬드를 얇고 바삭한 반죽에 채우고 전통적인 시나몬과 슈가파우더의 달콤함을 더했습니다."
+                     data-name-hi="चिकन और बादाम पस्टिला" data-desc-hi="मसालेदार चिकन और बादाम से भरी पतली और कुरकुरी पेस्ट्री, दालचीनी और आइसिंग शुगर के पारंपरिक मीठे स्पर्श के साथ।"
+                     data-name-nl="Kip en Amandel Pastilla" data-desc-nl="Fijn en knapperig deeg gevuld met gekruid kip en amandelen, met de traditionele zoete toets van kaneel en poedersuiker."
+                     data-name-pl="Pastilla z Kurczakiem i Migdałami" data-desc-pl="Cienkie i chrupiące ciasto wypełnione przyprawionym kurczakiem i migdałami, z tradycyjną słodką nutą cynamonu i cukru pudru."
+                     data-name-tr="Tavuklu ve Bademli Pastilla" data-desc-tr="Baharatlı tavuk ve bademle doldurulmuş ince ve çıtır hamur, geleneksel tarçın ve pudra şekeri tatlılığıyla tamamlanır."
+                     data-name-uk="Пастила з куркою та мигдалем" data-desc-uk="Тонке хрустке тісто з начинкою з пряної курки та мигдалю, з традиційною солодкою ноткою кориці та цукрової пудри."
+                     data-price="19.50">
+                    <div class="item-img">
+                        <img src="images/pastela.png" alt="Pastela de pollo y almendras" loading="lazy" />
+                    </div>
+                    <div class="item-info">
+                        <div class="item-name">Pastela de pollo y almendras</div>
+                        <div class="item-desc">Fina y crujiente masa rellena de pollo especiado y almendras, con el tradicional toque dulce de canela y azúcar glas.</div>
+                        <div class="allergy-icons">
+                            <span class="allergy-icon">🌾 Gluten</span>
+                            <span class="allergy-icon">🌰 Frutos cáscara</span>
+                            <span class="allergy-icon">🥚 Huevos</span>
+                        </div>
+                    </div>
+                    <div class="price-add">
+                        <div class="price">19.50</div>
+                        <button class="add-btn">Añadir</button>
+                    </div>
+                </div>
+            </div>
+            <!-- END PASTELA -->
             <!-- END ESPECIALIDADES LAS PALMERAS -->
 
             <!-- ─── ENTRANTES ─── -->
@@ -1502,7 +1612,37 @@
                         <button class="add-btn">Añadir</button>
                     </div>
                 </div>
-
+<div class="menu-item" data-id="cordero_horno_marrakech" 
+                      data-name-es="Cordero al horno Estilo Marrakech" data-desc-es="Cordero asado lentamente al horno con especias, acompañado de arroz blanco y verduras salteadas." 
+                          data-name-en="Marrakech-Style Roasted Lamb" data-desc-en="Slow-roasted lamb with spices, served with white rice and sautéed vegetables." 
+                       data-name-fr="Agneau Rôti à la Marrakchie" data-desc-fr="Agneau rôti lentement au four avec des épices, accompagné de riz blanc et de légumes sautés." 
+                     data-name-ar="حم الغنم المشوي في الفرن على الطريقة المراكشية" data-desc-ar="لحم الغنم المشوي ببطء في الفرن مع التوابل المغربية، تقدم مع الأرز الأبيض والخضروات المشوحة." 
+                      data-name-de="Lammbraten nach Marrakesch-Art" data-desc-de="Langsam im Ofen gebratenes Lamm mit Gewürzen, serviert mit weißem Reis und sautiertem Gemüse."
+                      data-name-ru="Жареная баранина по-марракешски" data-desc-ru="Медленно запеченная в духовке баранина со специями, подается с белым рисом и обжаренными овощами."
+                data-name-it="Agnello arrosto alla marrakchina" data-desc-it="Agnello arrostito lentamente al forno con spezie, servito con riso bianco e verdure saltate."
+              data-name-pt="Cordeiro Assado ao Estilo Marraquexe" data-desc-pt="Cordeiro assado lentamente no forno com especiarias, servido com arroz branco e legumes salteados."
+             data-name-nl="Geroosterd Lamsvlees op Marrakech-Wijze" data-desc-nl="Langzaam in de oven geroosterd lamsvlees met kruiden, geserveerd met witte rijst en gebakken groenten."
+                  data-name-pl="Pieczona Jagnięcina w Stylu Marrakeszu" data-desc-pl="Powoli pieczona w piekarniku jagnięcina z przyprawami, podawana z białym ryżem i podsmażanymi warzywami."
+             data-name-tr="Marakeş Usulü Fırında Kuzu" data-desc-tr="Baharatlarla fırında yavaşça pişirilmiş kuzu eti, beyaz pirinç ve sote sebzelerle servis edilir."
+               data-name-uk="Запечена ягнятина за марракеським рецептом" data-desc-uk="Повільно запечена в духовці ягнятина зі спеціями, подається з білим рисом та обсмаженими овочами."
+            data-name-el="Ψητό Αρνί σε Στυλ Μαρακές" data-desc-el="Αρνί ψημένο αργά στο φούρνο με μπαχαρικά, σερβίρεται με λευκό ρύζι και σοταρισμένα λαχανικά."
+              data-name-zh="马拉喀什风味烤羊肉" data-desc-zh="用香料慢烤的羊肉，配白米饭和炒蔬菜。"
+                  data-name-zh-tw="馬拉喀什風味烤羊肉" data-desc-zh-tw="用香料慢烤的羊肉，配白米飯和炒蔬菜。"
+             data-name-ja="マラケシュ風ローストラム" data-desc-ja="スパイスでじっくりオーブンで焼いたラム肉。白米とソテーした野菜を添えて。"
+                data-name-ko="마라케시 스타일 구운 양고기" data-desc-ko="향신료와 함께 오븐에서 천천히 구운 양고기. 흰쌀밥과 볶은 채소를 곁들여 제공합니다."
+                 data-name-hi="मराकेश शैली में भुना हुआ मेमना" data-desc-hi="मसालों के साथ ओवन में धीरे-धीरे भुना हुआ मेमना, सफेद चावल और भुनी हुई सब्जियों के साथ परोसा जाता है।"
+                data-price="22.90">
+    <div class="item-img"><img src="images/Cordero al horno Estilo Marrakech.jpeg" alt="Cordero al horno Estilo Marrakech" loading="lazy" /></div>
+    <div class="item-info">
+        <div class="item-name">Cordero al horno Estilo Marrakech</div>
+        <div class="item-desc">Cordero asado lentamente al horno con especias, acompañado de arroz blanco y verduras salteadas.</div>
+        <div class="allergy-icons"></div>
+    </div>
+    <div class="price-add">
+        <div class="price">22.90</div>
+        <button class="add-btn">Añadir</button>
+    </div>
+</div>
                 <!-- 3. Tajín de Pollo con Limón y Aceitunas -->
                 <div class="menu-item" data-id="pollo_limon" 
                      data-name-es="Tajín de Pollo con Limón y Aceitunas" data-desc-es="Chicken Tagine with Preserved Lemon and Olives." 
@@ -1665,6 +1805,8 @@
                 </div>
 
             </div>
+            <!-- 10. Cordero al horno Estilo Marrakech -->
+
             <!-- END TAJINES -->
            
             <!-- ─── TÉS E INFUSIONES ─── -->
@@ -1705,7 +1847,7 @@
                      data-name-it="Tè Khamsa Zaatar" data-desc-it="Tè nero con origano marocchino."
                      data-name-pt="Chá Khamsa Zaatar" data-desc-pt="Chá preto com orégano marroquino."
                      data-price="4.00">
-                    <div class="item-img"><img src="images/te_zaatar.jpg" alt="Té Khamsa Zaatar" loading="lazy" /></div>
+                    <div class="item-img"><img src="images/KHAMSA zaatar.jpeg" alt="Té Khamsa Zaatar" loading="lazy" /></div>
                     <div class="item-info">
                         <div class="item-name">Té Khamsa Zaatar</div>
                         <div class="item-desc">Té negro con orégano marroquí.</div>
@@ -1728,7 +1870,7 @@
                      data-name-it="Tè Khamsa Grey" data-desc-it="Tè nero con menta, scorza d'arancia e bergamotto."
                      data-name-pt="Chá Khamsa Grey" data-desc-pt="Chá preto com hortelã, casca de laranja e bergamota."
                      data-price="4.00">
-                    <div class="item-img"><img src="images/te_grey.jpg" alt="Té Khamsa Grey" loading="lazy" /></div>
+                    <div class="item-img"><img src="images/KHAMSA GREY.jpeg" alt="Té Khamsa Grey" loading="lazy" /></div>
                     <div class="item-info">
                         <div class="item-name">Té Khamsa Grey</div>
                         <div class="item-desc">Té negro con hierbabuena, piel de naranja y bergamota.</div>
@@ -1751,7 +1893,7 @@
                      data-name-it="Infuso Khamsa Louisa" data-desc-it="Infuso di verbena marocchina."
                      data-name-pt="Infusão Khamsa Louisa" data-desc-pt="Infusão de verbena marroquina."
                      data-price="4.00">
-                    <div class="item-img"><img src="images/te_louisa.jpg" alt="Té Khamsa Louisa" loading="lazy" /></div>
+                    <div class="item-img"><img src="images/KHAMSA Louisa.jpeg" alt="Té Khamsa Louisa" loading="lazy" /></div>
                     <div class="item-info">
                         <div class="item-name">Té Khamsa Louisa</div>
                         <div class="item-desc">Infusión de verbena marroquí.</div>
@@ -1774,7 +1916,7 @@
                      data-name-it="Tè verde Khamsa alla menta" data-desc-it="Tè verde con menta."
                      data-name-pt="Chá Verde Khamsa com Menta" data-desc-pt="Chá verde com hortelã."
                      data-price="4.00">
-                    <div class="item-img"><img src="images/TeaMarroquiKhamsa.png" alt="Té Khamsa Green Tea Mint" loading="lazy" /></div>
+                    <div class="item-img"><img src="images/Khamsa green tea mint.jpeg" alt="Té Khamsa Green Tea Mint" loading="lazy" /></div>
                     <div class="item-info">
                         <div class="item-name">Té Khamsa Green Tea Mint</div>
                         <div class="item-desc">Té verde con hierbabuena y menta.</div>
@@ -1804,7 +1946,7 @@
                      data-name-it="Cuscus di agnello con verdure, uvetta e cipolle caramellate" data-desc-it="Agnello, verdure, uvetta e cipolle caramellate."
                      data-name-pt="Cuscuz de Cordeiro com Legumes, Passas e Cebola Caramelizada" data-desc-pt="Cordeiro, legumes, passas e cebola caramelizada."
                      data-price="19.00">
-                    <div class="item-img"><img src="images/b4cf3d74-cb9f-4077-af1e-473c3836da0a 2.JPG" alt="Cuscús de Cordero" loading="lazy" /></div>
+                    <div class="item-img"><img src="images/COUSCOUS CORDERO.jpeg" alt="Cuscús de Cordero" loading="lazy" /></div>
                     <div class="item-info">
                         <div class="item-name">Cuscús de Cordero con Verduras, Pasas y Cebolla Caramelizada</div>
                         <div class="item-desc">Cordero, verduras, pasas y cebolla caramelizada.</div>
@@ -2405,13 +2547,12 @@
             <!-- CIGARS MARROQUÍES -->
             <div class="menu-section" data-category="cigars">
                 <div class="section-title" data-name-es="Cigars Marroquíes" data-name-en="Moroccan Cigars" data-name-fr="Cigares Marocains" data-name-ar="سيجار مغربي" data-name-de="Marokkanische Cigars" data-name-ru="Марокканские сигары" data-name-it="Sigari Marocchini" data-name-pt="Charutos Marroquinos" data-name-el="Μαροκινά Πούρα" data-name-zh="摩洛哥雪茄" data-name-zh-tw="摩洛哥雪茄" data-name-ja="モロッコ風シガー" data-name-ko="모로코 시가" data-name-hi="मोरक्कन सिगार" data-name-nl="Marokkaanse Sigaren" data-name-pl="Marokańskie Cygara" data-name-tr="Fas Purosu" data-name-uk="Марокканські сигари"> Cigars Marroquíes</div>
-                
                 <!-- Vegetal -->
-                <div class="menu-item" data-id="cigar_vegetal" 
-                     data-name-es="Cigars Vegetal (2 Uds.)" data-desc-es="Vegetal." 
-                     data-name-en="Vegetable Cigars (2 Uds.)" data-desc-en="Vegetable." 
-                     data-name-fr="Cigares aux Légumes (2 Uds.)" data-desc-fr="Légumes." 
-                     data-name-ar="لفائف خضار (2 قطع)" data-desc-ar="لفائف خضار." 
+                <div class="menu-item" data-id="cigar_vegetal"
+                     data-name-es="Cigars Vegetal (2 Uds.)" data-desc-es="Vegetal."
+                     data-name-en="Vegetable Cigars (2 Uds.)" data-desc-en="Vegetable."
+                     data-name-fr="Cigares aux Légumes (2 Uds.)" data-desc-fr="Légumes."
+                     data-name-ar="لفائف خضار (2 قطع)" data-desc-ar="لفائف خضار.""
                      data-name-de="Gemüse-Cigars (2 Stk.)" data-desc-de="Gemüse."
                      data-name-ru="Овощные сигары (2 шт.)" data-desc-ru="Овощи."
                      data-name-it="Sigari di verdure (2 pezzi)" data-desc-it="Verdure."
@@ -2430,11 +2571,10 @@
                 </div>
 
                 <!-- Kefta -->
-                <div class="menu-item" data-id="cigar_kefta" 
-                     data-name-es="Cigars Kefta (2 Uds.)" data-desc-es="Kefta. Carne picada." 
-                     data-name-en="Kefta Cigars (2 Uds.)" data-desc-en="Kefta. Minced Beef." 
-                     data-name-fr="Cigares Kefta (2 Uds.)" data-desc-fr="Kefta. Viande hachée." 
-                     data-name-ar="لفائف كفتة (2 قطع)" data-desc-ar="كفتة." 
+                <div class="menu-item" data-id="cigar_kefta"
+                     data-name-en="Kefta Cigars (2 Uds.)" data-desc-en="Kefta. Minced Beef."
+                     data-name-fr="Cigares Kefta (2 Uds.)" data-desc-fr="Kefta. Viande hachée."
+                     data-name-ar="لفائف كفتة (2 قطع)" data-desc-ar="كفتة."
                      data-name-de="Keften-Cigars (2 Stk.)" data-desc-de="Keften. Hackfleisch."
                      data-name-ru="Сигары с кефтой (2 шт.)" data-desc-ru="Кефта. Говяжий фарш."
                      data-name-it="Sigari di kefta (2 pezzi)" data-desc-it="Kefta. Carne macinata."
@@ -2453,11 +2593,11 @@
                 </div>
 
                 <!-- Espinacas y Queso -->
-                <div class="menu-item" data-id="cigar_espinacas" 
-                     data-name-es="Cigars de Espinacas y Queso (2 Uds.)" data-desc-es="Espinacas y Queso." 
-                     data-name-en="Spinach & Cheese Cigars (2 Uds.)" data-desc-en="Spinach & Cheese." 
-                     data-name-fr="Cigares aux Épinards et Fromage (2 Uds.)" data-desc-fr="Épinards et Fromage." 
-                     data-name-ar="لفائف بالسبانخ والجبنة (2 قطع)" data-desc-ar="سبانخ وجبنة." 
+                <div class="menu-item" data-id="cigar_espinacas"
+                     data-name-es="Cigars de Espinacas y Queso (2 Uds.)" data-desc-es="Espinacas y Queso."
+                     data-name-en="Spinach & Cheese Cigars (2 Uds.)" data-desc-en="Spinach & Cheese."
+                     data-name-fr="Cigares aux Épinards et Fromage (2 Uds.)" data-desc-fr="Épinards et Fromage."
+                     data-name-ar="لفائف بالسبانخ والجبنة (2 قطع)" data-desc-ar="سبانخ وجبنة."
                      data-name-de="Spinat-Käse-Cigars (2 Stk.)" data-desc-de="Spinat und Käse."
                      data-name-ru="Сигары со шпинатом и сыром (2 шт.)" data-desc-ru="Шпинат и сыр."
                      data-name-it="Sigari spinaci e formaggio (2 pezzi)" data-desc-it="Spinaci e formaggio."
@@ -2476,11 +2616,11 @@
                 </div>
 
                 <!-- Marisco -->
-                <div class="menu-item" data-id="cigar_marisco" 
-                     data-name-es="Cigars de Marisco (2 Uds.)" data-desc-es="Marisco." 
-                     data-name-en="Seafood Cigars (2 Uds.)" data-desc-en="Seafood." 
-                     data-name-fr="Cigares aux Fruits de Mer (2 Uds.)" data-desc-fr="Fruits de mer." 
-                     data-name-ar="لفائف المأكولات البحرية (2 قطع)" data-desc-ar="المأكولات البحرية." 
+                <div class="menu-item" data-id="cigar_marisco"
+                     data-name-es="Cigars de Marisco (2 Uds.)" data-desc-es="Marisco."
+                     data-name-en="Seafood Cigars (2 Uds.)" data-desc-en="Seafood.
+                     data-name-fr="Cigares aux Fruits de Mer (2 Uds.)" data-desc-fr="Fruits de mer."
+                     data-name-ar="لفائف المأكولات البحرية (2 قطع)" data-desc-ar="المأكولات البحرية."
                      data-name-de="Meeresfrüchte-Cigars (2 Stk.)" data-desc-de="Meeresfrüchte."
                      data-name-ru="Сигары с морепродуктами (2 шт.)" data-desc-ru="Морепродукты."
                      data-name-it="Sigari ai frutti di mare (2 pezzi)" data-desc-it="Frutti di mare."
@@ -2500,9 +2640,9 @@
 
                 <!-- Surtido -->
                 <div class="menu-item" data-id="cigar_surtido" 
-                     data-name-es="Surtido de Cigars (4 Uds.)" data-desc-es="Surtido de Cigars." 
-                     data-name-en="Cigar Assortment (4 Uds.)" data-desc-en="Cigar Assortment." 
-                     data-name-fr="Assortiment de Cigares (4 Uds.)" data-desc-fr="Assortiment de Cigares." 
+                     data-name-es="Surtido de Cigars (4 Uds.)" data-desc-es="Surtido de Cigars."
+                     data-name-en="Cigar Assortment (4 Uds.)" data-desc-en="Cigar Assortment."
+                     data-name-fr="Assortiment de Cigares (4 Uds.)" data-desc-fr="Assortiment de Cigares."
                      data-name-ar="تشكيلة سيجار (4 قطع)" data-desc-ar="تشكيلة سيجار." 
                      data-name-de="Cigar-Assortiment (4 Stk.)" data-desc-de="Cigar-Assortiment."
                      data-name-ru="Ассорти сигар (4 шт.)" data-desc-ru="Ассорти сигар."
@@ -2596,7 +2736,38 @@
                         <button class="add-btn">Añadir</button>
                     </div>
                 </div>
-
+                <!-- 6. Limonada casera con menta fresca -->
+                <div class="menu-item" data-id="limonada" 
+                     data-name-es="Limonada" data-desc-es="Limonada." 
+                     data-name-en="Homemade Lemonade with Fresh Mint" data-desc-en="Homemade lemonade with fresh mint." 
+                     data-name-fr="Limonade maison à la menthe fraîche" data-desc-fr="Limonade maison à la menthe fraîche." 
+                     data-name-ar="ليموناضة منزلية بالنعناع الطازج" data-desc-ar="ليموناضة منزلية بالنعناع الطازج." 
+                     data-name-de="Hausgemachte Limonade mit frischer Minze" data-desc-de="Hausgemachte Limonade mit frischer Minze."
+                     data-name-ru="Домашний лимонад со свежей мятой" data-desc-ru="Домашний лимонад со свежей мятой."
+                     data-name-it="Limonata fatta in casa con menta fresca" data-desc-it="Limonata fatta in casa con menta fresca."
+                     data-name-el="Σπιτική λεμονάδα με φρέσκια μέντα" data-desc-el="Σπιτική λεμονάδα με φρέσκια μέντα."
+                     data-name-pt="Limonada Caseira com Menta Fresca" data-desc-pt="Limonada caseira com menta fresca."
+                     data-name-zh="自制新鲜薄荷柠檬水" data-desc-zh="自制新鲜薄荷柠檬水。"
+                     data-name-zh-tw="自製新鮮薄荷檸檬水" data-desc-zh-tw="自製新鮮薄荷檸檬水。"
+                     data-name-ja="自家製フレッシュミントレモネード" data-desc-ja="自家製フレッシュミントレモネード。"
+                     data-name-ko="수제 신선한 민트 레모네이드" data-desc-ko="수제 신선한 민트 레모네이드."
+                     data-name-hi="घर का ताज़ा पुदीना नींबू पानी" data-desc-hi="घर का ताज़ा पुदीना नींबू पानी।"
+                     data-name-nl="Huisgemaakte Limonade met Verse Munt" data-desc-nl="Huisgemaakte limonade met verse munt."
+                     data-name-pl="Domowa Lemonada ze Świeżą Miętą" data-desc-pl="Domowa lemonada ze świeżą miętą."
+                     data-name-tr="Taze Naneli Ev Yapımı Limonata" data-desc-tr="Taze naneli ev yapımı limonata."
+                     data-name-uk="Домашній лимонад зі свіжою м'ятою" data-desc-uk="Домашній лимонад зі свіжою м'ятою."
+                     data-price="5.00">
+                    <div class="item-img"><img src="images/LIMONADA.jpeg" alt="Limonada casera" loading="lazy" /></div>
+                    <div class="item-info">
+                        <div class="item-name">Limonada casera con menta fresca</div>
+                        <div class="item-desc">Limonada casera con menta fresca.</div>
+                        <div class="allergy-icons"><span class="allergy-icon">🌿 Apio</span></div>
+                    </div>
+                    <div class="price-add">
+                        <div class="price">5.00</div>
+                        <button class="add-btn">Añadir</button>
+                    </div>
+                </div>
                 <!-- 4. Agua con gas -->
                 <div class="menu-item" data-id="agua_con_gas" 
                      data-name-es="Agua con gas" data-desc-es="Agua mineral con gas." 
@@ -2643,28 +2814,7 @@
                     </div>
                 </div>
 
-                <!-- 6. Limonada casera con menta fresca -->
-                <div class="menu-item" data-id="limonada" 
-                     data-name-es="Limonada casera con menta fresca" data-desc-es="Limonada casera con menta fresca." 
-                     data-name-en="Homemade Lemonade with Fresh Mint" data-desc-en="Homemade lemonade with fresh mint." 
-                     data-name-fr="Limonade maison à la menthe fraîche" data-desc-fr="Limonade maison à la menthe fraîche." 
-                     data-name-ar="ليموناضة منزلية بالنعناع الطازج" data-desc-ar="ليموناضة منزلية بالنعناع الطازج." 
-                     data-name-de="Hausgemachte Limonade mit frischer Minze" data-desc-de="Hausgemachte Limonade mit frischer Minze."
-                     data-name-ru="Домашний лимонад со свежей мятой" data-desc-ru="Домашний лимонад со свежей мятой."
-                     data-name-it="Limonata fatta in casa con menta fresca" data-desc-it="Limonata fatta in casa con menta fresca."
-                     data-name-pt="Limonada Caseira com Menta Fresca" data-desc-pt="Limonada caseira com menta fresca."
-                     data-price="5.00">
-                    <div class="item-img"><img src="images/limonada.jpeg" alt="Limonada casera" loading="lazy" /></div>
-                    <div class="item-info">
-                        <div class="item-name">Limonada casera con menta fresca</div>
-                        <div class="item-desc">Limonada casera con menta fresca.</div>
-                        <div class="allergy-icons"><span class="allergy-icon">🌿 Apio</span></div>
-                    </div>
-                    <div class="price-add">
-                        <div class="price">5.00</div>
-                        <button class="add-btn">Añadir</button>
-                    </div>
-                </div>
+                
 
                 <!-- 7. Zumo de fruta -->
                 <div class="menu-item" data-id="zumo_fruta" 
@@ -3142,7 +3292,7 @@ function applyTranslation() {
 
     // 1. Translations Dictionary for all languages
     const dictionary = {
-        es: { add: "Añadir", all: "Todo", entrantes: "Entrantes", sopas: "Sopas", tagines: "Tajines", cuscus: "Cuscús", pizzas: "Pizza", arroces: "Arroces", grill: "Grill", postres: "Postres", bebidas: "Bebidas", cigars: "Cigars", pastela: "Pastela", acompanamientos: "Acompañamientos", tes: "Tés e infusiones", smoothies: "Smoothies", especialidades: "⭐ Especialidades Las Palmeras" },
+        es: { add: "Añadir", all: "⭐ Especialidades Las Palmeras", entrantes: "Entrantes", sopas: "Sopas", tagines: "Tajines", cuscus: "Cuscús", pizzas: "Pizza", arroces: "Arroces", grill: "Grill", postres: "Postres", bebidas: "Bebidas", cigars: "Cigars", pastela: "Pastela", acompanamientos: "Acompañamientos", tes: "Tés e infusiones", smoothies: "Smoothies", especialidades: "⭐ Especialidades Las Palmeras" },
         en: { add: "Add", all: "All", entrantes: "Starters", sopas: "Soups", tagines: "Tagines", cuscus: "Couscous", pizzas: "Pizza", arroces: "Rice", grill: "Grill", postres: "Desserts", bebidas: "Drinks", cigars: "Cigars", pastela: "Pastilla", acompanamientos: "Side Dishes", tes: "Teas & Infusions", smoothies: "Smoothies", especialidades: "⭐ Las Palmeras Specialties" },
         fr: { add: "Ajouter", all: "Tout", entrantes: "Entrées", sopas: "Soupes", tagines: "Tajines", cuscus: "Couscous", pizzas: "Pizza", arroces: "Riz", grill: "Grill", postres: "Desserts", bebidas: "Boissons", cigars: "Cigares", pastela: "Pastilla", acompanamientos: "Accompagnements", tes: "Thés et infusions", smoothies: "Smoothies", especialidades: "⭐ Spécialités Las Palmeras" },
         ar: { add: "إضافة", all: "الكل", entrantes: "مقبلات", sopas: "شوربات", tagines: "طواجن", cuscus: "كسكس", pizzas: "بيتزا", arroces: "أرز", grill: "مشاوي", postres: "حلويات", bebidas: "مشروبات", cigars: "سيجار", pastela: "بسطيلة", acompanamientos: "أطباق جانبية", tes: "شاي وأعشاب", smoothies: "سموذي", especialidades: "⭐ تخصصات لاس بالميراس" },
@@ -3183,16 +3333,15 @@ function applyTranslation() {
         }
     });
 
-    // 3. Translate Section Titles
     document.querySelectorAll('.menu-section').forEach(section => {
         const cat = section.dataset.category;
         const titleEl = section.querySelector('.section-title span:last-child') || section.querySelector('.section-title');
         if (titleEl && dict[cat]) {
-            // Preserve the SVG icons, only change the text
             const svg = section.querySelector('.section-title svg');
             if (svg) {
                 titleEl.textContent = dict[cat];
             } else {
+                // Fallback for dynamically added sections (like Pastela)
                 titleEl.textContent = dict[cat];
             }
         }
@@ -3200,13 +3349,7 @@ function applyTranslation() {
 
 }
 
-    // ─── SCROLL HELPERS ───
-    function scrollToElement(el, offset = 10) {
-        if (!el) return;
-        const rect = el.getBoundingClientRect();
-        const targetTop = window.pageYOffset + rect.top - offset;
-        window.scrollTo({ top: targetTop, behavior: 'smooth' });
-    }
+
 
     function scrollChipIntoView(chip) {
         const container = document.getElementById('filterTabs');
@@ -3293,33 +3436,33 @@ function applyTranslation() {
         t.style.opacity = '1';
         setTimeout(() => t.style.opacity = '0', 1500);
     }
+      function filterMenu(selected) {
+    let activeSection = null;
 
-    // ─── NAVEGACIÓN Y FILTROS ───
-    function filterMenu(selected) {
-        document.querySelectorAll('.menu-section').forEach(s => {
-            let cat = s.dataset.category;
-            if (selected === 'all' || cat === selected) s.classList.remove('hidden-cat');
-            else s.classList.add('hidden-cat');
-        });
-        document.querySelectorAll('.cat-chip').forEach(chip => {
-            if (chip.dataset.filter === selected) chip.classList.add('active');
-            else chip.classList.remove('active');
-        });
-
-        const firstVisible = document.querySelector('.menu-section:not(.hidden-cat)');
-        if (firstVisible) {
-            scrollToElement(firstVisible, 70);
+    document.querySelectorAll('.menu-section').forEach(s => {
+        let cat = s.dataset.category;
+        if (cat === selected) {
+            s.classList.remove('hidden-cat');
+            activeSection = s;
+        } else {
+            s.classList.add('hidden-cat');
         }
-    }
-
-    document.querySelectorAll('.cat-chip').forEach(chip => {
-        chip.addEventListener('click', function() {
-            const filter = this.dataset.filter;
-            filterMenu(filter);
-            scrollChipIntoView(this);
-        });
     });
 
+    document.querySelectorAll('.cat-chip').forEach(chip => {
+        if (chip.dataset.filter === selected) chip.classList.add('active');
+        else chip.classList.remove('active');
+    });
+
+    // Smoothly scroll down to the section so it doesn't jump
+    if (activeSection) {
+        setTimeout(() => {
+            const yOffset = -120; // Adjust this to account for your sticky header/categories
+            const y = activeSection.getBoundingClientRect().top + window.scrollY + yOffset;
+            window.scrollTo({ top: y, behavior: 'smooth' });
+        }, 50); // Small timeout ensures the DOM has updated the visibility
+    }
+}
     document.querySelectorAll('.nav-item').forEach(nav => nav.addEventListener('click', function() {
         document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
         this.classList.add('active');
@@ -3418,18 +3561,18 @@ function applyTranslation() {
         }
     });
 
-    // ─── INICIO ───
+        // ─── INICIO ───
     loadOrder();
-    filterMenu('all');
+    filterMenu('especialidades'); // 👈 Changed from 'all' to 'especialidades'
     applyTranslation();
 
 
     // ─── MENÚ ACTUALIZADO ───
     const menuOverrides = [
+        ['Pastela de pollo y almendras', 'pastela', 'Pastela de pollo y almendras', 19.50, 'Fina y crujiente masa rellena de pollo especiado y almendras, con el tradicional toque dulce de canela y azúcar glas.', 'Chicken and almond pastilla', 'Delicate crispy pastry filled with spiced chicken and almonds, finished with cinnamon and icing sugar.', 'pastela'],
         ['Ensalada marroquí', 'ensalada', 'Ensalada marroquí', 7.50, 'Tomate, pepino, cebolla, pimiento y vinagreta.', 'Moroccan salad', 'Tomato, cucumber, onion, pepper and vinaigrette.', 'entrantes'],
         ['Hummus con pan de pita', 'hummus', 'Hummus clásico con pan pita', 8.00, 'Hummus tradicional con aceite de oliva, servido con pan pita.', 'Classic hummus with pita bread', 'Traditional hummus with olive oil, served with pita bread.', 'entrantes'],
         ['Falafel (4 uds.)', 'falafel', 'Falafel (4 unidades)', 8.00, 'Cuatro falafel de garbanzos con especias.', 'Falafel (4 pieces)', 'Four chickpea falafel with spices.', 'entrantes'],
-        ['Pastela de pollo y almendras', 'pastela', 'Pastela de pollo y almendras', 19.50, 'Fina y crujiente masa rellena de pollo especiado y almendras, con el tradicional toque dulce de canela y azúcar glas.', 'Chicken and almond pastilla', 'Delicate crispy pastry filled with spiced chicken and almonds, finished with cinnamon and icing sugar.', 'pastela'],
         ['Zaalouk · Berenjena asada', 'zaalouk', 'Zaalouk · Ensalada de berenjena', 8.50, 'Berenjena cocinada con tomate y especias marroquíes.', 'Zaalouk · Moroccan eggplant salad', 'Eggplant cooked with tomato and Moroccan spices.', 'entrantes'],
         ['Taktouka · Berenjena asada', 'Taktouka', 'Taktouka · Ensalada de pimientos', 8.50, 'Tomate y pimientos cocinados con especias marroquíes.', 'Taktouka · Moroccan pepper salad', 'Tomato and peppers cooked with Moroccan spices.', 'entrantes'],
         ['Gambas al pil pil', 'gambas', 'Gambas al pil pil', 12.00, 'Gambas salteadas con ajo y aceite de oliva.', 'Gambas al pil pil', 'Prawns sautéed with garlic and olive oil.', 'entrantes'],
@@ -3469,7 +3612,7 @@ function applyTranslation() {
         'agua_con_gas': 'images/AGUA%20CON%20GAS.jpeg',
         'refrescos': 'images/CocaCola.jpg',
         'limonada': 'images/limonada.jpeg',
-
+        'pastela': 'images/PASTELA  .jpeg',
         // Other items - Fixed spaces with %20
         'Tajin Verdura': 'images/TAJIN%20VERDURA.jpeg',
         gambas: 'images/Gambas%20pil%20pil.jpeg',
@@ -3723,30 +3866,55 @@ function applyTranslation() {
             }
         }
     }
-
     function addCategoryFilters() {
-        const filters = document.getElementById('filterTabs');
-        for (const [category, title] of Object.entries(categoryTitles)) {
-            if (filters.querySelector(`[data-filter="${category}"]`)) continue;
-            const chip = document.createElement('button');
-            chip.type = 'button';
-            chip.className = 'cat-chip';
-            chip.dataset.filter = category;
-            chip.textContent = title.replace(/^[^ ]+ /, '');
-            filters.appendChild(chip);
-            chip.addEventListener('click', function() {
-                filterMenu(this.dataset.filter);
-                scrollChipIntoView(this);
-            });
-        }
-    }
+    const filters = document.getElementById('filterTabs');
+    const desiredFilterOrder = [
+        'especialidades', 'entrantes', 'sopas', 'pastela', 'tagines', 'cuscus',
+        'pizzas', 'arroces', 'grill', 'acompanamientos', 'smoothies', 'bebidas',
+        'tes', 'postres', 'cigars'
+    ];
 
-    // ─── INICIO ───
+    filters.innerHTML = '';
+
+    desiredFilterOrder.forEach(cat => {
+        const chip = document.createElement('div');
+        chip.className = 'cat-chip';
+        if (cat === 'especialidades') chip.classList.add('active');
+        chip.dataset.filter = cat;
+        const categoryTitle = categoryTitles[cat] || (typeof dict !== 'undefined' && dict[cat]) || cat;
+        chip.textContent = categoryTitle.replace(/^[^ ]+ /, '');
+        filters.appendChild(chip);
+    });
+}
+// Global listener for category clicks
+document.getElementById('filterTabs').addEventListener('click', function(e) {
+    const chip = e.target.closest('.cat-chip');
+    if (chip) {
+        // If the chip is partially off-screen, scroll it into view smoothly
+        chip.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+        // Filter the menu and scroll the page down
+        filterMenu(chip.dataset.filter);
+    }
+});
+        // ─── INICIO ───
     applyMenuOverrides();
     addMenuProducts();
     applyMenuImages();
     addCategoryFilters();
-    </script>
+
+    const menuContainer = document.getElementById('menuContainer');
+        const sectionOrder = [
+        'especialidades', 'entrantes', 'sopas', 'pastela', 'tagines',
+        'cuscus', 'pizzas', 'arroces', 'grill', 'acompanamientos',
+        'smoothies', 'bebidas', 'tes', 'postres', 'cigars'
+    ];
+
+    sectionOrder.forEach(cat => {
+        const section = menuContainer.querySelector(`.menu-section[data-category="${cat}"]`);
+        if (section) menuContainer.appendChild(section);
+    });
+</script>
+</script>
 </body>
 <!-- ▼▼▼ PASSWORD LOCK SYSTEM ▼▼▼ -->
 <div id="passwordLockScreen" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: #f2ebe1; z-index: 999999; display: flex; flex-direction: column; align-items: center; justify-content: center; font-family: sans-serif;">
@@ -3816,9 +3984,8 @@ function applyTranslation() {
 <script>
     // This replaces the emojis with two-tone icons
     document.addEventListener("DOMContentLoaded", function() {
-        
         const twoToneIcons = {
-            all:             '<svg class="two-tone-svg" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10" opacity="0.35"/><path d="M12 4a8 8 0 100 16 8 8 0 000-16zm0 14a6 6 0 110-12 6 6 0 010 12z"/></svg>',
+            especialidades: '<svg class="two-tone-svg" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>',
             entrantes:       '<svg class="two-tone-svg" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10" opacity="0.35"/><path d="M12 6a6 6 0 100 12 6 6 0 000-12zm0 10a4 4 0 110-8 4 4 0 010 8z"/></svg>',
             sopas:           '<svg class="two-tone-svg" viewBox="0 0 24 24" fill="currentColor"><path d="M4 10h16v6a4 4 0 01-4 4H8a4 4 0 01-4-4v-6z" opacity="0.35"/><path d="M6 10h12v5a3 3 0 01-3 3H9a3 3 0 01-3-3v-5z"/></svg>',
             tagines:         '<svg class="two-tone-svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3L4 10h16L12 3z" opacity="0.35"/><path d="M5 10h14l-2 8a2 2 0 01-2 2h-6a2 2 0 01-2-2l-2-8z"/></svg>',
@@ -3839,7 +4006,6 @@ function applyTranslation() {
         document.querySelectorAll('.cat-chip').forEach(chip => {
             const filter = chip.dataset.filter;
             const svg = twoToneIcons[filter];
-            
             if (svg) {
                 // Keep the text, remove the emoji
                 const label = chip.textContent.replace(/^[^\w]+\s*/, '').trim();
@@ -3905,19 +4071,20 @@ function applyTranslation() {
 </style>
 
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        
-        // Fix the getMenuSection error
-        window.getMenuSection = function(category) {
-            let section = document.querySelector(`.menu-section[data-category="${category}"]`);
-            if (section) return section;
-            section = document.createElement('div');
-            section.className = 'menu-section';
-            section.dataset.category = category;
-            document.getElementById('menuContainer').appendChild(section);
-            return section;
-        };
-
+                    // Find every category button and replace its emoji
+        document.querySelectorAll('.cat-chip').forEach(chip => {
+            const filter = chip.dataset.filter;
+            const svg = twoToneIcons[filter];
+            if (svg) {
+                // Keep the text, remove the emoji
+                const label = chip.textContent.replace(/^[^\w]+\s*/, '').trim();
+                // Put the SVG + text inside
+                chip.innerHTML = svg + ' ' + label;
+                chip.style.display = 'inline-flex';
+                chip.style.alignItems = 'center';
+                chip.style.gap = '6px';
+            }
+        });
         // Exact minimalist SVG icons
         const exactIcons = {
             all: '<svg class="two-tone-svg" viewBox="0 0 24 24"><path d="M4 3v7a3 3 0 0 0 3 3h0a3 3 0 0 0 3-3V3"/><path d="M7 13v8"/><path d="M20 3v7a3 3 0 0 1-3 3h0a3 3 0 0 1-3-3V3"/><path d="M14 13v8"/></svg>',
@@ -3935,28 +4102,15 @@ function applyTranslation() {
             acompanamientos: '<svg class="two-tone-svg" viewBox="0 0 24 24"><path d="M3 8h18l-1 12H4L3 8z" opacity="0.3"/><path d="M5 10h14l-1 10H6L5 10z"/></svg>',
             tes: '<svg class="two-tone-svg" viewBox="0 0 24 24"><path d="M6 8h10v8a4 4 0 0 1-4 4h-2a4 4 0 0 1-4-4V8z" opacity="0.3"/><path d="M8 10h6v6a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2v-6z"/><path d="M16 10h2a2 2 0 0 1 0 4h-2"/></svg>',
             smoothies: '<svg class="two-tone-svg" viewBox="0 0 24 24"><path d="M7 4h10l-1 16H8L7 4z" opacity="0.3"/><path d="M9 7h6l-1 12H9L9 7z"/><circle cx="12" cy="3" r="1"/></svg>',
-            
             // Nav icons
             nav_favorites: '<svg class="two-tone-svg" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>',
             nav_contact: '<svg class="two-tone-svg" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>',
             nav_menu: '<svg class="two-tone-svg" viewBox="0 0 24 24"><path d="M4 3v7a3 3 0 0 0 3 3h0a3 3 0 0 0 3-3V3"/><path d="M7 13v8"/><path d="M20 3v7a3 3 0 0 1-3 3h0a3 3 0 0 1-3-3V3"/><path d="M14 13v8"/></svg>',
             nav_mylist: '<svg class="two-tone-svg" viewBox="0 0 24 24"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><path d="M9 14l2 2 4-4"/></svg>',
-            
             // Section titles
             title_especialidades: '<svg class="two-tone-svg" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>'
         };
-
-        // 1. Replace Category Chips
-        document.querySelectorAll('.cat-chip').forEach(chip => {
-            const filter = chip.dataset.filter;
-            if (exactIcons[filter]) {
-                const label = chip.textContent.replace(/^[^\w]+\s*/, '').trim();
-                chip.innerHTML = exactIcons[filter] + ' <span>' + label + '</span>';
-            }
-        });
-
-        // 2. Replace Bottom Nav
-        document.querySelectorAll('.nav-item').forEach(nav => {
+                document.querySelectorAll('.nav-item').forEach(nav => {
             const type = nav.dataset.nav;
             const iconKey = 'nav_' + type;
             if (exactIcons[iconKey]) {
