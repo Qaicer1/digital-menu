@@ -1093,8 +1093,7 @@
                 <button class="lang-option" data-lang="uk"><span class="flag">🇺🇦</span> <span class="lang-name">Українська</span></button>
             </div>
         </div>
-
-                    <!-- ─── FILTROS ─── -->
+    <!-- ─── FILTROS ─── -->
         <div class="cats-scroll" id="filterTabs">
 <div class="cat-chip active" data-filter="especialidades" data-name-es="⭐ Especialidades Las Palmeras" data-name-en="⭐ Las Palmeras Specialties" data-name-fr="⭐ Spécialités Las Palmeras" data-name-ar="⭐ تخصصات لاس بالميراس" data-name-de="⭐ Spezialitäten Las Palmeras" data-name-ru="⭐ Фирменные блюда Las Palmeras" data-name-it="⭐ Specialità Las Palmeras" data-name-pt="⭐ Especialidades Las Palmeras" data-name-el="⭐ Σπεσιαλιτέ Las Palmeras" data-name-zh="⭐ Las Palmeras 特色菜" data-name-zh-tw="⭐ Las Palmeras 特色菜" data-name-ja="⭐ Las Palmeras の特産品" data-name-ko="⭐ Las Palmeras 특선" data-name-hi="⭐ Las Palmeras विशेषताएँ" data-name-nl="⭐ Las Palmeras Specialiteiten" data-name-pl="⭐ Specjalności Las Palmeras" data-name-tr="⭐ Las Palmeras Özel Lezzetleri" data-name-uk="⭐ Фірмові страви Las Palmeras">⭐ Especialidades Las Palmeras</div>            <div class="cat-chip" data-filter="entrantes" data-name-es="Entrantes" data-name-en="Starters" data-name-fr="Entrées" data-name-ar="مقبلات" data-name-de="Vorspeisen" data-name-ru="Закуски" data-name-it="Antipasti" data-name-pt="Entradas" data-name-el="Ορεκτικά" data-name-zh="开胃菜" data-name-zh-tw="開胃菜" data-name-ja="前菜" data-name-ko="에피타이저" data-name-hi="स्टार्टर" data-name-nl="Voorgerechten" data-name-pl="Przystawki" data-name-tr="Başlangıçlar" data-name-uk="Закуски"> Entrantes</div>
             <div class="cat-chip" data-filter="sopas" data-name-es="Sopas" data-name-en="Soups" data-name-fr="Soupes" data-name-ar="شوربات" data-name-de="Suppen" data-name-ru="Супы" data-name-it="Zuppe" data-name-pt="Sopas" data-name-el="Σούπες" data-name-zh="汤类" data-name-zh-tw="湯類" data-name-ja="スープ" data-name-ko="수프" data-name-hi="सूप" data-name-nl="Soepen" data-name-pl="Zupy" data-name-tr="Çorbalar" data-name-uk="Супи"> Sopas</div>
@@ -3088,7 +3087,7 @@
 <!-- fin app-container -->
 
 <div class="bottom-nav">
-    <div class="nav-item" data-nav="favorites"><div class="nav-icon">⭐</div><span>Favorites</span></div>
+    <div class="nav-item" data-nav="favorites"><div class="nav-icon">⭐</div><span>Reseñas</span></div>
     <div class="nav-item" data-nav="contact"><div class="nav-icon">📞</div><span>Contacto</span></div>
     <div class="nav-item active" data-nav="menu"><div class="nav-icon">🍽️</div><span>Menu</span></div>
     <div class="nav-item" data-nav="mylist"><div class="nav-icon">📋</div><span>Mi selección</span></div>
@@ -3144,6 +3143,15 @@
                 <div class="contact-card-value">Escríbenos un mensaje</div>
             </div>
             <div class="contact-card-action">Abrir</div>
+        </a>
+
+        <a class="contact-card" href="https://www.instagram.com/laspalmerasrestaurantegranada/" target="_blank" rel="noopener">
+            <div class="contact-card-icon">📸</div>
+            <div class="contact-card-body">
+                <div class="contact-card-label">Instagram</div>
+                <div class="contact-card-value">@laspalmerasrestaurantegranada</div>
+            </div>
+            <div class="contact-card-action">Seguir</div>
         </a>
 
         <div class="contact-footer-note">Las Palmeras · Cocina Mediterránea · Halal</div>
@@ -3484,7 +3492,7 @@ function applyTranslation() {
             menuPage.style.display = 'block';
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
-        if (type === 'favorites') showToast("⭐ Favoritos próximamente");
+        if (type === 'favorites') window.open('https://g.page/r/CSAvD4eyeSzLEBM/review', '_blank');
         if (type === 'contact') openContact();
     }));
 
